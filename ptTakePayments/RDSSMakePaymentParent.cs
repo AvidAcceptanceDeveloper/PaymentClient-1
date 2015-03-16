@@ -924,7 +924,7 @@ namespace RDDSMakePayments
         
         private void rtxtABANumber_OnExit(object sender, EventArgs e)
         {
-            System.Drawing.Icon abaIco = new System.Drawing.Icon(AppDoma)
+            System.Drawing.Icon abaIco = new System.Drawing.Icon(RDDSMakePayments.Properties.Resources[])
             picVerifABA.Image = 
         }
         

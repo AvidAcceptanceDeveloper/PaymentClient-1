@@ -76,6 +76,7 @@ namespace RDDSMakePayments
             this.rbtnCheck = new Telerik.WinControls.UI.RadRadioButton();
             this.rlblCurrentDue = new Telerik.WinControls.UI.RadLabel();
             this.rpnlCCACH = new Telerik.WinControls.UI.RadPanel();
+            this.picVerifABA = new System.Windows.Forms.PictureBox();
             this.rtxtBankAccount = new Telerik.WinControls.UI.RadTextBoxControl();
             this.rtxtABANumber = new Telerik.WinControls.UI.RadTextBoxControl();
             this.rtxtCCNumber = new Telerik.WinControls.UI.RadTextBoxControl();
@@ -94,7 +95,6 @@ namespace RDDSMakePayments
             this.wizardPage1 = new Telerik.WinControls.UI.WizardPage();
             this.wizardPage2 = new Telerik.WinControls.UI.WizardPage();
             this.cmdBarOpenPayments = new Telerik.WinControls.UI.CommandBarButton();
-            this.picVerifABA = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.rWizMakeAPayment)).BeginInit();
             this.rWizMakeAPayment.SuspendLayout();
             this.pnlConfirm.SuspendLayout();
@@ -139,6 +139,7 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rlblCurrentDue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rpnlCCACH)).BeginInit();
             this.rpnlCCACH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVerifABA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtBankAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtABANumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtCCNumber)).BeginInit();
@@ -152,7 +153,6 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rlblABANumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlblCCNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerifABA)).BeginInit();
             this.SuspendLayout();
             // 
             // radMenuItem2
@@ -689,6 +689,14 @@ namespace RDDSMakePayments
             this.rpnlCCACH.TabIndex = 3012;
             this.rpnlCCACH.ThemeName = "ControlDefault";
             // 
+            // picVerifABA
+            // 
+            this.picVerifABA.Location = new System.Drawing.Point(267, 19);
+            this.picVerifABA.Name = "picVerifABA";
+            this.picVerifABA.Size = new System.Drawing.Size(32, 19);
+            this.picVerifABA.TabIndex = 3028;
+            this.picVerifABA.TabStop = false;
+            // 
             // rtxtBankAccount
             // 
             this.rtxtBankAccount.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -909,14 +917,6 @@ namespace RDDSMakePayments
             this.cmdBarOpenPayments.Text = "Open Payments";
             this.cmdBarOpenPayments.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
-            // picVerifABA
-            // 
-            this.picVerifABA.Location = new System.Drawing.Point(267, 19);
-            this.picVerifABA.Name = "picVerifABA";
-            this.picVerifABA.Size = new System.Drawing.Size(32, 19);
-            this.picVerifABA.TabIndex = 3028;
-            this.picVerifABA.TabStop = false;
-            // 
             // RDSSMakePaymentParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -983,6 +983,7 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rpnlCCACH)).EndInit();
             this.rpnlCCACH.ResumeLayout(false);
             this.rpnlCCACH.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVerifABA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtBankAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtABANumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtCCNumber)).EndInit();
@@ -996,7 +997,6 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rlblABANumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlblCCNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerifABA)).EndInit();
             this.ResumeLayout(false);
 
         }

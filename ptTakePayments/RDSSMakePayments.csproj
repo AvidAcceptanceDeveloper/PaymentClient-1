@@ -212,7 +212,6 @@
     <None Include="images\pertitus_logo_300x120.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Empty-Yellow.bmp" />
     <None Include="images\arrow-refresh-2-icon.png" />
     <None Include="images\105361-3d-glossy-orange-orb-icon-business-magic-wand.png" />
     <None Include="images\1417688572_Shutdown_Box_Red.png" />
@@ -223,6 +222,8 @@
     <None Include="images\money-symbol-green 180 by 139.jpg" />
     <None Include="images\lock-41168_640.png" />
     <None Include="images\lock small.png" />
+    <Content Include="images\Blank-Green.ico" />
+    <Content Include="images\Blank-Yellow.ico" />
     <Content Include="images\peritus_icon.bmp" />
     <None Include="images\reload-50.png" />
     <None Include="images\settings.jpg" />
