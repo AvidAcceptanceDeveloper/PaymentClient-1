@@ -1,0 +1,470 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TelerikExport</name>
+    </assembly>
+    <members>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.OnChildViewExporting(Telerik.WinControls.UI.Export.ChildViewExportingEventArgs)">
+            <summary>
+            Raises the <see cref="E:ChildViewExporting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.Export.ChildViewExportingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.ExportHierarchy">
+            <summary>
+            Set if child rows should be exported.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.ExportVisualSettings">
+            <summary>
+            Sets a value indicating whether the visual settings should be exported.
+            </summary>
+            <value>
+            <c>true</c> if visual settings are exported; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.SummariesExportOption">
+            <summary>
+            Sets a value indicating how summary rows are exported.
+            </summary>
+            <value>
+            The summaries export option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.HiddenColumnOption">
+            <summary>
+            Sets a value indicating how hidden columns are exported.
+            </summary>
+            <value>
+            The hidden column option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.HiddenRowOption">
+            <summary>
+            Sets a value indicating how hidden rows are exported.
+            </summary>
+            <value>
+            The hidden row option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.PagingExportOption">
+            <summary>
+            Sets a value indicating how the export behavies when paging is enabled.
+            </summary>
+            <value>
+            The paging export option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.ChildViewExportMode">
+            <summary>
+            Gets or sets the child view export mode.
+            </summary>
+            <value>
+            The child view export mode.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.RadGridViewToExport">
+            <summary>
+            Sets the RadGridView to export.
+            </summary>
+            <value>
+            The RadGridView to export.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.FileExtension">
+            <summary>
+            Sets the file extension of the exported file.
+            </summary>
+            <value>
+            The file extension.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.Encoding">
+            <summary>
+            Gets or sets the encoding used for the exported file. Default encoding is UTF8.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.Export.SpreadExport.ExportToPDF.ChildViewExporting">
+            <summary>
+            Occurs when a child view will be exported.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo">
+            <summary>
+            A wrapper class used to transform the Windows forms types to types compatible with the CellSelection object needs
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.#ctor(Telerik.Windows.Documents.Spreadsheet.Model.CellSelection,Telerik.WinControls.UI.GridCellElement)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo"/> class.
+            </summary>
+            <param name="currentExcelCell">The current excel cell.</param>
+            <param name="gridCellElement">The grid cell element.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.#ctor(Telerik.Windows.Documents.Spreadsheet.Model.CellSelection,Telerik.Windows.Documents.Spreadsheet.Model.Worksheet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo"/> class.
+            </summary>
+            <param name="currentExcelCell">The current excel cell.</param>
+            <param name="worksheet">The worksheet.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.BackColor">
+            <summary>
+            Gets or sets the fill of the excel cell.
+            </summary>
+            <value>
+            The fill.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.ForeColor">
+            <summary>
+            Gets or sets the forecolor of the excel cell.
+            </summary>
+            <value>
+            The forecolor.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.FontFamily">
+            <summary>
+            Gets or sets the font family of the excel cell.
+            </summary>
+            <value>
+            The font family.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.FontSize">
+            <summary>
+            Gets or sets the size of the font of the excel cell. 
+            </summary>
+            <value>
+            The size of the font in points (pt). It will be automatically converted to the Device Independent Pixels, when setting.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.IsBold">
+            <summary>
+            Gets or sets a value indicating whether this text of the excel cell is bold.
+            </summary>
+            <value>
+              <c>true</c> if the text of the excel cell is bold; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.IsItalic">
+            <summary>
+            Gets or sets a value indicating whether the text of the excel cell is italic.
+            </summary>
+            <value>
+              <c>true</c> if the text of the excel cell is italic; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.Underline">
+            <summary>
+            Gets or sets whether the text of the excel cell is underline.
+            </summary>
+            <value>
+            The underline type.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.TextAlignment">
+            <summary>
+            Gets or sets the text alignment.
+            </summary>
+            <value>
+            The text alignment.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.Borders">
+            <summary>
+            Gets or sets the borders.
+            </summary>
+            <value>
+            The borders.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo.TextWrap">
+            <summary>
+            Gets or sets a value indicating whether the text of the excel cell is wrapped.
+            </summary>
+            <value>
+            <c>true</c> if the text of the excel cell is wrapped; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventHandler">
+            <summary>
+             Represents the method that will handle the CellFormatting event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs">
+            <summary>
+            Provides event arguments for the CellFormatting event
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs.#ctor(System.Int32,System.Int32,System.Type,Telerik.WinControls.UI.GridViewCellInfo,Telerik.Windows.Documents.Spreadsheet.Model.CellSelection,Telerik.WinControls.UI.Export.SpreadExport.CellStyleInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs"/> class.
+            </summary>
+            <param name="gridRowIndex">Index of the grid row.</param>
+            <param name="gridColumnIndex">Index of the grid column.</param>
+            <param name="gridRowInfoType">Type of the grid RowInfo.</param>
+            <param name="gridViewCellInfo">The grid view CellInfo.</param>
+            <param name="cellSelection">The cell in the workbook.</param>
+            <param name="cellStyleInfo">The cell style, allowing to introduce appearance modification to the exported cells.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs.GridColumnIndex">
+            <summary>
+            Get source grid's column index
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs.GridRowIndex">
+            <summary>
+            Get source grid's row index
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs.GridRowInfoType">
+            <summary>
+            Get source grid's row type
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs.GridCellInfo">
+            <summary>
+            Get a reference to the source grid's cell.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs.CellSelection">
+            <summary>
+            Get excel cell element for further formatting
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs.CellStyleInfo">
+            <summary>
+            Get style element for further formatting
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventHandler">
+            <summary>
+            Represents the method that will handle the WorkbookCreated event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventArgs">
+            <summary>
+            Provides event arguments for the WorkbookCreated event
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventArgs.#ctor(Telerik.Windows.Documents.Spreadsheet.Model.Workbook)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventArgs"/> class.
+            </summary>
+            <param name="workbook">The workbook.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventArgs.Workbook">
+            <summary>
+            Gets the workbook which is going to be exported.
+            </summary>
+            <value>
+            The workbook.
+            </value>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Export.SpreadExport.SpreadExportFormat">
+            <summary>
+            Enum listing the export formats supported by RadSpreadProessing.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Export.SpreadExport.SpreadExportFormat.Xlsx">
+            <summary>
+            XLSX format
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Export.SpreadExport.SpreadExportFormat.Pdf">
+            <summary>
+            PDF format
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Export.SpreadExport.SpreadExportFormat.Csv">
+            <summary>
+            CSV format
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Export.SpreadExport.SpreadExportFormat.Txt">
+            <summary>
+            Txt format
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport">
+            <summary>
+            SpreadExport is a powerful exporting API, allowing to export RadGridView to XLSX, PDF, CSV, and TXT format, utilizing the Document Processing Libraries.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.#ctor(Telerik.WinControls.UI.RadGridView)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport"/> class.
+            </summary>
+            <param name="radGridView">The grid to export.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.#ctor(Telerik.WinControls.UI.RadGridView,Telerik.WinControls.UI.Export.SpreadExport.SpreadExportFormat)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport"/> class.
+            </summary>
+            <param name="radGridView">The grid to export.</param>
+            <param name="spreadExportFormat">The spread export format.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.OnChildViewExporting(Telerik.WinControls.UI.Export.ChildViewExportingEventArgs)">
+            <summary>
+            Raises the <see cref="E:ChildViewExporting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.Export.ChildViewExportingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.OnCellFormatting(Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs)">
+            <summary>
+            Raises the <see cref="E:CellFormatting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.CellFormattingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.OnWorkbookCreated(Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventArgs)">
+            <summary>
+            Raises the <see cref="E:WorkbookCreated"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.Export.SpreadExport.WorkbookCreatedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.OnExportCompleted(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ExportCompleted"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.RunExport(System.String)">
+            <summary>
+            Start exporting
+            </summary>
+            <param name="fileName">Export file name</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.RunExport(System.String,System.String)">
+            <summary>
+             Starting the export, in specified sheet. If such sheet does not exist, it gets created. Alternatively, the exporter will export in the specified sheet.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="sheetName">Name of the sheet.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.CheckDateTimeValue(System.DateTime)">
+            <summary>
+            Check if date is supported from MS Excel
+            </summary>
+            <param name="value"></param>
+            <returns>True if value is supported</returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.AddWorkSheet(Telerik.Windows.Documents.Spreadsheet.Model.Workbook)">
+            <summary>
+            Create and add excel worksheet to the workbook
+            </summary>
+            <param name="workbook">Excel workbook</param>
+            <returns>Excel table element</returns>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.ExportHierarchy">
+            <summary>
+            Set if child rows should be exported.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.ExportVisualSettings">
+            <summary>
+            Sets a value indicating whether the visual settings should be exported.
+            </summary>
+            <value>
+            <c>true</c> if visual settings are exported; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.SheetName">
+            <summary>
+            Sets the name of the sheet.
+            </summary>
+            <value>
+            The name of the sheet.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.SheetMaxRows">
+            <summary>
+            Sets the sheet max rows.
+            </summary>
+            <value>
+            The sheet max rows.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.SummariesExportOption">
+            <summary>
+            Sets a value indicating how summary rows are exported.
+            </summary>
+            <value>
+            The summaries export option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.HiddenColumnOption">
+            <summary>
+            Sets a value indicating how hidden columns are exported.
+            </summary>
+            <value>
+            The hidden column option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.HiddenRowOption">
+            <summary>
+            Sets a value indicating how hidden rows are exported.
+            </summary>
+            <value>
+            The hidden row option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.PagingExportOption">
+            <summary>
+            Sets a value indicating how the export behavies when paging is enabled.
+            </summary>
+            <value>
+            The paging export option.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.ChildViewExportMode">
+            <summary>
+            Gets or sets the child view export mode.
+            </summary>
+            <value>
+            The child view export mode.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.RadGridViewToExport">
+            <summary>
+            Sets the RadGridView to export.
+            </summary>
+            <value>
+            The RadGridView to export.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.ExportFormat">
+            <summary>
+            Sets the format of the exported file - PDF, XLSX, CSV or TXT.
+            </summary>
+            <value>
+            The file extension.
+            </value>
+        </member>
+        <member name="E:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.ChildViewExporting">
+            <summary>
+            Occurs when a child view will be exported.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.CellFormatting">
+            <summary>
+            Occurs for every cell that is being exported.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.WorkbookCreated">
+            <summary>
+            Occurs when the workbook is created and is ready to be exported. Suitable for any final touches.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.Export.SpreadExport.SpreadExport.ExportCompleted">
+            <summary>
+            Occurs when the export process completes.
+            </summary>
+        </member>
+    </members>
+</doc>
