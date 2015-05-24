@@ -1,0 +1,137 @@
+﻿1>------ Build started: Project: RDSSMakePayments, Configuration: Release Any CPU ------
+1>  Consider app.config remapping of assembly "TelerikCommon, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" from Version "2015.1.225.20" [C:\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\TelerikCommon.dll] to Version "2015.1.225.40" [C:\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin40\TelerikCommon.dll] to solve conflict and get rid of warning.
+1>  Consider app.config remapping of assembly "Telerik.WinControls, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" from Version "2015.1.225.20" [C:\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.dll] to Version "2015.1.225.40" [C:\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin40\Telerik.WinControls.dll] to solve conflict and get rid of warning.
+1>  Consider app.config remapping of assembly "Telerik.WinControls.UI, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" from Version "2015.1.225.20" [C:\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.UI.dll] to Version "2015.1.225.40" [C:\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin40\Telerik.WinControls.UI.dll] to solve conflict and get rid of warning.
+1>C:\Program Files (x86)\MSBuild\12.0\bin\Microsoft.Common.CurrentVersion.targets(1697,5): warning MSB3276: Found conflicts between different versions of the same dependent assembly. Please set the "AutoGenerateBindingRedirects" property to true in the project file. For more information, see http://go.microsoft.com/fwlink/?LinkId=294190.
+1>  RDSSMakePayments -> C:\Users\Alan\OneDrive\RDDS\Source\Workspaces\DealerFileProcess\RDSSPaymentSolution\ptTakePayments\bin\Release\RDDSMakePayments.exe
+2>------ Build started: Project: SetupRDSSMakePayments, Configuration: DVD-5 ------
+2>Created release folders
+2>ISEXP : warning : -7235: InstallShield could not create the software identification tag because the Tag Creator ID setting in the General Information view is empty.
+2>AdminExecuteSequence table successfully built
+2>AdminUISequence table successfully built
+2>AdvtExecuteSequence table successfully built
+2>AdvtUISequence table successfully built
+2>InstallExecuteSequence table successfully built
+2>InstallUISequence table successfully built
+2>Directory table successfully built
+2>Feature table successfully built
+2>FeatureComponents table successfully built
+2>Component table successfully built
+2>Loading File table
+2>Building File table
+2>ISEXP : warning : -6245: One or more of the project's components contain .NET properties that require the .NET Framework.  It is recommended that the release include the .NET Framework.
+2>Adding file 'ATSSecurePostUILib.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>Adding file 'Telerik.WinControls.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>Adding file 'Telerik.WinControls.GridView.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>Adding file 'Telerik.WinControls.PdfViewer.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>Adding file 'Telerik.WinControls.RichTextBox.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>Adding file 'Telerik.WinControls.Themes.Aqua.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>Adding file 'Telerik.WinControls.UI.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>Adding file 'TelerikCommon.dll' that is a dependency of component 'RDSSMakePayments.Primary_output'
+2>File table successfully built
+2>Building MsiFileHash table
+2>MsiFileHash table successfully built
+2>Class table successfully built
+2>Extension table successfully built
+2>ActionText table successfully built
+2>AppSearch table successfully built
+2>CCPSearch table successfully built
+2>Condition table successfully built
+2>AppId table successfully built
+2>Started signing 9063.tmp ...
+2>Property table successfully built
+2>Binary table successfully built
+2>CompLocator table successfully built
+2>ControlCondition table successfully built
+2>ControlEvent table successfully built
+2>CreateFolder table successfully built
+2>CustomAction table successfully built
+2>Error table successfully built
+2>DrLocator table successfully built
+2>DuplicateFile table successfully built
+2>Environment table successfully built
+2>EventMapping table successfully built
+2>Font table successfully built
+2>ProgId table successfully built
+2>ISIISItem table successfully built
+2>ISIISProperty table successfully built
+2>ISSelfReg table successfully built
+2>IniFile table successfully built
+2>IniLocator table successfully built
+2>LaunchCondition table successfully built
+2>MIME table successfully built
+2>MoveFile table successfully built
+2>MsiAssembly table successfully built
+2>MsiAssemblyName table successfully built
+2>MsiDigitalCertificate table successfully built
+2>MsiDigitalSignature table successfully built
+2>MsiPackageCertificate table successfully built
+2>MsiPatchCertificate table successfully built
+2>MsiShortcutProperty table successfully built
+2>PatchPackage table successfully built
+2>PublishComponent table successfully built
+2>RegLocator table successfully built
+2>Registry table successfully built
+2>RemoveFile table successfully built
+2>RemoveIniFile table successfully built
+2>RemoveRegistry table successfully built
+2>ReserveCost table successfully built
+2>SelfReg table successfully built
+2>ServiceControl table successfully built
+2>ServiceInstall table successfully built
+2>Started signing 9239.tmp ...
+2>Started signing 924B.tmp ...
+2>Shortcut table successfully built
+2>Signature table successfully built
+2>TextStyle table successfully built
+2>TypeLib table successfully built
+2>UIText table successfully built
+2>Upgrade table successfully built
+2>Verb table successfully built
+2>_Validation table successfully built
+2>Searching project for extract-at-build components...
+2>Building scanned MsiAssembly records
+2>Building scanned MsiAssemblyName records
+2>Validating Custom Action sequencing
+2>Embedding manifest SetupExe.Invoker.manifest into setup.exe
+2>Dialog AdminChangeFolder for language English (United States) built
+2>Dialog AdminNetworkLocation for language English (United States) built
+2>Dialog AdminWelcome for language English (United States) built
+2>Dialog CancelSetup for language English (United States) built
+2>Dialog CustomSetup for language English (United States) built
+2>Dialog CustomSetupTips for language English (United States) built
+2>Dialog CustomerInformation for language English (United States) built
+2>Dialog DatabaseFolder for language English (United States) built
+2>Dialog DestinationFolder for language English (United States) built
+2>Dialog DiskSpaceRequirements for language English (United States) built
+2>Dialog FilesInUse for language English (United States) built
+2>Dialog InstallChangeFolder for language English (United States) built
+2>Dialog InstallWelcome for language English (United States) built
+2>Dialog LicenseAgreement for language English (United States) built
+2>Dialog MaintenanceType for language English (United States) built
+2>Dialog MaintenanceWelcome for language English (United States) built
+2>Dialog MsiRMFilesInUse for language English (United States) built
+2>Dialog OutOfSpace for language English (United States) built
+2>Dialog PatchWelcome for language English (United States) built
+2>Dialog ReadmeInformation for language English (United States) built
+2>Dialog ReadyToInstall for language English (United States) built
+2>Dialog ReadyToRemove for language English (United States) built
+2>Dialog SetupCompleteError for language English (United States) built
+2>Dialog SetupCompleteSuccess for language English (United States) built
+2>Dialog SetupError for language English (United States) built
+2>Dialog SetupInitialization for language English (United States) built
+2>Dialog SetupInterrupted for language English (United States) built
+2>Dialog SetupProgress for language English (United States) built
+2>Dialog SetupResume for language English (United States) built
+2>Dialog SetupType for language English (United States) built
+2>Dialog SplashBitmap for language English (United States) built
+2>Resolving strings...
+2>Language English (United States) built
+2>Files built
+2>Media table successfully built
+2>Setup.exe created
+2>Automatic update notification disabled
+2>Express\DVD-5 - 0 error(s), 2 warning(s)
+2>Log file has been created: <file:C:\Users\Alan\OneDrive\RDDS\Source\Workspaces\DealerFileProcess\RDSSPaymentSolution\SetupRDSSMakePayments\SetupRDSSMakePayments\Express\DVD-5\LogFiles\3-13-2015 04-51-21 PM.txt>
+2>
+========== Build: 2 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========
