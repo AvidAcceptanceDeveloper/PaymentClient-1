@@ -30,6 +30,8 @@ namespace RDDSMakePayments
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RDSSMakePaymentParent));
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.rWizMakeAPayment = new Telerik.WinControls.UI.RadWizard();
@@ -76,9 +78,13 @@ namespace RDDSMakePayments
             this.rbtnCheck = new Telerik.WinControls.UI.RadRadioButton();
             this.rlblCurrentDue = new Telerik.WinControls.UI.RadLabel();
             this.rpnlCCACH = new Telerik.WinControls.UI.RadPanel();
-            this.picVerifABA = new System.Windows.Forms.PictureBox();
-            this.rtxtBankAccount = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.rlblChkSav = new Telerik.WinControls.UI.RadLabel();
+            this.rddlChkSav = new Telerik.WinControls.UI.RadDropDownList();
+            this.rlblPaymentDate = new Telerik.WinControls.UI.RadLabel();
+            this.rdtpPaymentDate = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.picbxABAVerif = new System.Windows.Forms.PictureBox();
             this.rtxtABANumber = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.rtxtBankAccount = new Telerik.WinControls.UI.RadTextBoxControl();
             this.rtxtCCNumber = new Telerik.WinControls.UI.RadTextBoxControl();
             this.rtxtTotalAmount = new Telerik.WinControls.UI.RadTextBoxControl();
             this.rtxtFeeAmt = new Telerik.WinControls.UI.RadTextBoxControl();
@@ -139,9 +145,13 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rlblCurrentDue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rpnlCCACH)).BeginInit();
             this.rpnlCCACH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerifABA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtxtBankAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlblChkSav)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rddlChkSav)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlblPaymentDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdtpPaymentDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxABAVerif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtABANumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtBankAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtCCNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtTotalAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtFeeAmt)).BeginInit();
@@ -173,13 +183,14 @@ namespace RDDSMakePayments
             this.rWizMakeAPayment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rWizMakeAPayment.ImageScalingSize = new System.Drawing.Size(8, 8);
             this.rWizMakeAPayment.Location = new System.Drawing.Point(0, 0);
+            this.rWizMakeAPayment.Margin = new System.Windows.Forms.Padding(4);
             this.rWizMakeAPayment.Name = "rWizMakeAPayment";
             this.rWizMakeAPayment.PageHeaderIcon = ((System.Drawing.Image)(resources.GetObject("rWizMakeAPayment.PageHeaderIcon")));
             this.rWizMakeAPayment.Pages.Add(this.wizardWelcomePage1);
             this.rWizMakeAPayment.Pages.Add(this.wizardPage1);
             this.rWizMakeAPayment.Pages.Add(this.wizardPage2);
             this.rWizMakeAPayment.Pages.Add(this.wizardCompletionPage1);
-            this.rWizMakeAPayment.Size = new System.Drawing.Size(944, 479);
+            this.rWizMakeAPayment.Size = new System.Drawing.Size(1259, 590);
             this.rWizMakeAPayment.TabIndex = 3;
             this.rWizMakeAPayment.WelcomePage = this.wizardWelcomePage1;
             this.rWizMakeAPayment.Next += new Telerik.WinControls.UI.WizardCancelEventHandler(this.rWizMakeAPayment_Next);
@@ -200,17 +211,19 @@ namespace RDDSMakePayments
             this.pnlConfirm.Controls.Add(this.pictureBox3);
             this.pnlConfirm.Controls.Add(this.rtxtPaymentResult);
             this.pnlConfirm.Controls.Add(this.rtxtConfirmMsg);
-            this.pnlConfirm.Location = new System.Drawing.Point(150, 56);
+            this.pnlConfirm.Location = new System.Drawing.Point(150, 63);
+            this.pnlConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.pnlConfirm.Name = "pnlConfirm";
-            this.pnlConfirm.Size = new System.Drawing.Size(794, 375);
+            this.pnlConfirm.Size = new System.Drawing.Size(1109, 479);
             this.pnlConfirm.TabIndex = 2;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::RDDSMakePayments.Properties.Resources.AvidLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Image = global::RDDSMakePayments.Properties.Resources.avid_logo;
+            this.pictureBox3.Location = new System.Drawing.Point(13, 25);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(247, 111);
+            this.pictureBox3.Size = new System.Drawing.Size(251, 116);
             this.pictureBox3.TabIndex = 3015;
             this.pictureBox3.TabStop = false;
             // 
@@ -219,10 +232,11 @@ namespace RDDSMakePayments
             this.rtxtPaymentResult.AutoSize = false;
             this.rtxtPaymentResult.Enabled = false;
             this.rtxtPaymentResult.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtPaymentResult.Location = new System.Drawing.Point(252, 143);
+            this.rtxtPaymentResult.Location = new System.Drawing.Point(336, 176);
+            this.rtxtPaymentResult.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtPaymentResult.Multiline = true;
             this.rtxtPaymentResult.Name = "rtxtPaymentResult";
-            this.rtxtPaymentResult.Size = new System.Drawing.Size(530, 229);
+            this.rtxtPaymentResult.Size = new System.Drawing.Size(707, 282);
             this.rtxtPaymentResult.TabIndex = 79;
             // 
             // rtxtConfirmMsg
@@ -230,19 +244,21 @@ namespace RDDSMakePayments
             this.rtxtConfirmMsg.AutoSize = false;
             this.rtxtConfirmMsg.Enabled = false;
             this.rtxtConfirmMsg.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtConfirmMsg.Location = new System.Drawing.Point(252, 3);
+            this.rtxtConfirmMsg.Location = new System.Drawing.Point(336, 4);
+            this.rtxtConfirmMsg.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtConfirmMsg.Multiline = true;
             this.rtxtConfirmMsg.Name = "rtxtConfirmMsg";
-            this.rtxtConfirmMsg.Size = new System.Drawing.Size(530, 138);
+            this.rtxtConfirmMsg.Size = new System.Drawing.Size(707, 170);
             this.rtxtConfirmMsg.TabIndex = 78;
             // 
             // rbtnOpenPayClient
             // 
-            this.rbtnOpenPayClient.Location = new System.Drawing.Point(494, 443);
+            this.rbtnOpenPayClient.Location = new System.Drawing.Point(778, 553);
+            this.rbtnOpenPayClient.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnOpenPayClient.Name = "rbtnOpenPayClient";
-            this.rbtnOpenPayClient.Size = new System.Drawing.Size(100, 24);
+            this.rbtnOpenPayClient.Size = new System.Drawing.Size(114, 24);
             this.rbtnOpenPayClient.TabIndex = 81;
-            this.rbtnOpenPayClient.Text = "First Mile";
+            this.rbtnOpenPayClient.Text = "Post Payment";
             this.rbtnOpenPayClient.TextWrap = true;
             this.rbtnOpenPayClient.Visible = false;
             this.rbtnOpenPayClient.Click += new System.EventHandler(this.rbtnOpenPayClient_Click);
@@ -258,16 +274,18 @@ namespace RDDSMakePayments
             this.pnlCLN.Controls.Add(this.lbLoanNumber);
             this.pnlCLN.Controls.Add(this.txtLoanNumber);
             this.pnlCLN.Controls.Add(this.btnFindLoan);
-            this.pnlCLN.Location = new System.Drawing.Point(258, 56);
+            this.pnlCLN.Location = new System.Drawing.Point(258, 63);
+            this.pnlCLN.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCLN.Name = "pnlCLN";
-            this.pnlCLN.Size = new System.Drawing.Size(686, 375);
+            this.pnlCLN.Size = new System.Drawing.Size(1001, 479);
             this.pnlCLN.TabIndex = 0;
             this.pnlCLN.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCLN_Paint);
             // 
             // rlblLogonId
             // 
             this.rlblLogonId.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.rlblLogonId.Location = new System.Drawing.Point(322, 111);
+            this.rlblLogonId.Location = new System.Drawing.Point(429, 137);
+            this.rlblLogonId.Margin = new System.Windows.Forms.Padding(4);
             this.rlblLogonId.Name = "rlblLogonId";
             this.rlblLogonId.Size = new System.Drawing.Size(2, 2);
             this.rlblLogonId.TabIndex = 4;
@@ -275,17 +293,19 @@ namespace RDDSMakePayments
             // radLabel2
             // 
             this.radLabel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radLabel2.Location = new System.Drawing.Point(322, 103);
+            this.radLabel2.Location = new System.Drawing.Point(429, 127);
+            this.radLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(2, 2);
             this.radLabel2.TabIndex = 1004;
             // 
             // picbxLogo
             // 
-            this.picbxLogo.Image = global::RDDSMakePayments.Properties.Resources.AvidLogo;
-            this.picbxLogo.Location = new System.Drawing.Point(3, 3);
+            this.picbxLogo.Image = global::RDDSMakePayments.Properties.Resources.avid_logo;
+            this.picbxLogo.Location = new System.Drawing.Point(4, 4);
+            this.picbxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picbxLogo.Name = "picbxLogo";
-            this.picbxLogo.Size = new System.Drawing.Size(680, 110);
+            this.picbxLogo.Size = new System.Drawing.Size(993, 135);
             this.picbxLogo.TabIndex = 1003;
             this.picbxLogo.TabStop = false;
             // 
@@ -293,10 +313,10 @@ namespace RDDSMakePayments
             // 
             this.rlblCustomerName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rlblCustomerName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rlblCustomerName.Location = new System.Drawing.Point(260, 164);
-            this.rlblCustomerName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblCustomerName.Location = new System.Drawing.Point(347, 202);
+            this.rlblCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblCustomerName.Name = "rlblCustomerName";
-            this.rlblCustomerName.Size = new System.Drawing.Size(57, 18);
+            this.rlblCustomerName.Size = new System.Drawing.Size(71, 22);
             this.rlblCustomerName.TabIndex = 39;
             this.rlblCustomerName.Text = "Customer:";
             // 
@@ -304,12 +324,12 @@ namespace RDDSMakePayments
             // 
             this.rtxtCustomerName.AutoSize = false;
             this.rtxtCustomerName.Enabled = false;
-            this.rtxtCustomerName.Location = new System.Drawing.Point(322, 162);
-            this.rtxtCustomerName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtCustomerName.Location = new System.Drawing.Point(429, 199);
+            this.rtxtCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtCustomerName.Multiline = true;
             this.rtxtCustomerName.Name = "rtxtCustomerName";
             this.rtxtCustomerName.ReadOnly = true;
-            this.rtxtCustomerName.Size = new System.Drawing.Size(231, 67);
+            this.rtxtCustomerName.Size = new System.Drawing.Size(308, 82);
             this.rtxtCustomerName.TabIndex = 41;
             this.rtxtCustomerName.TabStop = false;
             // 
@@ -317,27 +337,27 @@ namespace RDDSMakePayments
             // 
             this.lbLoanNumber.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbLoanNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoanNumber.Location = new System.Drawing.Point(241, 136);
-            this.lbLoanNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.lbLoanNumber.Location = new System.Drawing.Point(321, 167);
+            this.lbLoanNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbLoanNumber.Name = "lbLoanNumber";
-            this.lbLoanNumber.Size = new System.Drawing.Size(77, 18);
+            this.lbLoanNumber.Size = new System.Drawing.Size(96, 22);
             this.lbLoanNumber.TabIndex = 38;
             this.lbLoanNumber.Text = "Loan Number:";
             // 
             // txtLoanNumber
             // 
-            this.txtLoanNumber.Location = new System.Drawing.Point(322, 135);
-            this.txtLoanNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtLoanNumber.Location = new System.Drawing.Point(429, 166);
+            this.txtLoanNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLoanNumber.Name = "txtLoanNumber";
-            this.txtLoanNumber.Size = new System.Drawing.Size(171, 23);
+            this.txtLoanNumber.Size = new System.Drawing.Size(228, 28);
             this.txtLoanNumber.TabIndex = 1001;
             // 
             // btnFindLoan
             // 
-            this.btnFindLoan.Location = new System.Drawing.Point(495, 134);
-            this.btnFindLoan.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnFindLoan.Location = new System.Drawing.Point(660, 165);
+            this.btnFindLoan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFindLoan.Name = "btnFindLoan";
-            this.btnFindLoan.Size = new System.Drawing.Size(58, 24);
+            this.btnFindLoan.Size = new System.Drawing.Size(77, 30);
             this.btnFindLoan.TabIndex = 1002;
             this.btnFindLoan.Text = "&Find";
             this.btnFindLoan.ThemeName = "ControlDefault";
@@ -349,9 +369,10 @@ namespace RDDSMakePayments
             this.pnlDemo.Controls.Add(this.rlblValidationMsg);
             this.pnlDemo.Controls.Add(this.rpnlDemographics);
             this.pnlDemo.Controls.Add(this.pictureBox1);
-            this.pnlDemo.Location = new System.Drawing.Point(0, 81);
+            this.pnlDemo.Location = new System.Drawing.Point(0, 93);
+            this.pnlDemo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDemo.Name = "pnlDemo";
-            this.pnlDemo.Size = new System.Drawing.Size(944, 350);
+            this.pnlDemo.Size = new System.Drawing.Size(1259, 449);
             this.pnlDemo.TabIndex = 1;
             // 
             // rlblValidationMsg
@@ -359,13 +380,14 @@ namespace RDDSMakePayments
             this.rlblValidationMsg.BorderVisible = true;
             this.rlblValidationMsg.Dock = System.Windows.Forms.DockStyle.Top;
             this.rlblValidationMsg.Location = new System.Drawing.Point(0, 0);
-            this.rlblValidationMsg.MinimumSize = new System.Drawing.Size(944, 0);
+            this.rlblValidationMsg.Margin = new System.Windows.Forms.Padding(4);
+            this.rlblValidationMsg.MinimumSize = new System.Drawing.Size(1259, 0);
             this.rlblValidationMsg.Name = "rlblValidationMsg";
             // 
             // 
             // 
-            this.rlblValidationMsg.RootElement.MinSize = new System.Drawing.Size(944, 0);
-            this.rlblValidationMsg.Size = new System.Drawing.Size(944, 2);
+            this.rlblValidationMsg.RootElement.MinSize = new System.Drawing.Size(1259, 0);
+            this.rlblValidationMsg.Size = new System.Drawing.Size(1259, 2);
             this.rlblValidationMsg.TabIndex = 2010;
             this.rlblValidationMsg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -386,37 +408,38 @@ namespace RDDSMakePayments
             this.rpnlDemographics.Controls.Add(this.rlblAddress1);
             this.rpnlDemographics.Controls.Add(this.rtxtPayerName);
             this.rpnlDemographics.Controls.Add(this.rlblPayerName);
-            this.rpnlDemographics.Location = new System.Drawing.Point(252, 77);
+            this.rpnlDemographics.Location = new System.Drawing.Point(336, 95);
+            this.rpnlDemographics.Margin = new System.Windows.Forms.Padding(4);
             this.rpnlDemographics.Name = "rpnlDemographics";
-            this.rpnlDemographics.Size = new System.Drawing.Size(527, 178);
+            this.rpnlDemographics.Size = new System.Drawing.Size(703, 219);
             this.rpnlDemographics.TabIndex = 2009;
             // 
             // rtxtEmail
             // 
             this.rtxtEmail.AutoSize = false;
             this.rtxtEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.rtxtEmail.Location = new System.Drawing.Point(107, 109);
-            this.rtxtEmail.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtEmail.Location = new System.Drawing.Point(143, 134);
+            this.rtxtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtEmail.Multiline = true;
             this.rtxtEmail.Name = "rtxtEmail";
-            this.rtxtEmail.Size = new System.Drawing.Size(402, 24);
+            this.rtxtEmail.Size = new System.Drawing.Size(536, 30);
             this.rtxtEmail.TabIndex = 2022;
             // 
             // rlblEmail
             // 
-            this.rlblEmail.Location = new System.Drawing.Point(19, 112);
-            this.rlblEmail.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblEmail.Location = new System.Drawing.Point(25, 138);
+            this.rlblEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblEmail.Name = "rlblEmail";
-            this.rlblEmail.Size = new System.Drawing.Size(79, 18);
+            this.rlblEmail.Size = new System.Drawing.Size(98, 22);
             this.rlblEmail.TabIndex = 2015;
             this.rlblEmail.Text = "Email Address:";
             // 
             // rlblAddr2
             // 
-            this.rlblAddr2.Location = new System.Drawing.Point(379, 51);
-            this.rlblAddr2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblAddr2.Location = new System.Drawing.Point(505, 63);
+            this.rlblAddr2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblAddr2.Name = "rlblAddr2";
-            this.rlblAddr2.Size = new System.Drawing.Size(42, 18);
+            this.rlblAddr2.Size = new System.Drawing.Size(52, 22);
             this.rlblAddr2.TabIndex = 2014;
             this.rlblAddr2.Text = "Addr 2:";
             this.rlblAddr2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,9 +448,10 @@ namespace RDDSMakePayments
             // lnklblClear
             // 
             this.lnklblClear.AutoSize = true;
-            this.lnklblClear.Location = new System.Drawing.Point(104, 141);
+            this.lnklblClear.Location = new System.Drawing.Point(139, 174);
+            this.lnklblClear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnklblClear.Name = "lnklblClear";
-            this.lnklblClear.Size = new System.Drawing.Size(62, 13);
+            this.lnklblClear.Size = new System.Drawing.Size(76, 19);
             this.lnklblClear.TabIndex = 2008;
             this.lnklblClear.TabStop = true;
             this.lnklblClear.Text = "Clear Form";
@@ -436,10 +460,10 @@ namespace RDDSMakePayments
             // rlblState
             // 
             this.rlblState.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.rlblState.Location = new System.Drawing.Point(260, 79);
-            this.rlblState.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblState.Location = new System.Drawing.Point(347, 97);
+            this.rlblState.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblState.Name = "rlblState";
-            this.rlblState.Size = new System.Drawing.Size(49, 18);
+            this.rlblState.Size = new System.Drawing.Size(57, 22);
             this.rlblState.TabIndex = 2013;
             this.rlblState.Text = "State:";
             this.rlblState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -449,20 +473,20 @@ namespace RDDSMakePayments
             this.rddlState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rddlState.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rddlState.FormattingEnabled = true;
-            this.rddlState.ItemHeight = 13;
-            this.rddlState.Location = new System.Drawing.Point(313, 78);
-            this.rddlState.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rddlState.ItemHeight = 19;
+            this.rddlState.Location = new System.Drawing.Point(417, 96);
+            this.rddlState.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rddlState.Name = "rddlState";
-            this.rddlState.Size = new System.Drawing.Size(50, 21);
+            this.rddlState.Size = new System.Drawing.Size(65, 27);
             this.rddlState.TabIndex = 2020;
             // 
             // rlblZip
             // 
             this.rlblZip.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.rlblZip.Location = new System.Drawing.Point(379, 83);
-            this.rlblZip.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblZip.Location = new System.Drawing.Point(505, 102);
+            this.rlblZip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblZip.Name = "rlblZip";
-            this.rlblZip.Size = new System.Drawing.Size(39, 18);
+            this.rlblZip.Size = new System.Drawing.Size(45, 22);
             this.rlblZip.TabIndex = 2012;
             this.rlblZip.Text = "Zip:";
             this.rlblZip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -470,28 +494,28 @@ namespace RDDSMakePayments
             // rtxtZip
             // 
             this.rtxtZip.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtZip.Location = new System.Drawing.Point(440, 75);
-            this.rtxtZip.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtZip.Location = new System.Drawing.Point(587, 92);
+            this.rtxtZip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtZip.Name = "rtxtZip";
-            this.rtxtZip.Size = new System.Drawing.Size(69, 26);
+            this.rtxtZip.Size = new System.Drawing.Size(92, 32);
             this.rtxtZip.TabIndex = 2021;
             // 
             // rtxtCity
             // 
             this.rtxtCity.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtCity.Location = new System.Drawing.Point(107, 75);
-            this.rtxtCity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtCity.Location = new System.Drawing.Point(143, 92);
+            this.rtxtCity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtCity.Name = "rtxtCity";
-            this.rtxtCity.Size = new System.Drawing.Size(149, 26);
+            this.rtxtCity.Size = new System.Drawing.Size(199, 32);
             this.rtxtCity.TabIndex = 2019;
             // 
             // rlblCity
             // 
             this.rlblCity.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.rlblCity.Location = new System.Drawing.Point(16, 83);
-            this.rlblCity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblCity.Location = new System.Drawing.Point(21, 102);
+            this.rlblCity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblCity.Name = "rlblCity";
-            this.rlblCity.Size = new System.Drawing.Size(43, 18);
+            this.rlblCity.Size = new System.Drawing.Size(49, 22);
             this.rlblCity.TabIndex = 2011;
             this.rlblCity.Text = "City:";
             this.rlblCity.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -500,29 +524,29 @@ namespace RDDSMakePayments
             // rtxtAddress2
             // 
             this.rtxtAddress2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtAddress2.Location = new System.Drawing.Point(440, 43);
-            this.rtxtAddress2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtAddress2.Location = new System.Drawing.Point(587, 53);
+            this.rtxtAddress2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtAddress2.Name = "rtxtAddress2";
-            this.rtxtAddress2.Size = new System.Drawing.Size(69, 26);
+            this.rtxtAddress2.Size = new System.Drawing.Size(92, 32);
             this.rtxtAddress2.TabIndex = 2018;
             // 
             // rtxtAddress1
             // 
             this.rtxtAddress1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtAddress1.Location = new System.Drawing.Point(107, 43);
-            this.rtxtAddress1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtAddress1.Location = new System.Drawing.Point(143, 53);
+            this.rtxtAddress1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtAddress1.Multiline = true;
             this.rtxtAddress1.Name = "rtxtAddress1";
-            this.rtxtAddress1.Size = new System.Drawing.Size(245, 26);
+            this.rtxtAddress1.Size = new System.Drawing.Size(327, 32);
             this.rtxtAddress1.TabIndex = 2017;
             // 
             // rlblAddress1
             // 
             this.rlblAddress1.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.rlblAddress1.Location = new System.Drawing.Point(16, 51);
-            this.rlblAddress1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblAddress1.Location = new System.Drawing.Point(21, 63);
+            this.rlblAddress1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblAddress1.Name = "rlblAddress1";
-            this.rlblAddress1.Size = new System.Drawing.Size(73, 18);
+            this.rlblAddress1.Size = new System.Drawing.Size(87, 22);
             this.rlblAddress1.TabIndex = 2010;
             this.rlblAddress1.Text = "Address 1:";
             this.rlblAddress1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -531,20 +555,20 @@ namespace RDDSMakePayments
             // rtxtPayerName
             // 
             this.rtxtPayerName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtPayerName.Location = new System.Drawing.Point(107, 13);
-            this.rtxtPayerName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtPayerName.Location = new System.Drawing.Point(143, 16);
+            this.rtxtPayerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtPayerName.Name = "rtxtPayerName";
-            this.rtxtPayerName.Size = new System.Drawing.Size(402, 26);
+            this.rtxtPayerName.Size = new System.Drawing.Size(536, 32);
             this.rtxtPayerName.TabIndex = 2016;
             // 
             // rlblPayerName
             // 
             this.rlblPayerName.Image = ((System.Drawing.Image)(resources.GetObject("rlblPayerName.Image")));
             this.rlblPayerName.ImageScalingSize = new System.Drawing.Size(6, 6);
-            this.rlblPayerName.Location = new System.Drawing.Point(16, 19);
-            this.rlblPayerName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblPayerName.Location = new System.Drawing.Point(21, 23);
+            this.rlblPayerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblPayerName.Name = "rlblPayerName";
-            this.rlblPayerName.Size = new System.Drawing.Size(84, 18);
+            this.rlblPayerName.Size = new System.Drawing.Size(101, 22);
             this.rlblPayerName.TabIndex = 2009;
             this.rlblPayerName.Text = "Payer Name:";
             this.rlblPayerName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -552,10 +576,11 @@ namespace RDDSMakePayments
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::RDDSMakePayments.Properties.Resources.AvidLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Image = global::RDDSMakePayments.Properties.Resources.avid_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(307, 137);
             this.pictureBox1.TabIndex = 2008;
             this.pictureBox1.TabStop = false;
             // 
@@ -568,15 +593,17 @@ namespace RDDSMakePayments
             this.pnlAcct.Controls.Add(this.gbxPaymentType);
             this.pnlAcct.Controls.Add(this.rpnlCCACH);
             this.pnlAcct.Controls.Add(this.pictureBox2);
-            this.pnlAcct.Location = new System.Drawing.Point(0, 81);
+            this.pnlAcct.Location = new System.Drawing.Point(0, 93);
+            this.pnlAcct.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAcct.Name = "pnlAcct";
-            this.pnlAcct.Size = new System.Drawing.Size(944, 350);
+            this.pnlAcct.Size = new System.Drawing.Size(1259, 449);
             this.pnlAcct.TabIndex = 3;
             this.pnlAcct.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // rlblAlertMessage
             // 
-            this.rlblAlertMessage.Location = new System.Drawing.Point(252, 259);
+            this.rlblAlertMessage.Location = new System.Drawing.Point(336, 319);
+            this.rlblAlertMessage.Margin = new System.Windows.Forms.Padding(4);
             this.rlblAlertMessage.Name = "rlblAlertMessage";
             this.rlblAlertMessage.Size = new System.Drawing.Size(2, 2);
             this.rlblAlertMessage.TabIndex = 3016;
@@ -584,9 +611,10 @@ namespace RDDSMakePayments
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(255, 259);
+            this.linkLabel1.Location = new System.Drawing.Point(340, 319);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(57, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(77, 17);
             this.linkLabel1.TabIndex = 3013;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Clear Form";
@@ -596,13 +624,14 @@ namespace RDDSMakePayments
             this.rlblMsgWinPayment.BorderVisible = true;
             this.rlblMsgWinPayment.Dock = System.Windows.Forms.DockStyle.Top;
             this.rlblMsgWinPayment.Location = new System.Drawing.Point(0, 0);
-            this.rlblMsgWinPayment.MinimumSize = new System.Drawing.Size(944, 0);
+            this.rlblMsgWinPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.rlblMsgWinPayment.MinimumSize = new System.Drawing.Size(1259, 0);
             this.rlblMsgWinPayment.Name = "rlblMsgWinPayment";
             // 
             // 
             // 
-            this.rlblMsgWinPayment.RootElement.MinSize = new System.Drawing.Size(944, 0);
-            this.rlblMsgWinPayment.Size = new System.Drawing.Size(944, 2);
+            this.rlblMsgWinPayment.RootElement.MinSize = new System.Drawing.Size(1259, 0);
+            this.rlblMsgWinPayment.Size = new System.Drawing.Size(1259, 2);
             this.rlblMsgWinPayment.TabIndex = 97;
             this.rlblMsgWinPayment.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -614,11 +643,11 @@ namespace RDDSMakePayments
             this.gbxPaymentType.Controls.Add(this.rlblCurrentDue);
             this.gbxPaymentType.Enabled = false;
             this.gbxPaymentType.HeaderText = "Payment Type";
-            this.gbxPaymentType.Location = new System.Drawing.Point(252, 77);
-            this.gbxPaymentType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.gbxPaymentType.Location = new System.Drawing.Point(336, 95);
+            this.gbxPaymentType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbxPaymentType.Name = "gbxPaymentType";
-            this.gbxPaymentType.Padding = new System.Windows.Forms.Padding(2, 21, 2, 2);
-            this.gbxPaymentType.Size = new System.Drawing.Size(554, 44);
+            this.gbxPaymentType.Padding = new System.Windows.Forms.Padding(3, 26, 3, 2);
+            this.gbxPaymentType.Size = new System.Drawing.Size(739, 54);
             this.gbxPaymentType.TabIndex = 8;
             this.gbxPaymentType.TabStop = false;
             this.gbxPaymentType.Text = "Payment Type";
@@ -626,15 +655,15 @@ namespace RDDSMakePayments
             // rbtnCrDebit
             // 
             this.rbtnCrDebit.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rbtnCrDebit.Location = new System.Drawing.Point(123, 17);
-            this.rbtnCrDebit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rbtnCrDebit.Location = new System.Drawing.Point(164, 21);
+            this.rbtnCrDebit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbtnCrDebit.Name = "rbtnCrDebit";
             // 
             // 
             // 
             this.rbtnCrDebit.RootElement.StretchHorizontally = true;
             this.rbtnCrDebit.RootElement.StretchVertically = true;
-            this.rbtnCrDebit.Size = new System.Drawing.Size(90, 21);
+            this.rbtnCrDebit.Size = new System.Drawing.Size(120, 26);
             this.rbtnCrDebit.TabIndex = 3001;
             this.rbtnCrDebit.Text = "Credit/Debit";
             this.rbtnCrDebit.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
@@ -642,15 +671,15 @@ namespace RDDSMakePayments
             // 
             // rbtnCheck
             // 
-            this.rbtnCheck.Location = new System.Drawing.Point(227, 17);
-            this.rbtnCheck.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rbtnCheck.Location = new System.Drawing.Point(303, 21);
+            this.rbtnCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbtnCheck.Name = "rbtnCheck";
             // 
             // 
             // 
             this.rbtnCheck.RootElement.StretchHorizontally = true;
             this.rbtnCheck.RootElement.StretchVertically = true;
-            this.rbtnCheck.Size = new System.Drawing.Size(72, 21);
+            this.rbtnCheck.Size = new System.Drawing.Size(96, 26);
             this.rbtnCheck.TabIndex = 3002;
             this.rbtnCheck.Text = "Check";
             this.rbtnCheck.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.rbtnCheck_ToggleStateChanged);
@@ -659,19 +688,23 @@ namespace RDDSMakePayments
             // 
             this.rlblCurrentDue.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.rlblCurrentDue.ForeColor = System.Drawing.Color.Red;
-            this.rlblCurrentDue.Location = new System.Drawing.Point(429, 17);
-            this.rlblCurrentDue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblCurrentDue.Location = new System.Drawing.Point(572, 21);
+            this.rlblCurrentDue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblCurrentDue.Name = "rlblCurrentDue";
-            this.rlblCurrentDue.Size = new System.Drawing.Size(26, 18);
+            this.rlblCurrentDue.Size = new System.Drawing.Size(32, 22);
             this.rlblCurrentDue.TabIndex = 79;
             this.rlblCurrentDue.Text = "$$$";
             this.rlblCurrentDue.Visible = false;
             // 
             // rpnlCCACH
             // 
-            this.rpnlCCACH.Controls.Add(this.picVerifABA);
-            this.rpnlCCACH.Controls.Add(this.rtxtBankAccount);
+            this.rpnlCCACH.Controls.Add(this.rlblChkSav);
+            this.rpnlCCACH.Controls.Add(this.rddlChkSav);
+            this.rpnlCCACH.Controls.Add(this.rlblPaymentDate);
+            this.rpnlCCACH.Controls.Add(this.rdtpPaymentDate);
+            this.rpnlCCACH.Controls.Add(this.picbxABAVerif);
             this.rpnlCCACH.Controls.Add(this.rtxtABANumber);
+            this.rpnlCCACH.Controls.Add(this.rtxtBankAccount);
             this.rpnlCCACH.Controls.Add(this.rtxtCCNumber);
             this.rpnlCCACH.Controls.Add(this.rtxtTotalAmount);
             this.rpnlCCACH.Controls.Add(this.rtxtFeeAmt);
@@ -683,63 +716,114 @@ namespace RDDSMakePayments
             this.rpnlCCACH.Controls.Add(this.rlblABANumber);
             this.rpnlCCACH.Controls.Add(this.rlblCCNumber);
             this.rpnlCCACH.Controls.Add(this.ckbxFees);
-            this.rpnlCCACH.Location = new System.Drawing.Point(252, 127);
+            this.rpnlCCACH.Location = new System.Drawing.Point(336, 156);
+            this.rpnlCCACH.Margin = new System.Windows.Forms.Padding(4);
             this.rpnlCCACH.Name = "rpnlCCACH";
-            this.rpnlCCACH.Size = new System.Drawing.Size(554, 126);
+            this.rpnlCCACH.Size = new System.Drawing.Size(739, 155);
             this.rpnlCCACH.TabIndex = 3012;
             this.rpnlCCACH.ThemeName = "ControlDefault";
             // 
-            // picVerifABA
+            // rlblChkSav
             // 
-            this.picVerifABA.Location = new System.Drawing.Point(267, 19);
-            this.picVerifABA.Name = "picVerifABA";
-            this.picVerifABA.Size = new System.Drawing.Size(32, 19);
-            this.picVerifABA.TabIndex = 3028;
-            this.picVerifABA.TabStop = false;
+            this.rlblChkSav.Image = global::RDDSMakePayments.Properties.Resources.status_small;
+            this.rlblChkSav.Location = new System.Drawing.Point(415, 55);
+            this.rlblChkSav.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rlblChkSav.Name = "rlblChkSav";
+            this.rlblChkSav.Size = new System.Drawing.Size(110, 22);
+            this.rlblChkSav.TabIndex = 3032;
+            this.rlblChkSav.Text = "Account Type:";
+            this.rlblChkSav.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rlblChkSav.Visible = false;
             // 
-            // rtxtBankAccount
+            // rddlChkSav
             // 
-            this.rtxtBankAccount.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtBankAccount.Location = new System.Drawing.Point(380, 16);
-            this.rtxtBankAccount.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.rtxtBankAccount.Name = "rtxtBankAccount";
-            this.rtxtBankAccount.Size = new System.Drawing.Size(149, 20);
-            this.rtxtBankAccount.TabIndex = 3019;
+            radListDataItem1.Text = "Checking";
+            radListDataItem2.Text = "Savings";
+            this.rddlChkSav.Items.Add(radListDataItem1);
+            this.rddlChkSav.Items.Add(radListDataItem2);
+            this.rddlChkSav.Location = new System.Drawing.Point(553, 55);
+            this.rddlChkSav.Name = "rddlChkSav";
+            this.rddlChkSav.Size = new System.Drawing.Size(153, 24);
+            this.rddlChkSav.TabIndex = 3031;
+            this.rddlChkSav.Visible = false;
+            // 
+            // rlblPaymentDate
+            // 
+            this.rlblPaymentDate.Image = global::RDDSMakePayments.Properties.Resources.status_small;
+            this.rlblPaymentDate.Location = new System.Drawing.Point(28, 119);
+            this.rlblPaymentDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rlblPaymentDate.Name = "rlblPaymentDate";
+            this.rlblPaymentDate.Size = new System.Drawing.Size(113, 22);
+            this.rlblPaymentDate.TabIndex = 3030;
+            this.rlblPaymentDate.Text = "Payment Date:";
+            this.rlblPaymentDate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ((Telerik.WinControls.UI.RadLabelElement)(this.rlblPaymentDate.GetChildAt(0))).BorderVisible = false;
+            ((Telerik.WinControls.UI.RadLabelElement)(this.rlblPaymentDate.GetChildAt(0))).Image = global::RDDSMakePayments.Properties.Resources.status_small;
+            ((Telerik.WinControls.UI.RadLabelElement)(this.rlblPaymentDate.GetChildAt(0))).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ((Telerik.WinControls.UI.RadLabelElement)(this.rlblPaymentDate.GetChildAt(0))).Text = "Payment Date:";
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.rlblPaymentDate.GetChildAt(0).GetChildAt(2))).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.Auto;
+            // 
+            // rdtpPaymentDate
+            // 
+            this.rdtpPaymentDate.Location = new System.Drawing.Point(158, 119);
+            this.rdtpPaymentDate.Name = "rdtpPaymentDate";
+            this.rdtpPaymentDate.Size = new System.Drawing.Size(274, 24);
+            this.rdtpPaymentDate.TabIndex = 3029;
+            this.rdtpPaymentDate.TabStop = false;
+            this.rdtpPaymentDate.Text = "Saturday, May 9, 2015";
+            this.rdtpPaymentDate.Value = new System.DateTime(2015, 5, 9, 21, 41, 1, 950);
+            // 
+            // picbxABAVerif
+            // 
+            this.picbxABAVerif.Location = new System.Drawing.Point(350, 23);
+            this.picbxABAVerif.Name = "picbxABAVerif";
+            this.picbxABAVerif.Size = new System.Drawing.Size(44, 25);
+            this.picbxABAVerif.TabIndex = 3028;
+            this.picbxABAVerif.TabStop = false;
             // 
             // rtxtABANumber
             // 
             this.rtxtABANumber.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtABANumber.Location = new System.Drawing.Point(112, 19);
-            this.rtxtABANumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtABANumber.Location = new System.Drawing.Point(158, 23);
+            this.rtxtABANumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtABANumber.MaxLength = 9;
             this.rtxtABANumber.Name = "rtxtABANumber";
-            this.rtxtABANumber.Size = new System.Drawing.Size(149, 20);
+            this.rtxtABANumber.Size = new System.Drawing.Size(183, 25);
             this.rtxtABANumber.TabIndex = 3018;
-            this.rtxtABANumber.TextChanged += new System.EventHandler(this.rtxtABANumber_TextChanged);
-            this.rtxtABANumber.Leave += new System.EventHandler(this.rtxtABANumber_OnExit);
+            this.rtxtABANumber.TextChanged += new System.EventHandler(this.rtxtABANumber_TextChanged_1);
+            this.rtxtABANumber.Leave += new System.EventHandler(this.rtxtABANumber_Leave);
+            // 
+            // rtxtBankAccount
+            // 
+            this.rtxtBankAccount.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtBankAccount.Location = new System.Drawing.Point(507, 20);
+            this.rtxtBankAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rtxtBankAccount.Name = "rtxtBankAccount";
+            this.rtxtBankAccount.Size = new System.Drawing.Size(199, 25);
+            this.rtxtBankAccount.TabIndex = 3019;
             // 
             // rtxtCCNumber
             // 
             this.rtxtCCNumber.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtCCNumber.Location = new System.Drawing.Point(112, 45);
-            this.rtxtCCNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtCCNumber.Location = new System.Drawing.Point(158, 55);
+            this.rtxtCCNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtCCNumber.Name = "rtxtCCNumber";
-            this.rtxtCCNumber.Size = new System.Drawing.Size(416, 20);
+            this.rtxtCCNumber.Size = new System.Drawing.Size(236, 25);
             this.rtxtCCNumber.TabIndex = 3020;
             // 
             // rtxtTotalAmount
             // 
             this.rtxtTotalAmount.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtTotalAmount.IsReadOnly = true;
-            this.rtxtTotalAmount.Location = new System.Drawing.Point(452, 96);
-            this.rtxtTotalAmount.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtTotalAmount.Location = new System.Drawing.Point(603, 118);
+            this.rtxtTotalAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtTotalAmount.Name = "rtxtTotalAmount";
             // 
             // 
             // 
             this.rtxtTotalAmount.RootElement.Alignment = System.Drawing.ContentAlignment.TopLeft;
             this.rtxtTotalAmount.RootElement.AutoSize = false;
-            this.rtxtTotalAmount.Size = new System.Drawing.Size(77, 20);
+            this.rtxtTotalAmount.Size = new System.Drawing.Size(103, 25);
             this.rtxtTotalAmount.TabIndex = 3012;
             this.rtxtTotalAmount.TabStop = false;
             // 
@@ -747,19 +831,19 @@ namespace RDDSMakePayments
             // 
             this.rtxtFeeAmt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtFeeAmt.IsReadOnly = true;
-            this.rtxtFeeAmt.Location = new System.Drawing.Point(482, 70);
-            this.rtxtFeeAmt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtxtFeeAmt.Location = new System.Drawing.Point(643, 86);
+            this.rtxtFeeAmt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtxtFeeAmt.Name = "rtxtFeeAmt";
-            this.rtxtFeeAmt.Size = new System.Drawing.Size(46, 20);
+            this.rtxtFeeAmt.Size = new System.Drawing.Size(61, 25);
             this.rtxtFeeAmt.TabIndex = 3013;
             this.rtxtFeeAmt.TabStop = false;
             // 
             // rbtnCalcTotal
             // 
-            this.rbtnCalcTotal.Location = new System.Drawing.Point(347, 96);
-            this.rbtnCalcTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rbtnCalcTotal.Location = new System.Drawing.Point(463, 118);
+            this.rbtnCalcTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbtnCalcTotal.Name = "rbtnCalcTotal";
-            this.rbtnCalcTotal.Size = new System.Drawing.Size(101, 20);
+            this.rbtnCalcTotal.Size = new System.Drawing.Size(135, 25);
             this.rbtnCalcTotal.TabIndex = 3027;
             this.rbtnCalcTotal.Text = "Calc Total";
             this.rbtnCalcTotal.Click += new System.EventHandler(this.rbtnCalcTotal_Click);
@@ -767,8 +851,8 @@ namespace RDDSMakePayments
             // rspnPayCents
             // 
             this.rspnPayCents.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rspnPayCents.Location = new System.Drawing.Point(200, 70);
-            this.rspnPayCents.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rspnPayCents.Location = new System.Drawing.Point(276, 86);
+            this.rspnPayCents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rspnPayCents.Maximum = new decimal(new int[] {
             99,
             0,
@@ -779,7 +863,7 @@ namespace RDDSMakePayments
             // 
             // 
             this.rspnPayCents.RootElement.StretchVertically = true;
-            this.rspnPayCents.Size = new System.Drawing.Size(60, 20);
+            this.rspnPayCents.Size = new System.Drawing.Size(80, 25);
             this.rspnPayCents.TabIndex = 3023;
             this.rspnPayCents.TabStop = false;
             this.rspnPayCents.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
@@ -787,8 +871,8 @@ namespace RDDSMakePayments
             // rspnPayDollars
             // 
             this.rspnPayDollars.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rspnPayDollars.Location = new System.Drawing.Point(111, 70);
-            this.rspnPayDollars.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rspnPayDollars.Location = new System.Drawing.Point(158, 86);
+            this.rspnPayDollars.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rspnPayDollars.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -799,7 +883,7 @@ namespace RDDSMakePayments
             // 
             // 
             this.rspnPayDollars.RootElement.StretchVertically = true;
-            this.rspnPayDollars.Size = new System.Drawing.Size(81, 20);
+            this.rspnPayDollars.Size = new System.Drawing.Size(108, 25);
             this.rspnPayDollars.TabIndex = 3022;
             this.rspnPayDollars.TabStop = false;
             this.rspnPayDollars.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right;
@@ -807,10 +891,10 @@ namespace RDDSMakePayments
             // radLabel1
             // 
             this.radLabel1.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.radLabel1.Location = new System.Drawing.Point(21, 73);
-            this.radLabel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.radLabel1.Location = new System.Drawing.Point(28, 90);
+            this.radLabel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(86, 18);
+            this.radLabel1.Size = new System.Drawing.Size(103, 22);
             this.radLabel1.TabIndex = 3026;
             this.radLabel1.Text = "Dollar/Cents:";
             this.radLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -823,10 +907,10 @@ namespace RDDSMakePayments
             // rlblBankAccount
             // 
             this.rlblBankAccount.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.rlblBankAccount.Location = new System.Drawing.Point(311, 18);
-            this.rlblBankAccount.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblBankAccount.Location = new System.Drawing.Point(415, 22);
+            this.rlblBankAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblBankAccount.Name = "rlblBankAccount";
-            this.rlblBankAccount.Size = new System.Drawing.Size(65, 18);
+            this.rlblBankAccount.Size = new System.Drawing.Size(76, 22);
             this.rlblBankAccount.TabIndex = 3015;
             this.rlblBankAccount.Text = "Account:";
             this.rlblBankAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -834,10 +918,10 @@ namespace RDDSMakePayments
             // rlblABANumber
             // 
             this.rlblABANumber.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.rlblABANumber.Location = new System.Drawing.Point(21, 21);
-            this.rlblABANumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblABANumber.Location = new System.Drawing.Point(28, 26);
+            this.rlblABANumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblABANumber.Name = "rlblABANumber";
-            this.rlblABANumber.Size = new System.Drawing.Size(45, 18);
+            this.rlblABANumber.Size = new System.Drawing.Size(52, 22);
             this.rlblABANumber.TabIndex = 3014;
             this.rlblABANumber.Text = "ABA:";
             this.rlblABANumber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -845,10 +929,10 @@ namespace RDDSMakePayments
             // rlblCCNumber
             // 
             this.rlblCCNumber.Image = global::RDDSMakePayments.Properties.Resources.status_small;
-            this.rlblCCNumber.Location = new System.Drawing.Point(21, 48);
-            this.rlblCCNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rlblCCNumber.Location = new System.Drawing.Point(28, 59);
+            this.rlblCCNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rlblCCNumber.Name = "rlblCCNumber";
-            this.rlblCCNumber.Size = new System.Drawing.Size(82, 18);
+            this.rlblCCNumber.Size = new System.Drawing.Size(98, 22);
             this.rlblCCNumber.TabIndex = 3016;
             this.rlblCCNumber.Text = "CC Number:";
             this.rlblCCNumber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -861,20 +945,21 @@ namespace RDDSMakePayments
             // ckbxFees
             // 
             this.ckbxFees.AutoSize = true;
-            this.ckbxFees.Location = new System.Drawing.Point(393, 74);
-            this.ckbxFees.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ckbxFees.Location = new System.Drawing.Point(524, 91);
+            this.ckbxFees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ckbxFees.Name = "ckbxFees";
-            this.ckbxFees.Size = new System.Drawing.Size(83, 17);
+            this.ckbxFees.Size = new System.Drawing.Size(99, 23);
             this.ckbxFees.TabIndex = 3025;
             this.ckbxFees.Text = "Waive Fee?";
             this.ckbxFees.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::RDDSMakePayments.Properties.Resources.AvidLogo;
+            this.pictureBox2.Image = global::RDDSMakePayments.Properties.Resources.avid_logo;
             this.pictureBox2.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(243, 111);
+            this.pictureBox2.Size = new System.Drawing.Size(324, 137);
             this.pictureBox2.TabIndex = 3014;
             this.pictureBox2.TabStop = false;
             // 
@@ -919,16 +1004,17 @@ namespace RDDSMakePayments
             // 
             // RDSSMakePaymentParent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(944, 479);
+            this.ClientSize = new System.Drawing.Size(1259, 590);
             this.Controls.Add(this.rWizMakeAPayment);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RDSSMakePaymentParent";
             this.Text = "RDSS Make Payment";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -983,9 +1069,13 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rpnlCCACH)).EndInit();
             this.rpnlCCACH.ResumeLayout(false);
             this.rpnlCCACH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVerifABA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtxtBankAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlblChkSav)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rddlChkSav)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlblPaymentDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdtpPaymentDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxABAVerif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtABANumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtxtBankAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtCCNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtTotalAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtFeeAmt)).EndInit();
@@ -1067,7 +1157,11 @@ namespace RDDSMakePayments
         private System.Windows.Forms.PictureBox pictureBox3;
         private RadButton rbtnOpenPayClient;
         private RadLabel rlblValidationMsg;
-        private System.Windows.Forms.PictureBox picVerifABA;
+        private System.Windows.Forms.PictureBox picbxABAVerif;
+        private RadDateTimePicker rdtpPaymentDate;
+        private RadLabel rlblPaymentDate;
+        private RadLabel rlblChkSav;
+        private RadDropDownList rddlChkSav;
 
 
     }

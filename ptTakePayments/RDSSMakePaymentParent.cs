@@ -135,17 +135,24 @@ namespace RDDSMakePayments
         }
         private void rWizMakeAPayment_Cancel(object sender, System.EventArgs e)
         {
-            DialogResult dr = new DialogResult();
-            dr = MessageBox.Show("Do you wish to continue?", "Cancel Current Payment", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
+            if (rWizMakeAPayment.CancelButton.Text == "Cancel")
             {
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show("Do you wish to continue?", "Cancel Current Payment", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
 
-                
-                this.Dispose();
+
+                    this.Dispose();
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
-                return;
+                this.Dispose();
             }
         }
         private string MakePaymentCredit()
@@ -193,6 +200,7 @@ namespace RDDSMakePayments
             sTotalAmount = rtxtTotalAmount.Text.Substring(1, rtxtTotalAmount.Text.Length - 1);
             sTotalFeeAmount = rtxtFeeAmt.Text;
 
+            sTotalAmount = Double.Parse(sTotalAmount).ToString();
             
 
             sCustomerDemoInfo = sb_customerdemo.Append(" /Address1:" + rtxtAddress1.Text).Append(" /Address2: " + rtxtAddress2.Text)
@@ -210,6 +218,10 @@ namespace RDDSMakePayments
 
 
             results = PostUI.ShowCreditCardForm(sb.ToString());
+
+            //Kill the PostUI object
+            PostUI = null;
+
             if (results.IndexOf("NONE") > 0)   //user cancelled first mile app, leave form state alone
             {
                 rtxtPaymentResult.Text = "Cancelled by User.";
@@ -232,26 +244,32 @@ namespace RDDSMakePayments
                 sPaymentReference = StatusArray[7].ToString();
                 sPaymentReference = sPaymentReference.Replace("ORDERID=", "");
 
-
-
                 IncludeFees = bool.Parse(oSettings.ChargeFees.ToString());  //for Avid, no fees with transactions
                 
 
                 //12-17-2014 This will not work, need to fix it and update the client
+                //added while loop to handle retry
                 string nlsRetVal = nls.PayByCCDebit(txtLoanNumber.Text, "", sTotalAmount, sTotalFeeAmount, sPaymentReference, this.NLSUserId, IncludeFees.ToString(), results);
-                if (nlsRetVal == "The operation has timed out")
+                while (sRetry == "")
                 {
-                    DialogResult dr = MessageBox.Show("The loan is locked.  Make sure you have save your changes and try again.", "Retry Payment", MessageBoxButtons.RetryCancel);
-                    switch (dr)
+                    if (nlsRetVal == "The operation has timed out")
                     {
-                        case DialogResult.Retry:
-                            sRetry = "";
-                            break;
-                        case DialogResult.Cancel:
-                            sRetry = "Quit";
-                            break;
-                    }
+                        DialogResult dr = MessageBox.Show("The loan is locked.  Make sure you have save your changes and try again.", "Retry Payment", MessageBoxButtons.RetryCancel);
+                        switch (dr)
+                        {
+                            case DialogResult.Retry:
+                                sRetry = "";
+                                break;
+                            case DialogResult.Cancel:
+                                sRetry = "Quit";
+                                break;
+                        }
 
+                    }
+                 else
+                    {
+                        sRetry = "Quit";
+                    }
                 }
                 /////////////////////////////////////////////////////////////////////
                 //put retry logic here if posting to nls is not successful
@@ -309,6 +327,45 @@ namespace RDDSMakePayments
             }
             return "";
         }
+        private string MakePaymentACHNacha()
+        {
+            RDSSNLSMPUtilsClasses.cNortridgeWapper nls = new RDSSNLSMPUtilsClasses.cNortridgeWapper();
+            string CheckingOrSavings = "";
+            if (rddlChkSav.SelectedItem.Text  == "Checking")
+            {
+                CheckingOrSavings = "0";
+            }
+            else
+            {
+                CheckingOrSavings = "1";
+            }
+            string nlsRetVal = nls.PayByACHNacha(txtLoanNumber.Text, "1", rtxtABANumber.Text, rtxtBankAccount.Text, rtxtTotalAmount.Text.Replace("$", String.Empty), "0", "NACHA FILE", NLSUserId, "false", "", rdtpPaymentDate.Value, rtxtEmail.Text, CheckingOrSavings);
+            string[] sPaymentReference = nlsRetVal.Split('|');
+
+            if (sPaymentReference.GetUpperBound(0) > 0)
+            {
+                if (sPaymentReference[0] == "True")
+                {
+
+                    rtxtPaymentResult.Text = "Payment Posted to Nortridge.\r\n";
+                    rtxtPaymentResult.Text += "Amount: " + rtxtTotalAmount.Text + "\r\n";
+                    rtxtPaymentResult.Text += "Reference Number: " + sPaymentReference[1];
+                    rbtnOpenPayClient.Enabled = false;
+
+                }
+                else
+                {
+                    rtxtPaymentResult.Text = "ERROR: ACH Payment Failed with the following error:  " + sPaymentReference[1];
+                    rbtnOpenPayClient.Enabled = true;
+                }
+            }
+            else
+            {
+                return sPaymentReference[0];
+            }
+            return rtxtPaymentResult.Text;
+
+        }
         private string MakePaymentCheck()
         {
            
@@ -318,16 +375,12 @@ namespace RDDSMakePayments
             string MPFirstMileSettings = oSettings.MPSettings;
             string sTotalAmount = "", sRetry="";
             string sTotalFeeAmount = "", sMerchantReceipt = "", sCustomerDemoInfo="";
-            
             string sPaymentPostingEmail = "";
             string strNLSPostingErrMsg = "";
             string sNLSUserId = "";
             string results = "";
-            //string sAccountId = "", sMerchantPIN = "", sMerchantReceipt = "";
-            //string sHideStuff = "", sCustomerDemoInfo = "", 
             string sPaymentReference = "";
             string nlsRetVal = "";
-            //bool bCCDebit = false;
             bool IncludeFees = false;
 
             string[] StatusArray;
@@ -337,7 +390,6 @@ namespace RDDSMakePayments
 
             StringBuilder sb = new StringBuilder();
             StringBuilder sb_merchant = new StringBuilder();
-            //StringBuilder sb_hidestuff = new StringBuilder();
             StringBuilder sb_customerdemo = new StringBuilder();
 
             string LegalEntity = nls.GetLoanGroupByLoan(txtLoanNumber.Text);
@@ -355,6 +407,9 @@ namespace RDDSMakePayments
             sTotalAmount = rtxtTotalAmount.Text.Substring(1, rtxtTotalAmount.Text.Length - 1);
             sTotalFeeAmount = rtxtFeeAmt.Text;
 
+            //strip comma from numbers larger than 999.99
+            sTotalAmount = Double.Parse(sTotalAmount).ToString();
+
             sCustomerDemoInfo = sb_customerdemo.Append(" /Address1:" + rtxtAddress1.Text).Append(" /Address2: " + rtxtAddress2.Text)
                     .Append(" /City: " + rtxtCity.Text).Append(" /State: " + rddlState.SelectedItem)
                     .Append(" /Zip:" + rtxtZip.Text)
@@ -369,9 +424,10 @@ namespace RDDSMakePayments
                    .Append(sCustomerDemoInfo).Append(" " + oSettings.MPAccount);
 
 
-          results = PostUI.ShowCheckForm(sb.ToString()); //blocks thread and execution stops until First Mile dialog is committed.
+                    results = PostUI.ShowCheckForm(sb.ToString()); //blocks thread and execution stops until First Mile dialog is committed.
 
-
+                    //Kill the PostUI object
+                    PostUI = null;
 
                     if (results.IndexOf("NONE") > 0)   //user cancelled first mile app, leave form state alone
                     {
@@ -397,7 +453,7 @@ namespace RDDSMakePayments
 
                         IncludeFees = bool.Parse(oSettings.ChargeFees.ToString());  //for Avid, no fees with transactions
 
-                        while (sRetry == "" && nlsRetVal !="True")
+                        while (sRetry == "" )
                         {
                             nlsRetVal = nls.PayByCheck(txtLoanNumber.Text, "", "", sTotalAmount, sTotalFeeAmount, sPaymentReference, sNLSUserId, IncludeFees.ToString(), results);
                             if (nlsRetVal == "The operation has timed out")
@@ -413,6 +469,10 @@ namespace RDDSMakePayments
                                         break;
                                 }
                                 
+                            }
+                            else
+                            {
+                                sRetry = "Quit";
                             }
                         }
                         //put retry logic here if posting to nls is not successful
@@ -460,11 +520,9 @@ namespace RDDSMakePayments
 
 
                         rtxtPaymentResult.Text += results;
-                        //DisableForm();
-                        //rchtbPayConfirm.Enabled = true;
-                        //rbtnSaveComment.Enabled = true;
-                        
-                        return "";
+
+
+                        return rtxtPaymentResult.Text;
                     }
                     return "";
                 }
@@ -500,10 +558,13 @@ namespace RDDSMakePayments
                 rtxtABANumber.Enabled = false;
                 rlblBankAccount.Enabled = false;
                 rtxtBankAccount.Enabled = false;
+                rddlChkSav.Visible = false;
+                rdtpPaymentDate.Visible = false;
+                rlblChkSav.Visible = false;
+                rlblPaymentDate.Visible = false;
                 rlblCCNumber.Enabled = true;
                 rtxtCCNumber.Enabled = true;
 
-                //TexasCheck(this.CurrentState);
 
                 if (oSettings.ChargeFees.ToString() == "false")  //avidac does not charge convenience fees
                 {
@@ -553,6 +614,7 @@ namespace RDDSMakePayments
                 if (!ValidateCCCheckFields())
                 {
                     e.Cancel = true;
+                    return;
                 }
                 
                 if (rbtnCheck.CheckState == CheckState.Checked )
@@ -560,6 +622,7 @@ namespace RDDSMakePayments
                 else
                     PAN = rtxtCCNumber.Text;
 
+                
 
                 rtxtConfirmMsg.Text = "A payment in the amount of " + rtxtTotalAmount.Text + " is about to be applied to loan number " + txtLoanNumber.Text + 
                     " using Card or Bank Account number " + PAN + ".\r\n";
@@ -572,6 +635,8 @@ namespace RDDSMakePayments
                 rWizMakeAPayment.FinishButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
 
                 rbtnOpenPayClient.Visible = true;
+                if (rbtnCheck.CheckState == CheckState.Checked)
+                    rbtnOpenPayClient.Text = "Post Payment";
 
                 oSettings = null;
                 oNLS = null;
@@ -580,7 +645,11 @@ namespace RDDSMakePayments
         private void RDSSMakePaymentParent_Load(object sender, EventArgs e)
         {
             RDSSNLSMPUtilsClasses.cNortridgeWapper nls = new RDSSNLSMPUtilsClasses.cNortridgeWapper();
-           
+            RDSSNLSMPUtilsClasses.cSettings oSettings = new RDSSNLSMPUtilsClasses.cSettings(Properties.Settings.Default.SettingsFile);
+            string CurrentCompany = oSettings.Company;
+
+            System.Drawing.Image imglogo = RDDSMakePayments.Properties.Resources.avid_logo;
+
             rWizMakeAPayment.NextButton.Enabled = false;
             rlblLogonId.Text = "Welcome back: " + this.LogonId; 
             LoadStatesDDL();
@@ -736,6 +805,7 @@ namespace RDDSMakePayments
             rtxtABANumber.Enabled = false;
             rtxtBankAccount.Enabled = false;
 
+
             rtxtABANumber.Text = "";
             rtxtBankAccount.Text = "";
 
@@ -747,6 +817,13 @@ namespace RDDSMakePayments
 
             if (this.CurrentState != null)
                 TexasCheck(this.CurrentState);
+
+            rlblPaymentDate.Visible = false;
+            rdtpPaymentDate.Visible = false;
+            rddlChkSav.Visible = false;
+            rlblChkSav.Visible = false;
+
+            picbxABAVerif.Visible = false;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -804,6 +881,14 @@ namespace RDDSMakePayments
 
             if (this.CurrentState != null)
                 TexasCheck(this.CurrentState);
+
+            rdtpPaymentDate.MinDate = DateTime.Today;
+            rdtpPaymentDate.MaxDate = DateTime.Today.AddDays(14);
+            rlblPaymentDate.Visible = true;
+            rdtpPaymentDate.Visible = true;
+
+            rddlChkSav.Visible = true;
+            rlblChkSav.Visible = true;
 
             oSettings = null;
         }
@@ -890,14 +975,41 @@ namespace RDDSMakePayments
         
         private void rbtnOpenPayClient_Click(object sender, EventArgs e)
         {
+            string ACHType = "NACHA", sRetVal = "" ;
+
+            rbtnOpenPayClient.Visible = false;
+            rWizMakeAPayment.BackButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+
             if (rbtnCheck.CheckState == CheckState.Checked)
             {
-                this.MakePaymentCheck();
+                if (ACHType == "NACHA")
+                {
+                    sRetVal = this.MakePaymentACHNacha();
+                }
+                else
+                {
+                   sRetVal =  this.MakePaymentCheck();
+                }
             }
+            
             if (rbtnCrDebit.CheckState == CheckState.Checked)
             {
-                this.MakePaymentCredit();
+                   sRetVal= this.MakePaymentCredit();
             }
+
+            //if there is an error then set the enabled and visibility settings to allow clerk to make changes.
+            if (sRetVal.IndexOf("ERROR") > -1)
+            {
+                rbtnOpenPayClient.Visible = true;
+                rWizMakeAPayment.BackButton.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+                rWizMakeAPayment.CancelButton.Text = "Cancel";
+            }
+            else
+            {
+                rWizMakeAPayment.CancelButton.Text = "Finish";
+            }
+            
+
         }
 
        
@@ -912,21 +1024,43 @@ namespace RDDSMakePayments
             rtxtPayerName.Focus();
         }
 
-        private void pnlCLN_Paint(object sender, PaintEventArgs e)
+        private void rtxtABANumber_Leave(object sender, EventArgs e)
         {
+            RDSSNLSMPUtilsClasses.cNortridgeWapper nls = new RDSSNLSMPUtilsClasses.cNortridgeWapper();
+            RDSSNLSMPUtilsClasses.cSettings osettings = new RDSSNLSMPUtilsClasses.cSettings(Properties.Settings.Default.SettingsFile);
+            string[] VerifyACH = nls.VerifyACH(osettings.MPAccount.ToString(),float.Parse("0.00"),rtxtABANumber.Text,"123456789",rtxtPayerName.Text,"TEL","1");
 
+            System.Drawing.Image imggreen = RDDSMakePayments.Properties.Resources.blank_green_icon;
+            System.Drawing.Image imgyellow = RDDSMakePayments.Properties.Resources.blank_yellow_icon;
+
+            if (VerifyACH[0].ToString() == "VERIFICATION")
+            {
+                picbxABAVerif.Image = imggreen;
+                picbxABAVerif.Visible = true;
+            }
+            else
+            {
+                picbxABAVerif.Image = imgyellow;
+                picbxABAVerif.Visible = true;
+            }
         }
 
         private void rtxtABANumber_TextChanged(object sender, EventArgs e)
         {
+           
+        }
+
+        private void rtxtABANumber_TextChanged_1(object sender, EventArgs e)
+        {
 
         }
-        
-        private void rtxtABANumber_OnExit(object sender, EventArgs e)
+
+        private void pnlCLN_Paint(object sender, PaintEventArgs e)
         {
-            System.Drawing.Icon abaIco = new System.Drawing.Icon(RDDSMakePayments.Properties.Resources[])
-            picVerifABA.Image = 
+
         }
+       
+
         
     }
      
