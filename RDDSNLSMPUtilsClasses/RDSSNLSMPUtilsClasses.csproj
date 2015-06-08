@@ -139,10 +139,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>RDDSNLSMPUtilsClasses_com_merchantpartners_trans1_TransactionSOAPBindingImplService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="https://ws.cyberridge.com/PeritusPortfolioWebService/Service.asmx">
+    <WebReferenceUrl Include="https://ws.cyberridge.com/AvidAcceptancewebservice/">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\com.cyberridge.ws\</RelPath>
-      <UpdateFromURL>https://ws.cyberridge.com/PeritusPortfolioWebService/Service.asmx</UpdateFromURL>
+      <UpdateFromURL>https://ws.cyberridge.com/AvidAcceptancewebservice/</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

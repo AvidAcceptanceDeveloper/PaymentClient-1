@@ -44,6 +44,9 @@ namespace RDSSNLSMPUtilsClasses
                 {
                     sEnvironment = "production";
                 }
+
+                //get current company
+                this.Company = this.SelectSingleNode(@"//company").Attributes["id"].InnerText;
                 //general NLS settings
                 this.NLSUserId = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["user"].InnerText;
                 this.NLSPassword = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["password"].InnerText; //need to tripledes encrypt
@@ -151,7 +154,7 @@ namespace RDSSNLSMPUtilsClasses
         }
 
         public string TestMode { get; set; }
-
+        public string Company { get; set; }
         public string NLSUserId { get; set; }
         public string NLSServer { get; set; }
         public string NLSPassword { get; set; }

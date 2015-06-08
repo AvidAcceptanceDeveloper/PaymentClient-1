@@ -6009,16 +6009,16 @@
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
-      <soap:address location="https://ws.cyberridge.com/PeritusPortfolioWebService/Service.asmx" />
+      <soap:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
-      <soap12:address location="https://ws.cyberridge.com/PeritusPortfolioWebService/Service.asmx" />
+      <soap12:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
-      <http:address location="https://ws.cyberridge.com/PeritusPortfolioWebService/Service.asmx" />
+      <http:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
-      <http:address location="https://ws.cyberridge.com/PeritusPortfolioWebService/Service.asmx" />
+      <http:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

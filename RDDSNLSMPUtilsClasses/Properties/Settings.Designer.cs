@@ -25,7 +25,7 @@ namespace RDSSNLSMPUtilsClasses.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\RDSS\\Settings\\Peritus\\RDSSPaymentConfig.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\RDSS\\Settings\\AvidAc\\RDSSPaymentConfig.xml")]
         public string SettingsFile {
             get {
                 return ((string)(this["SettingsFile"]));
@@ -38,21 +38,21 @@ namespace RDSSNLSMPUtilsClasses.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://ws.cyberridge.com/PeritusPortfolioWebService/Service.asmx")]
-        public string RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://trans.merchantpartners.com/Web/services/TransactionService")]
+        public string RDDSNLSMPUtilsClasses_com_merchantpartners_trans1_TransactionSOAPBindingImplService {
             get {
-                return ((string)(this["RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service"]));
+                return ((string)(this["RDDSNLSMPUtilsClasses_com_merchantpartners_trans1_TransactionSOAPBindingImplServi" +
+                    "ce"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://trans.merchantpartners.com/Web/services/TransactionService")]
-        public string RDDSNLSMPUtilsClasses_com_merchantpartners_trans1_TransactionSOAPBindingImplService {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx")]
+        public string RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service {
             get {
-                return ((string)(this["RDDSNLSMPUtilsClasses_com_merchantpartners_trans1_TransactionSOAPBindingImplServi" +
-                    "ce"]));
+                return ((string)(this["RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service"]));
             }
         }
     }
