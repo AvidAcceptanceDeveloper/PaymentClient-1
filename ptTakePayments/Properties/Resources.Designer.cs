@@ -73,16 +73,6 @@ namespace RDDSMakePayments.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1417688572_Shutdown_Box_Red {
-            get {
-                object obj = ResourceManager.GetObject("1417688572_Shutdown_Box_Red", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _1417689023_internt_web_technology_03_128 {
             get {
                 object obj = ResourceManager.GetObject("1417689023_internt_web_technology-03-128", resourceCulture);
@@ -103,9 +93,29 @@ namespace RDDSMakePayments.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AvidLogo {
+        internal static System.Drawing.Bitmap avid_logo {
             get {
-                object obj = ResourceManager.GetObject("AvidLogo", resourceCulture);
+                object obj = ResourceManager.GetObject("avid_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blank_green_icon {
+            get {
+                object obj = ResourceManager.GetObject("blank_green_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blank_yellow_icon {
+            get {
+                object obj = ResourceManager.GetObject("blank_yellow_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,16 +163,6 @@ namespace RDDSMakePayments.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pertitus_logo_300x120 {
-            get {
-                object obj = ResourceManager.GetObject("pertitus_logo_300x120", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap reload_50 {
             get {
                 object obj = ResourceManager.GetObject("reload-50", resourceCulture);
@@ -183,9 +183,19 @@ namespace RDDSMakePayments.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Shutdown_Box_Red {
+            get {
+                object obj = ResourceManager.GetObject("Shutdown_Box_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap status_small {
             get {
-                object obj = ResourceManager.GetObject("status small", resourceCulture);
+                object obj = ResourceManager.GetObject("status_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

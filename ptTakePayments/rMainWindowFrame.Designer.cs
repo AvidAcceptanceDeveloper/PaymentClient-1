@@ -42,6 +42,8 @@
             this.radRibbonBarButtonGroup1 = new Telerik.WinControls.UI.RadRibbonBarButtonGroup();
             this.radRibbonBarButtonGroup2 = new Telerik.WinControls.UI.RadRibbonBarButtonGroup();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radButtonElement3 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radButtonElement4 = new Telerik.WinControls.UI.RadButtonElement();
             ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.radRibbonBar1.Name = "radRibbonBar1";
             this.radRibbonBar1.QuickAccessToolBarItems.AddRange(new Telerik.WinControls.RadItem[] {
             this.radButtonElement1});
-            this.radRibbonBar1.Size = new System.Drawing.Size(1071, 167);
+            this.radRibbonBar1.Size = new System.Drawing.Size(1079, 174);
             this.radRibbonBar1.TabIndex = 1;
             this.radRibbonBar1.Text = "RDSS Take A Payment";
             this.radRibbonBar1.ThemeName = "ControlDefault";
@@ -80,13 +82,15 @@
             this.radRibbonBarGroup1.Name = "radRibbonBarGroup1";
             this.radRibbonBarGroup1.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.radRibbonBarGroup1.Text = "Payments";
+            this.radRibbonBarGroup1.Click += new System.EventHandler(this.radRibbonBarGroup1_Click);
+            ((Telerik.WinControls.UI.RadRibbonBarGroupDropDownButtonElement)(this.radRibbonBarGroup1.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             // 
             // rbtnTakePayment
             // 
             this.rbtnTakePayment.AccessibleDescription = "Take Payment Wizard";
             this.rbtnTakePayment.AccessibleName = "Take Payment Wizard";
             this.rbtnTakePayment.Enabled = false;
-            this.rbtnTakePayment.Image = global::RDDSMakePayments.Properties.Resources._1417689023_internt_web_technology_03_128;
+            this.rbtnTakePayment.Image = ((System.Drawing.Image)(resources.GetObject("rbtnTakePayment.Image")));
             this.rbtnTakePayment.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnTakePayment.Name = "rbtnTakePayment";
             this.rbtnTakePayment.SmallImage = null;
@@ -99,14 +103,15 @@
             this.rbtngrpClose.AccessibleName = "Close Application";
             this.rbtngrpClose.AutoSize = true;
             this.rbtngrpClose.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.rbtnCloseApp});
+            this.rbtnCloseApp,
+            this.radButtonElement3,
+            this.radButtonElement4});
             this.rbtngrpClose.Name = "rbtngrpClose";
             this.rbtngrpClose.Text = "Close";
             this.rbtngrpClose.TextOrientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // rbtnCloseApp
             // 
-            this.rbtnCloseApp.Image = global::RDDSMakePayments.Properties.Resources._1417688572_Shutdown_Box_Red;
             this.rbtnCloseApp.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnCloseApp.Name = "rbtnCloseApp";
             this.rbtnCloseApp.Text = "";
@@ -135,7 +140,6 @@
             // 
             // radButtonElement2
             // 
-            this.radButtonElement2.Image = global::RDDSMakePayments.Properties.Resources.settings;
             this.radButtonElement2.Name = "radButtonElement2";
             this.radButtonElement2.Text = "";
             this.radButtonElement2.Click += new System.EventHandler(this.radButtonElement2_Click);
@@ -163,15 +167,29 @@
             // 
             this.radMenuItem1.AccessibleDescription = "Settings";
             this.radMenuItem1.AccessibleName = "Settings";
-            this.radMenuItem1.Image = global::RDDSMakePayments.Properties.Resources.settings;
             this.radMenuItem1.Name = "radMenuItem1";
             this.radMenuItem1.Text = "Settings";
+            // 
+            // radButtonElement3
+            // 
+            this.radButtonElement3.Name = "radButtonElement3";
+            this.radButtonElement3.Text = "";
+            // 
+            // radButtonElement4
+            // 
+            this.radButtonElement4.AccessibleDescription = "radButtonElement4";
+            this.radButtonElement4.AccessibleName = "radButtonElement4";
+            this.radButtonElement4.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButtonElement4.Image = ((System.Drawing.Image)(resources.GetObject("radButtonElement4.Image")));
+            this.radButtonElement4.Name = "radButtonElement4";
+            this.radButtonElement4.Text = "radButtonElement4";
+            this.radButtonElement4.Click += new System.EventHandler(this.radButtonElement4_Click);
             // 
             // rMainWindowFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 723);
+            this.ClientSize = new System.Drawing.Size(1079, 757);
             this.ControlBox = false;
             this.Controls.Add(this.radRibbonBar1);
             this.FormBehavior = this.radRibbonFormBehavior1;
@@ -210,6 +228,8 @@
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup2;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement2;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement3;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement4;
 
     }
 }

@@ -25,7 +25,7 @@ namespace RDDSMakePayments.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\RDSS\\Settings\\Peritus\\RDSSPaymentConfig.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\RDSS\\Settings\\AvidAc\\RDSSPaymentConfig.xml")]
         public string SettingsFile {
             get {
                 return ((string)(this["SettingsFile"]));

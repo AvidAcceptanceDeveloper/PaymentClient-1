@@ -533,7 +533,7 @@ namespace RDDSMakePayments
         {
             if (this.rWizMakeAPayment.SelectedPage == this.rWizMakeAPayment.Pages[3]) //Check/CC Form
             {
-                rbtnOpenPayClient.Visible = false;
+                rbtnOpenPayClient.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             }
         }
         private void rWizMakeAPayment_Next(object sender, WizardCancelEventArgs e)
@@ -634,7 +634,9 @@ namespace RDDSMakePayments
 
                 rWizMakeAPayment.FinishButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
 
-                rbtnOpenPayClient.Visible = true;
+                rbtnOpenPayClient.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+               
+
                 if (rbtnCheck.CheckState == CheckState.Checked)
                     rbtnOpenPayClient.Text = "Post Payment";
 
@@ -977,7 +979,7 @@ namespace RDDSMakePayments
         {
             string ACHType = "NACHA", sRetVal = "" ;
 
-            rbtnOpenPayClient.Visible = false;
+            rbtnOpenPayClient.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             rWizMakeAPayment.BackButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
 
             if (rbtnCheck.CheckState == CheckState.Checked)
@@ -1000,7 +1002,7 @@ namespace RDDSMakePayments
             //if there is an error then set the enabled and visibility settings to allow clerk to make changes.
             if (sRetVal.IndexOf("ERROR") > -1)
             {
-                rbtnOpenPayClient.Visible = true;
+                rbtnOpenPayClient.Visibility = Telerik.WinControls.ElementVisibility.Visible;
                 rWizMakeAPayment.BackButton.Visibility = Telerik.WinControls.ElementVisibility.Visible;
                 rWizMakeAPayment.CancelButton.Text = "Cancel";
             }
@@ -1056,6 +1058,11 @@ namespace RDDSMakePayments
         }
 
         private void pnlCLN_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picbxLogo_Click(object sender, EventArgs e)
         {
 
         }

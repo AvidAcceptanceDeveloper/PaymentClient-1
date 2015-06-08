@@ -127,11 +127,8 @@
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\settings.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1417688572_Shutdown_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\1417688572_Shutdown_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pertitus_logo_300x120" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\pertitus_logo_300x120.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Shutdown_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Shutdown_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lock small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\lock small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,16 +142,22 @@
   <data name="105361-3d-glossy-orange-orb-icon-business-magic-wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\105361-3d-glossy-orange-orb-icon-business-magic-wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="status small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lock-41168_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\lock-41168_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1417689023_internt_web_technology-03-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\1417689023_internt_web_technology-03-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\images\internt_web_technology-03-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AvidLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\AvidLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blank_green_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\blank green 16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blank_yellow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\blank yellow 16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="status_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\status small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avid_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\avid_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

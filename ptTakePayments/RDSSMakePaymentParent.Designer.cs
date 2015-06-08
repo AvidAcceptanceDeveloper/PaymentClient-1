@@ -40,7 +40,7 @@ namespace RDDSMakePayments
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.rtxtPaymentResult = new Telerik.WinControls.UI.RadTextBox();
             this.rtxtConfirmMsg = new Telerik.WinControls.UI.RadTextBox();
-            this.rbtnOpenPayClient = new Telerik.WinControls.UI.RadButton();
+            this.rbtnOpenPayClient = new Telerik.WinControls.UI.RadButtonElement();
             this.pnlCLN = new System.Windows.Forms.Panel();
             this.rlblLogonId = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -107,7 +107,7 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtPaymentResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtConfirmMsg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbtnOpenPayClient)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.rbtnOpenPayClient)).BeginInit();
             this.pnlCLN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rlblLogonId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -175,7 +175,7 @@ namespace RDDSMakePayments
             // rWizMakeAPayment
             // 
             this.rWizMakeAPayment.CompletionPage = this.wizardCompletionPage1;
-            this.rWizMakeAPayment.Controls.Add(this.rbtnOpenPayClient);
+            //this.rWizMakeAPayment.Controls.Add(this.rbtnOpenPayClient);
             this.rWizMakeAPayment.Controls.Add(this.pnlCLN);
             this.rWizMakeAPayment.Controls.Add(this.pnlDemo);
             this.rWizMakeAPayment.Controls.Add(this.pnlConfirm);
@@ -253,15 +253,22 @@ namespace RDDSMakePayments
             // 
             // rbtnOpenPayClient
             // 
-            this.rbtnOpenPayClient.Location = new System.Drawing.Point(778, 553);
-            this.rbtnOpenPayClient.Margin = new System.Windows.Forms.Padding(4);
-            this.rbtnOpenPayClient.Name = "rbtnOpenPayClient";
-            this.rbtnOpenPayClient.Size = new System.Drawing.Size(114, 24);
-            this.rbtnOpenPayClient.TabIndex = 81;
-            this.rbtnOpenPayClient.Text = "Post Payment";
-            this.rbtnOpenPayClient.TextWrap = true;
-            this.rbtnOpenPayClient.Visible = false;
-            this.rbtnOpenPayClient.Click += new System.EventHandler(this.rbtnOpenPayClient_Click);
+            //rbtnOpenPayClient.Location = new System.Drawing.Point(798, 555);
+            rbtnOpenPayClient.Margin = new System.Windows.Forms.Padding(4);
+            rbtnOpenPayClient.Name = "rbtnOpenPayClient";
+            //rbtnOpenPayClient.Size = new System.Drawing.Size(100,148);
+            //this.rbtnOpenPayClient.TabIndex = 81;
+            rbtnOpenPayClient.Text = "Post Payment";
+            rbtnOpenPayClient.TextWrap = true;
+            rbtnOpenPayClient.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            rbtnOpenPayClient.MinSize = new System.Drawing.Size(100, 24);
+            
+            rWizMakeAPayment.CommandArea.CommandElements.Add(rbtnOpenPayClient);
+
+            rbtnOpenPayClient.Alignment = System.Drawing.ContentAlignment.BottomRight;
+
+            rbtnOpenPayClient.Click += new System.EventHandler(rbtnOpenPayClient_Click);
+            
             // 
             // pnlCLN
             // 
@@ -308,6 +315,7 @@ namespace RDDSMakePayments
             this.picbxLogo.Size = new System.Drawing.Size(993, 135);
             this.picbxLogo.TabIndex = 1003;
             this.picbxLogo.TabStop = false;
+            this.picbxLogo.Click += new System.EventHandler(this.picbxLogo_Click);
             // 
             // rlblCustomerName
             // 
@@ -1025,7 +1033,7 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtPaymentResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtConfirmMsg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbtnOpenPayClient)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.rbtnOpenPayClient)).EndInit();
             this.pnlCLN.ResumeLayout(false);
             this.pnlCLN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rlblLogonId)).EndInit();
@@ -1155,7 +1163,7 @@ namespace RDDSMakePayments
         private RadLabel rlblPayerName;
         private RadLabel rlblAlertMessage;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private RadButton rbtnOpenPayClient;
+        private RadButtonElement rbtnOpenPayClient;
         private RadLabel rlblValidationMsg;
         private System.Windows.Forms.PictureBox picbxABAVerif;
         private RadDateTimePicker rdtpPaymentDate;

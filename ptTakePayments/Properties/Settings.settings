@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SettingsFile" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\RDSS\Settings\Peritus\RDSSPaymentConfig.xml</Value>
+      <Value Profile="(Default)">c:\RDSS\Settings\AvidAc\RDSSPaymentConfig.xml</Value>
     </Setting>
   </Settings>
 </SettingsFile>

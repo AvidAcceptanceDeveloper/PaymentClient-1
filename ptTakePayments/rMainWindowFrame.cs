@@ -70,8 +70,6 @@ namespace RDDSMakePayments
 
         private void rbtnCloseApp_Click(object sender, EventArgs e)
         {
-            rfrmLogin.ActiveForm.Dispose();
-            SendingForm.Dispose();
             
         }
 
@@ -85,6 +83,18 @@ namespace RDDSMakePayments
             rfrmSettings settingsfrm = new rfrmSettings();
             settingsfrm.MdiParent = rMainWindowFrame.ActiveForm;
             settingsfrm.Show();
+        }
+
+        private void radRibbonBarGroup1_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void radButtonElement4_Click(object sender, EventArgs e)
+        {
+            rfrmLogin.ActiveForm.Dispose();
+            SendingForm.Dispose();
         }
 
        

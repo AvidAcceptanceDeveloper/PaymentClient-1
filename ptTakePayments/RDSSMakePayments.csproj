@@ -114,16 +114,21 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.GridView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.PdfViewer, Version=2015.1.225.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.RichTextBox, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.UI, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls, Version=2015.1.331.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.1.331.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2015.1.331.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextBox, Version=2015.1.331.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2015.1.331.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2015.1.331.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2015.1.331.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FEUtils.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RDSSMakePaymentParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,14 +165,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RDSSMakePaymentParent.resx">
       <DependentUpon>RDSSMakePaymentParent.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,22 +206,24 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo.jpg" />
+    <None Include="images\Logo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\pertitus_logo_300x120.jpg" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="images\Shutdown_Box_Red.png" />
+    <Content Include="Resources\avid_logo.png" />
+    <Content Include="Resources\blank green 16px.png" />
+    <Content Include="Resources\blank yellow 16px.png" />
     <None Include="images\arrow-refresh-2-icon.png" />
     <None Include="images\105361-3d-glossy-orange-orb-icon-business-magic-wand.png" />
-    <None Include="images\1417688572_Shutdown_Box_Red.png" />
-    <None Include="images\1417689023_internt_web_technology-03-128.png" />
+    <None Include="Resources\Shutdown_Box_Red.png" />
+    <None Include="images\internt_web_technology-03-128.png" />
     <Content Include="AvidIcon.ico" />
-    <Content Include="images\AvidLogo.png" />
     <None Include="images\money-symbol-green.jpg" />
     <None Include="images\money-symbol-green 180 by 139.jpg" />
     <None Include="images\lock-41168_640.png" />
     <None Include="images\lock small.png" />
+    <None Include="Resources\blank green icon.png" />
+    <None Include="Resources\blank yellow icon.png" />
     <Content Include="images\Blank-Green.ico" />
     <Content Include="images\Blank-Yellow.ico" />
     <Content Include="images\peritus_icon.bmp" />
