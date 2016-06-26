@@ -16,6 +16,7 @@ namespace RDSSMakePaymentParent
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new RDDSMakePayments.rfrmSettings());
             Application.Run(new RDDSMakePayments.rfrmLogin());
         }
         static Program()

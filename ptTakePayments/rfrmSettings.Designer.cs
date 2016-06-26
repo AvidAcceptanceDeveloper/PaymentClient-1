@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -37,16 +39,31 @@
             // radGridView1
             // 
             this.radGridView1.Location = new System.Drawing.Point(12, 60);
+            // 
+            // 
+            // 
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.Size = new System.Drawing.Size(794, 319);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "rgvSettings";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(264, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // rfrmSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 391);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.radGridView1);
             this.Name = "rfrmSettings";
             // 
@@ -66,5 +83,6 @@
         #endregion
 
         private Telerik.WinControls.UI.RadGridView radGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }

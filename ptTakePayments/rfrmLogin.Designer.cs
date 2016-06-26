@@ -77,7 +77,7 @@
             // 
             this.rtxtUserId.Location = new System.Drawing.Point(134, 89);
             this.rtxtUserId.Name = "rtxtUserId";
-            this.rtxtUserId.Size = new System.Drawing.Size(208, 20);
+            this.rtxtUserId.Size = new System.Drawing.Size(208, 24);
             this.rtxtUserId.TabIndex = 1;
             // 
             // rtxtPassword
@@ -85,7 +85,7 @@
             this.rtxtPassword.Location = new System.Drawing.Point(134, 115);
             this.rtxtPassword.Name = "rtxtPassword";
             this.rtxtPassword.PasswordChar = '●';
-            this.rtxtPassword.Size = new System.Drawing.Size(208, 20);
+            this.rtxtPassword.Size = new System.Drawing.Size(208, 24);
             this.rtxtPassword.TabIndex = 2;
             this.rtxtPassword.UseSystemPasswordChar = true;
             // 
@@ -93,7 +93,7 @@
             // 
             this.rlblUserId.Location = new System.Drawing.Point(73, 90);
             this.rlblUserId.Name = "rlblUserId";
-            this.rlblUserId.Size = new System.Drawing.Size(41, 18);
+            this.rlblUserId.Size = new System.Drawing.Size(51, 22);
             this.rlblUserId.TabIndex = 3;
             this.rlblUserId.Text = "User Id";
             // 
@@ -101,7 +101,7 @@
             // 
             this.rlblPassword.Location = new System.Drawing.Point(73, 114);
             this.rlblPassword.Name = "rlblPassword";
-            this.rlblPassword.Size = new System.Drawing.Size(53, 18);
+            this.rlblPassword.Size = new System.Drawing.Size(66, 22);
             this.rlblPassword.TabIndex = 4;
             this.rlblPassword.Text = "Password";
             // 

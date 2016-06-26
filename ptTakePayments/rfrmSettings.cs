@@ -31,5 +31,11 @@ namespace RDDSMakePayments
             radGridView1.DataSource = ds;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ATSSecurePostUILib.ATSSecurePostUI opost = new ATSSecurePostUILib.ATSSecurePostUI();
+            string ret =  opost.ShowCreditCardForm("");
+        }
     }
 }
