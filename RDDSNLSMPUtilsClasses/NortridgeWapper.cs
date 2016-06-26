@@ -19,6 +19,56 @@ namespace RDSSNLSMPUtilsClasses
         RDSSNLSMPUtilsClasses.cSettings oSettings = new cSettings(Properties.Settings.Default.SettingsFile.ToString());
 
 
+        public string CreateMPCCRecurring(string sLoanNumber, string cardnumber, string expiremon, string expireyr, string nameoncard,
+                                          string paymentamount, string crdebitfeeamt, string cvv2, string LegalEntity, string transuserid, string IncludeFees)
+        {
+            mp_ws.trans.CreditCardInfo ccinfo = new mp_ws.trans.CreditCardInfo();
+            mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
+
+            sLoanNumber = sLoanNumber.Replace("\r\n", string.Empty);
+
+            string PaymentReference = "";
+
+            Dictionary<string, string> dictSettings = GetMerchantPartnerSettings(LegalEntity);
+
+            if (dictSettings.Count == 0)
+            {
+                return "Unable to get Merchant Partner Settings.  Contact your administrator.";
+            }
+
+            ccinfo.acctid = dictSettings["ACCTID"];
+            ccinfo.subid = dictSettings["SUBACCTID"];
+            ccinfo.merchantpin = dictSettings["MERCHANTPIN"];
+
+            mp_ws.trans.CustomFields cf = new mp_ws.trans.CustomFields();
+            cf.custom1 = transuserid;
+            ccinfo.customizedfields = cf;
+
+            ccinfo.expmon = int.Parse(expiremon);
+            ccinfo.expyear = int.Parse(expireyr);
+            ccinfo.ccname = nameoncard;
+            ccinfo.ccnum = cardnumber;
+            ccinfo.memo = sLoanNumber;
+
+
+            if (cvv2 != "")
+                ccinfo.cvv2 = int.Parse(cvv2);
+
+            ccinfo.amount = float.Parse(paymentamount);
+
+            com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
+            pr = soapTrans.processCCSale(ccinfo);
+            if (pr.status == "Approved")
+            {
+                //post transaction to NLS
+                PaymentReference = pr.orderid;
+                //PayByCCDebit(sLoanNumber, ccinfo.ccnum, ccinfo.expmon + "//" + ccinfo.expyear, ccinfo.ccname, ccinfo.amount, crdebitfeeamt,PaymentReference,transuserid, IncludeFees);
+            }
+            return pr.status + " | " + PaymentReference;
+        }
+
+
+
 
         public string GetLoanGroupByLoan(string LoanNumber)
         {
@@ -211,7 +261,7 @@ namespace RDSSNLSMPUtilsClasses
 
 
         public string PayByCheck(string sLoanNumber, string abanumber, string checkingaccountnumber,
-             string paymentamount, string achfeeamt, string paymentreference, string transuserid, string IncludeFees, string MPResults)
+             string paymentamount, string achfeeamt, string paymentreference, string effectivedate, string transuserid, string IncludeFees, string MPResults)
         {
             XmlDocument xdoc = new XmlDocument();
             //Parse order id from payment reference string
@@ -228,18 +278,18 @@ namespace RDSSNLSMPUtilsClasses
             StringBuilder sb = new StringBuilder();
 
             sb.Append("<NLS CommitBlock='1' EnforceTagExistence='0'>");
-            sb.Append("<TRANSACTIONS>");
+            sb.Append("<TRANSACTIONS GLDate ='" + DateTime.Parse(effectivedate).ToString(@"MM/dd/yyyy") + "' >");
 
             if (bool.Parse(IncludeFees) == true)
             {
                 double dblAdjustedAmount = float.Parse(paymentamount) - float.Parse(achfeeamt);
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='" + oSettings.ACHPaymentMethod + "' PaymentMethodReference='ACH' Amount='" + dblAdjustedAmount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
+                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + effectivedate + "' PaymentMethod='" + oSettings.ACHPaymentMethod + "' PaymentMethodReference='ACH' Amount='" + dblAdjustedAmount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
                 sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.ACHBillingTransaction + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.ACHFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
-                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.ACHBillingAmount + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.ACHFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
+                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.ACHBillingAmount + "' DateDue='" + DateTime.Today.ToString("MM-dd-yyyy") + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.ACHFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
             }
             else
             {
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='" + oSettings.ACHPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP ACH' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
+                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Parse(effectivedate).ToString(@"MM/dd/yyyy") + "' PaymentMethod='" + oSettings.ACHPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP ACH' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
             }
             sb.Append("</TRANSACTIONS></NLS>");
 
@@ -257,7 +307,7 @@ namespace RDSSNLSMPUtilsClasses
                         payretval = oNLS.ImportXML(this.NLSServerName, this.NLSDatabaseName, sImportString, out  ErrMsg);
                         if (payretval)
                         {
-                            this.SaveComment(sLoanNumber, "A Payment has been made. Method = ACH Amount=" + paymentamount, NLSUser, oSettings.PayCommentCategory);
+                            this.SaveComment(sLoanNumber, "A Payment has been made. Method = ACH Amount = $" + paymentamount + " Transaction Reference: " + paymentreference, NLSUser, oSettings.PayCommentCategory);
                         }
                         return payretval.ToString();
                     }
@@ -298,7 +348,7 @@ namespace RDSSNLSMPUtilsClasses
             cEMail oEmail = new cEMail();
             bool payretval = false;
             int randint = randnbr.Next();
-
+            string sFromEmail = "MyAccount@AvidAcc.com";
             string sReference = "" + randint + sLoanNumber;
 
             sLoanNumber = sLoanNumber.Replace("\r\n", string.Empty);
@@ -333,7 +383,7 @@ namespace RDSSNLSMPUtilsClasses
                             {
                                 string sSubject = "Payment Confirmation";
 
-                                oEmail.EmailCustomerReceipt(sCustomerEmail, "customerservice@avidac.com", "Payment", "An ACH has been posted to your account in the amount of : $" + paymentamount + " Reference: " + sReference);
+                                oEmail.EmailCustomerReceipt(sCustomerEmail, sFromEmail, "Payment", "An ACH has been posted to your account in the amount of : $" + paymentamount + " Reference: " + sReference);
                             }
                             catch (Exception ex)
                             {
@@ -362,7 +412,7 @@ namespace RDSSNLSMPUtilsClasses
         }
 
         public string PayByCCDebit(string sLoanNumber, string nameoncard,
-             string paymentamount, string crdebitfeeamt, string paymentreference, string transuserid, string IncludeFees, string MPResults)
+             string paymentamount, string crdebitfeeamt, string effectivedate, string paymentreference, string transuserid, string IncludeFees, string MPResults)
         {
 
             XmlDocument xdoc = new XmlDocument();
@@ -382,22 +432,9 @@ namespace RDSSNLSMPUtilsClasses
 
 
             sb.Append("<NLS CommitBlock='1' EnforceTagExistence='0'>");
-            sb.Append("<TRANSACTIONS>");
-
-
-
-
-            if (bool.Parse(IncludeFees) == true)
-            {
-                double dblAdjustedAmount = float.Parse(paymentamount) - float.Parse(crdebitfeeamt);
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='25' PaymentMethodReference='Credit/Debit' Amount='" + dblAdjustedAmount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
-                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.CCDebitBillingTransaction + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.CCDebitFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
-                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.CCDebitPaymentTransaction + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.CCDebitFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
-            }
-            else
-            {
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='" + oSettings.CreditPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP CREDIT/DEBIT' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
-            }
+            sb.Append("<TRANSACTIONS GLDate ='" + DateTime.Parse(effectivedate).ToString(@"MM/dd/yyyy") + "' >");
+            sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + effectivedate + "' PaymentMethod='" + oSettings.CreditPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP CREDIT/DEBIT' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
+            
             sb.Append("</TRANSACTIONS></NLS>");
 
             sImportString = sb.ToString();
@@ -407,7 +444,7 @@ namespace RDSSNLSMPUtilsClasses
                 payretval = oNLS.ImportXML(this.NLSServerName, this.NLSDatabaseName, sImportString, out  ErrMsg);
                 if (payretval)
                 {
-                    this.SaveComment(sLoanNumber, "A Payment has been made. Method = CC/DEBIT Amount=" + paymentamount, transuserid, oSettings.PayCommentCategory);
+                    this.SaveComment(sLoanNumber, "A Payment has been made and will be executed on date:  " + effectivedate + ". Method = CC/DEBIT Amount = $" + paymentamount + " Transaction Reference: " + paymentreference, transuserid, oSettings.PayCommentCategory);
                 }
                 return payretval.ToString();
             }

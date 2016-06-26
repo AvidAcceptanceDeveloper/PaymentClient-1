@@ -2,6 +2,55 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://nortridge.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://nortridge.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://nortridge.com/">
+      <s:element name="NLSContactUDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldsToReturn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSContactUDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSContactUDFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLoanDetailUDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldsToReturn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLoanDetailUDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSLoanDetailUDFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLoanPaymentsDue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeginningDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndingDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLoanPaymentsDueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSLoanPaymentsDueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="NLSLoanPaymentHistory">
         <s:complexType>
           <s:sequence>
@@ -1148,61 +1197,30 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="NLSContactUDF">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="FieldsToReturn" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSContactUDFResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSContactUDFResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLoanDetailUDF">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="FieldsToReturn" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLoanDetailUDFResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSLoanDetailUDFResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLoanPaymentsDue">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BeginningDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EndingDate" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLoanPaymentsDueResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSLoanPaymentsDueResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="string" nillable="true" type="s:string" />
       <s:element name="double" type="s:double" />
       <s:element name="int" type="s:int" />
       <s:element name="boolean" type="s:boolean" />
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="NLSContactUDFSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSContactUDF" />
+  </wsdl:message>
+  <wsdl:message name="NLSContactUDFSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSContactUDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSLoanDetailUDFSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSLoanDetailUDF" />
+  </wsdl:message>
+  <wsdl:message name="NLSLoanDetailUDFSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSLoanDetailUDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSLoanPaymentsDueSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSLoanPaymentsDue" />
+  </wsdl:message>
+  <wsdl:message name="NLSLoanPaymentsDueSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSLoanPaymentsDueResponse" />
+  </wsdl:message>
   <wsdl:message name="NLSLoanPaymentHistorySoapIn">
     <wsdl:part name="parameters" element="tns:NLSLoanPaymentHistory" />
   </wsdl:message>
@@ -1599,23 +1617,30 @@
   <wsdl:message name="NLSGetTaskDetailSoapOut">
     <wsdl:part name="parameters" element="tns:NLSGetTaskDetailResponse" />
   </wsdl:message>
-  <wsdl:message name="NLSContactUDFSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSContactUDF" />
+  <wsdl:message name="NLSContactUDFHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="ContactNumber" type="s:string" />
+    <wsdl:part name="FieldsToReturn" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSContactUDFSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSContactUDFResponse" />
+  <wsdl:message name="NLSContactUDFHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanDetailUDFSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSLoanDetailUDF" />
+  <wsdl:message name="NLSLoanDetailUDFHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
+    <wsdl:part name="FieldsToReturn" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanDetailUDFSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSLoanDetailUDFResponse" />
+  <wsdl:message name="NLSLoanDetailUDFHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPaymentsDueSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSLoanPaymentsDue" />
+  <wsdl:message name="NLSLoanPaymentsDueHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
+    <wsdl:part name="BeginningDate" type="s:string" />
+    <wsdl:part name="EndingDate" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPaymentsDueSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSLoanPaymentsDueResponse" />
+  <wsdl:message name="NLSLoanPaymentsDueHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="NLSLoanPaymentHistoryHttpGetIn">
     <wsdl:part name="token" type="s:string" />
@@ -2187,29 +2212,29 @@
   <wsdl:message name="NLSGetTaskDetailHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSContactUDFHttpGetIn">
+  <wsdl:message name="NLSContactUDFHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="ContactNumber" type="s:string" />
     <wsdl:part name="FieldsToReturn" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSContactUDFHttpGetOut">
+  <wsdl:message name="NLSContactUDFHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanDetailUDFHttpGetIn">
+  <wsdl:message name="NLSLoanDetailUDFHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="LoanNumber" type="s:string" />
     <wsdl:part name="FieldsToReturn" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanDetailUDFHttpGetOut">
+  <wsdl:message name="NLSLoanDetailUDFHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPaymentsDueHttpGetIn">
+  <wsdl:message name="NLSLoanPaymentsDueHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="LoanNumber" type="s:string" />
     <wsdl:part name="BeginningDate" type="s:string" />
     <wsdl:part name="EndingDate" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPaymentsDueHttpGetOut">
+  <wsdl:message name="NLSLoanPaymentsDueHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="NLSLoanPaymentHistoryHttpPostIn">
@@ -2782,32 +2807,19 @@
   <wsdl:message name="NLSGetTaskDetailHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSContactUDFHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="ContactNumber" type="s:string" />
-    <wsdl:part name="FieldsToReturn" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSContactUDFHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLoanDetailUDFHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="LoanNumber" type="s:string" />
-    <wsdl:part name="FieldsToReturn" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLoanDetailUDFHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLoanPaymentsDueHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="LoanNumber" type="s:string" />
-    <wsdl:part name="BeginningDate" type="s:string" />
-    <wsdl:part name="EndingDate" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLoanPaymentsDueHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="NLSContactUDF">
+      <wsdl:input message="tns:NLSContactUDFSoapIn" />
+      <wsdl:output message="tns:NLSContactUDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanDetailUDF">
+      <wsdl:input message="tns:NLSLoanDetailUDFSoapIn" />
+      <wsdl:output message="tns:NLSLoanDetailUDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPaymentsDue">
+      <wsdl:input message="tns:NLSLoanPaymentsDueSoapIn" />
+      <wsdl:output message="tns:NLSLoanPaymentsDueSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="NLSLoanPaymentHistory">
       <wsdl:input message="tns:NLSLoanPaymentHistorySoapIn" />
       <wsdl:output message="tns:NLSLoanPaymentHistorySoapOut" />
@@ -3072,20 +3084,20 @@
       <wsdl:input message="tns:NLSGetTaskDetailSoapIn" />
       <wsdl:output message="tns:NLSGetTaskDetailSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="NLSContactUDF">
-      <wsdl:input message="tns:NLSContactUDFSoapIn" />
-      <wsdl:output message="tns:NLSContactUDFSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanDetailUDF">
-      <wsdl:input message="tns:NLSLoanDetailUDFSoapIn" />
-      <wsdl:output message="tns:NLSLoanDetailUDFSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPaymentsDue">
-      <wsdl:input message="tns:NLSLoanPaymentsDueSoapIn" />
-      <wsdl:output message="tns:NLSLoanPaymentsDueSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="NLSContactUDF">
+      <wsdl:input message="tns:NLSContactUDFHttpGetIn" />
+      <wsdl:output message="tns:NLSContactUDFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanDetailUDF">
+      <wsdl:input message="tns:NLSLoanDetailUDFHttpGetIn" />
+      <wsdl:output message="tns:NLSLoanDetailUDFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPaymentsDue">
+      <wsdl:input message="tns:NLSLoanPaymentsDueHttpGetIn" />
+      <wsdl:output message="tns:NLSLoanPaymentsDueHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="NLSLoanPaymentHistory">
       <wsdl:input message="tns:NLSLoanPaymentHistoryHttpGetIn" />
       <wsdl:output message="tns:NLSLoanPaymentHistoryHttpGetOut" />
@@ -3330,20 +3342,20 @@
       <wsdl:input message="tns:NLSGetTaskDetailHttpGetIn" />
       <wsdl:output message="tns:NLSGetTaskDetailHttpGetOut" />
     </wsdl:operation>
-    <wsdl:operation name="NLSContactUDF">
-      <wsdl:input message="tns:NLSContactUDFHttpGetIn" />
-      <wsdl:output message="tns:NLSContactUDFHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanDetailUDF">
-      <wsdl:input message="tns:NLSLoanDetailUDFHttpGetIn" />
-      <wsdl:output message="tns:NLSLoanDetailUDFHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPaymentsDue">
-      <wsdl:input message="tns:NLSLoanPaymentsDueHttpGetIn" />
-      <wsdl:output message="tns:NLSLoanPaymentsDueHttpGetOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="NLSContactUDF">
+      <wsdl:input message="tns:NLSContactUDFHttpPostIn" />
+      <wsdl:output message="tns:NLSContactUDFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanDetailUDF">
+      <wsdl:input message="tns:NLSLoanDetailUDFHttpPostIn" />
+      <wsdl:output message="tns:NLSLoanDetailUDFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPaymentsDue">
+      <wsdl:input message="tns:NLSLoanPaymentsDueHttpPostIn" />
+      <wsdl:output message="tns:NLSLoanPaymentsDueHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="NLSLoanPaymentHistory">
       <wsdl:input message="tns:NLSLoanPaymentHistoryHttpPostIn" />
       <wsdl:output message="tns:NLSLoanPaymentHistoryHttpPostOut" />
@@ -3588,21 +3600,36 @@
       <wsdl:input message="tns:NLSGetTaskDetailHttpPostIn" />
       <wsdl:output message="tns:NLSGetTaskDetailHttpPostOut" />
     </wsdl:operation>
-    <wsdl:operation name="NLSContactUDF">
-      <wsdl:input message="tns:NLSContactUDFHttpPostIn" />
-      <wsdl:output message="tns:NLSContactUDFHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanDetailUDF">
-      <wsdl:input message="tns:NLSLoanDetailUDFHttpPostIn" />
-      <wsdl:output message="tns:NLSLoanDetailUDFHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPaymentsDue">
-      <wsdl:input message="tns:NLSLoanPaymentsDueHttpPostIn" />
-      <wsdl:output message="tns:NLSLoanPaymentsDueHttpPostOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NLSContactUDF">
+      <soap:operation soapAction="http://nortridge.com/NLSContactUDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanDetailUDF">
+      <soap:operation soapAction="http://nortridge.com/NLSLoanDetailUDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPaymentsDue">
+      <soap:operation soapAction="http://nortridge.com/NLSLoanPaymentsDue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSLoanPaymentHistory">
       <soap:operation soapAction="http://nortridge.com/NLSLoanPaymentHistory" style="document" />
       <wsdl:input>
@@ -4197,36 +4224,36 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NLSContactUDF">
-      <soap:operation soapAction="http://nortridge.com/NLSContactUDF" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanDetailUDF">
-      <soap:operation soapAction="http://nortridge.com/NLSLoanDetailUDF" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPaymentsDue">
-      <soap:operation soapAction="http://nortridge.com/NLSLoanPaymentsDue" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NLSContactUDF">
+      <soap12:operation soapAction="http://nortridge.com/NLSContactUDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanDetailUDF">
+      <soap12:operation soapAction="http://nortridge.com/NLSLoanDetailUDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPaymentsDue">
+      <soap12:operation soapAction="http://nortridge.com/NLSLoanPaymentsDue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSLoanPaymentHistory">
       <soap12:operation soapAction="http://nortridge.com/NLSLoanPaymentHistory" style="document" />
       <wsdl:input>
@@ -4821,36 +4848,36 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NLSContactUDF">
-      <soap12:operation soapAction="http://nortridge.com/NLSContactUDF" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanDetailUDF">
-      <soap12:operation soapAction="http://nortridge.com/NLSLoanDetailUDF" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPaymentsDue">
-      <soap12:operation soapAction="http://nortridge.com/NLSLoanPaymentsDue" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
     <http:binding verb="GET" />
+    <wsdl:operation name="NLSContactUDF">
+      <http:operation location="/NLSContactUDF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanDetailUDF">
+      <http:operation location="/NLSLoanDetailUDF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPaymentsDue">
+      <http:operation location="/NLSLoanPaymentsDue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSLoanPaymentHistory">
       <http:operation location="/NLSLoanPaymentHistory" />
       <wsdl:input>
@@ -5393,33 +5420,6 @@
     </wsdl:operation>
     <wsdl:operation name="NLSGetTaskDetail">
       <http:operation location="/NLSGetTaskDetail" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSContactUDF">
-      <http:operation location="/NLSContactUDF" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanDetailUDF">
-      <http:operation location="/NLSLoanDetailUDF" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPaymentsDue">
-      <http:operation location="/NLSLoanPaymentsDue" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -5430,6 +5430,33 @@
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
     <http:binding verb="POST" />
+    <wsdl:operation name="NLSContactUDF">
+      <http:operation location="/NLSContactUDF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanDetailUDF">
+      <http:operation location="/NLSLoanDetailUDF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPaymentsDue">
+      <http:operation location="/NLSLoanPaymentsDue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSLoanPaymentHistory">
       <http:operation location="/NLSLoanPaymentHistory" />
       <wsdl:input>
@@ -5979,46 +6006,19 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NLSContactUDF">
-      <http:operation location="/NLSContactUDF" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanDetailUDF">
-      <http:operation location="/NLSLoanDetailUDF" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPaymentsDue">
-      <http:operation location="/NLSLoanPaymentsDue" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
-      <soap:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <soap:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
-      <soap12:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <soap12:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
-      <http:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <http:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
-      <http:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <http:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

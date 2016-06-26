@@ -54,8 +54,8 @@ namespace RDSSNLSMPUtilsClasses
                 this.NLSDatabase = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["database"].InnerText;
                 this.NLSDomain = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["domain"].InnerText;
                 this.NLSDatabaseType = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["databasetype"].InnerText;
-                this.NLSKey = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["nlskey"].InnerText;
-                this.NLSWebServiceUrl = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["webserviceurl"].InnerText;
+               // this.NLSKey = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["nlskey"].InnerText;
+               // this.NLSWebServiceUrl = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlssettings").Attributes["webserviceurl"].InnerText;
                 //report server
                 this.NLSRSDatabase = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/sqlreportserver").Attributes["database"].InnerText;
                 this.NLSRSServer = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/sqlreportserver").Attributes["server"].InnerText;
@@ -66,11 +66,16 @@ namespace RDSSNLSMPUtilsClasses
                 this.smtpuserid = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/emailsettings").Attributes["smtpuserid"].InnerText;
                 this.smtppassword = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/emailsettings").Attributes["smtppassword"].InnerText;
                 this.smtpport = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/generalappsettings/emailsettings").Attributes["smtpport"].InnerText;
-                //merchant partner first mile settings
-                this.MPAccount = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/merchantpartners[@type='account']").Attributes["value"].InnerText;
-                this.MPSettings = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/merchantpartners[@type='application']").Attributes["value"].InnerText;
-                //Emails
-                this.MPReceipt = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/merchantreceipt").Attributes["value"].InnerText;
+                
+                ///Authorize.net Settings
+                ///
+                //this.AuthNetApiLoginKey = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/authnet").Attributes["apilogonid"].InnerText;
+                //this.AuthNetTransactionKey = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/authnet").Attributes["transactionkey"].InnerText;                
+                ////merchant partner first mile settings
+                //this.MPAccount = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/merchantpartners[@type='account']").Attributes["value"].InnerText;
+                //this.MPSettings = this.SelectSingleNode(@"//appsettings[@environment='" + sEnvironment + "']/merchantpartners[@type='application']").Attributes["value"].InnerText;
+                ////Emails
+                //this.MPReceipt = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/merchantreceipt").Attributes["value"].InnerText;
                 //payment queue settings
                 this.PayQuePath = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/paymentqueue").InnerText;
                 this.QueErrorPayments = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/paymentqueue").Attributes["queerrpayments"].InnerText;
@@ -89,12 +94,26 @@ namespace RDSSNLSMPUtilsClasses
                 //this.CCDebitPaymentTransaction = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/fees[@type='payccdebitfee']").Attributes["transactioncode"].InnerText;
                 //this.CCDebitFeeAmount = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/fees[@type='payccdebitfee']").Attributes["transactionfee"].InnerText;
                 //email addresses
+
+                //Payment Tech Settings
+                this.OrbitalUserName = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/orbitalsettings").Attributes["username"].InnerText;
+                this.OrbitalPassword = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/orbitalsettings").Attributes["password"].InnerText;
+                this.OrbitalApiUrl = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/orbitalsettings").Attributes["apiurl"].InnerText;
+                this.OrbitalApiFailoverUrl = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/orbitalsettings").Attributes["apifailoverurl"].InnerText;
+
+                this.TransType = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/paymentech").Attributes["transtype"].InnerText;
+                this.BIN = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/paymentech").Attributes["bin"].InnerText;
+                this.MerchantId = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/paymentech").Attributes["merchantid"].InnerText;
+                this.TerminalId = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/paymentech").Attributes["terminalid"].InnerText;
+                this.IndustryType = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/paymentech").Attributes["industrytype"].InnerText;
+
                 this.CustomerServiceEmail = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/emailsettings/address[@type='customerservice']").Attributes["address"].InnerText;
                 this.CustomerServiceEmail = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/emailsettings/address[@type='nlspostingerrors']").Attributes["address"].InnerText;
                 //nls customer udf settings
                 this.ACHAllowedField = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlsfields").Attributes["achallowedflag"].InnerText;
+                this.ACHType = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlspaymentmethods").Attributes["achtype"].InnerText;
                 //this.ACHAllowedActive = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlsfields/achallowedflag").Attributes["active"].InnerText;
-
+                this.ValidateRoutingNumber = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/validate").Attributes["routingnumber"].InnerText; 
                 //NLS Payment Methods
                 this.ACHPaymentMethod = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlspaymentmethods").Attributes["ach"].InnerText;
                 this.CreditPaymentMethod = this.SelectSingleNode(@"//rdss/company/appsettings[@environment='" + sEnvironment + "']/generalappsettings/nlspaymentmethods").Attributes["credit"].InnerText;
@@ -181,9 +200,22 @@ namespace RDSSNLSMPUtilsClasses
 
         public string MPSettings { get; set; }
         public string MPSettingsTransType { get; set; }
-        public string MPTransAmount { get; set; }
 
-        public string MPReceipt { get; set; }
+        public string OrbitalUserName { get; set; }
+        public string OrbitalPassword { get; set; }
+        public string OrbitalApiUrl { get; set; }
+        public string OrbitalApiFailoverUrl { get; set; }
+
+        public string TransType { get; set; }
+        public string BIN { get; set; }
+        public string MerchantId { get; set; }
+        public string TerminalId { get; set; }
+        public string IndustryType { get; set; }
+        
+
+        //public string MPTransAmount { get; set; }
+
+        //public string MPReceipt { get; set; }
 
         public string PayQuePath { get; set; }
         public string QueErrorPayments { get; set; }
@@ -210,9 +242,15 @@ namespace RDSSNLSMPUtilsClasses
         public string ACHPaymentMethod { get; set; }
         public string CreditPaymentMethod { get; set; }
 
-        public string MPAccount { get; set; }
-        public string MPMerchKey { get; set; }
+        //public string MPAccount { get; set; }
+        //public string MPMerchKey { get; set; }
 
+        public string AuthNetApiLoginKey { get; set; }
+        public string AuthNetTransactionKey { get; set; }
+
+        //Validations
+        public string ValidateRoutingNumber { get; set; }
+        public string ACHType { get; set; }
         //public string ACHAllowedActive { get; set; }
     }
 }
