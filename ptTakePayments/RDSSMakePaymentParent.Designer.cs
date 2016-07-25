@@ -57,6 +57,7 @@ namespace RDDSMakePayments
             this.rbtnSendReceipt = new Telerik.WinControls.UI.RadButton();
             this.rtxtConfirmMsg = new Telerik.WinControls.UI.RadTextBox();
             this.pnlCLN = new System.Windows.Forms.Panel();
+            this.rbtnTestEmail = new Telerik.WinControls.UI.RadButton();
             this.rlblLogonId = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.picbxLogo = new System.Windows.Forms.PictureBox();
@@ -127,6 +128,7 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rbtnSendReceipt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtConfirmMsg)).BeginInit();
             this.pnlCLN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rbtnTestEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlblLogonId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxLogo)).BeginInit();
@@ -297,6 +299,7 @@ namespace RDDSMakePayments
             // pnlCLN
             // 
             this.pnlCLN.BackColor = System.Drawing.Color.White;
+            this.pnlCLN.Controls.Add(this.rbtnTestEmail);
             this.pnlCLN.Controls.Add(this.rlblLogonId);
             this.pnlCLN.Controls.Add(this.radLabel2);
             this.pnlCLN.Controls.Add(this.picbxLogo);
@@ -310,6 +313,16 @@ namespace RDDSMakePayments
             this.pnlCLN.Size = new System.Drawing.Size(688, 425);
             this.pnlCLN.TabIndex = 0;
             this.pnlCLN.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCLN_Paint);
+            // 
+            // rbtnTestEmail
+            // 
+            this.rbtnTestEmail.Location = new System.Drawing.Point(26, 316);
+            this.rbtnTestEmail.Name = "rbtnTestEmail";
+            this.rbtnTestEmail.Size = new System.Drawing.Size(110, 24);
+            this.rbtnTestEmail.TabIndex = 1005;
+            this.rbtnTestEmail.Text = "Test Email";
+            this.rbtnTestEmail.Visible = false;
+            this.rbtnTestEmail.Click += new System.EventHandler(this.rbtnTestEmail_Click);
             // 
             // rlblLogonId
             // 
@@ -529,7 +542,7 @@ namespace RDDSMakePayments
             this.lnklblClear.AutoSize = true;
             this.lnklblClear.Location = new System.Drawing.Point(104, 141);
             this.lnklblClear.Name = "lnklblClear";
-            this.lnklblClear.Size = new System.Drawing.Size(62, 13);
+            this.lnklblClear.Size = new System.Drawing.Size(57, 13);
             this.lnklblClear.TabIndex = 2008;
             this.lnklblClear.TabStop = true;
             this.lnklblClear.Text = "Clear Form";
@@ -854,7 +867,6 @@ namespace RDDSMakePayments
             this.rpvCCDebit.Controls.Add(this.rddlYear);
             this.rpvCCDebit.Controls.Add(this.rtxtCCNumber);
             this.rpvCCDebit.Controls.Add(this.rlblCCNumber);
-            this.rpvCCDebit.ItemSize = new System.Drawing.SizeF(687F, 32F);
             this.rpvCCDebit.Location = new System.Drawing.Point(5, 29);
             this.rpvCCDebit.Margin = new System.Windows.Forms.Padding(2);
             this.rpvCCDebit.Name = "rpvCCDebit";
@@ -1012,7 +1024,6 @@ namespace RDDSMakePayments
             this.rpvCheck.Controls.Add(this.rtxtBankAccount);
             this.rpvCheck.Controls.Add(this.rlblBankAccount);
             this.rpvCheck.Controls.Add(this.rlblABANumber);
-            this.rpvCheck.ItemSize = new System.Drawing.SizeF(687F, 32F);
             this.rpvCheck.Location = new System.Drawing.Point(5, 29);
             this.rpvCheck.Margin = new System.Windows.Forms.Padding(2);
             this.rpvCheck.Name = "rpvCheck";
@@ -1219,6 +1230,7 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rtxtConfirmMsg)).EndInit();
             this.pnlCLN.ResumeLayout(false);
             this.pnlCLN.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rbtnTestEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlblLogonId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxLogo)).EndInit();
@@ -1356,5 +1368,6 @@ namespace RDDSMakePayments
         private TextBox rtxtDollars;
         private RadTextBox rtxtReceiptEmailAddr;
         private RadButton rbtnSendReceipt;
+        private RadButton rbtnTestEmail;
     }
 }

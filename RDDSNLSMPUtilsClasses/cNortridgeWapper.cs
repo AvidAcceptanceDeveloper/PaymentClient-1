@@ -211,7 +211,7 @@ namespace RDSSNLSMPUtilsClasses
         
        
         public string PayByCheck(string sLoanNumber, string abanumber, string checkingaccountnumber,
-             string paymentamount, string achfeeamt, string paymentreference, string transuserid, string IncludeFees, string MPResults)
+             string paymentamount, string achfeeamt, string paymentreference, string effectivedate, string transuserid, string IncludeFees, string MPResults)
         {
             XmlDocument xdoc = new XmlDocument();
             //Parse order id from payment reference string
@@ -228,19 +228,8 @@ namespace RDSSNLSMPUtilsClasses
             StringBuilder sb = new StringBuilder();
 
             sb.Append("<NLS CommitBlock='1' EnforceTagExistence='0'>");
-            sb.Append("<TRANSACTIONS>");
-
-            if (bool.Parse(IncludeFees) == true)
-            {
-                double dblAdjustedAmount = float.Parse(paymentamount) - float.Parse(achfeeamt);
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='" + oSettings.ACHPaymentMethod + "' PaymentMethodReference='ACH' Amount='" + dblAdjustedAmount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
-                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.ACHBillingTransaction + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.ACHFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
-                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.ACHBillingAmount + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.ACHFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
-            }
-            else
-            {
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='" + oSettings.ACHPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP ACH' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
-            }
+            sb.Append("<TRANSACTIONS GLDate='" + effectivedate + "'>");
+            sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + effectivedate + "' PaymentMethod='" + oSettings.ACHPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP ACH' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
             sb.Append("</TRANSACTIONS></NLS>");
 
             sImportString = sb.ToString();
@@ -362,7 +351,7 @@ namespace RDSSNLSMPUtilsClasses
         }
 
         public string PayByCCDebit(string sLoanNumber, string nameoncard,
-             string paymentamount, string crdebitfeeamt, string paymentreference, string transuserid, string IncludeFees, string MPResults)
+             string paymentamount, string crdebitfeeamt, string paymentreference, string effectivedate, string transuserid, string IncludeFees, string Results)
         {
 
             XmlDocument xdoc = new XmlDocument();
@@ -382,22 +371,8 @@ namespace RDSSNLSMPUtilsClasses
             
 
             sb.Append("<NLS CommitBlock='1' EnforceTagExistence='0'>");
-            sb.Append("<TRANSACTIONS>");
-
-            
-
-
-            if (bool.Parse(IncludeFees) == true)
-            {
-                double dblAdjustedAmount = float.Parse(paymentamount) - float.Parse(crdebitfeeamt);
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='25' PaymentMethodReference='Credit/Debit' Amount='" + dblAdjustedAmount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
-                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.CCDebitBillingTransaction + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.CCDebitFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
-                sb.Append("<TRANSACTIONCODE TransactionCode='" + oSettings.CCDebitPaymentTransaction + "' DateDue='" + DateTime.Today.ToShortDateString() + "' LoanNumber='" + sLoanNumber + "' Amount='" + oSettings.CCDebitFeeAmount + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' TransactionDate = '" + DateTime.Today.ToShortDateString() + "' />");
-            }
-            else
-            {
-                sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + DateTime.Today.ToShortDateString() + "' PaymentMethod='" + oSettings.CreditPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP CREDIT/DEBIT' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
-            }
+            sb.Append("<TRANSACTIONS GLDate='" + effectivedate + "'>");
+            sb.Append("<PAYMENT LoanNumber='" + sLoanNumber + "' EffectiveDate='" + effectivedate + "' PaymentMethod='" + oSettings.CreditPaymentMethod.ToString() + "' PaymentMethodReference='PAYMENT APP CREDIT/DEBIT' Amount='" + paymentamount + "' UserDefined2='" + paymentreference + "' UserDefined1='" + transuserid + "' />");
             sb.Append("</TRANSACTIONS></NLS>");
 
             sImportString = sb.ToString();
@@ -423,141 +398,7 @@ namespace RDSSNLSMPUtilsClasses
 
 
         }
-        public string PayByMerchantPartnersCC(string sLoanNumber, string cardnumber, string expiremon, string expireyr, string nameoncard,
-             string paymentamount, string crdebitfeeamt, string cvv2, string LegalEntity, string transuserid, string IncludeFees)
-        {
-            mp_ws.trans.CreditCardInfo ccinfo = new mp_ws.trans.CreditCardInfo();
-            mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
-
-            sLoanNumber = sLoanNumber.Replace("\r\n", string.Empty);
-
-            string PaymentReference = "";
-
-            Dictionary<string, string> dictSettings = GetMerchantPartnerSettings(LegalEntity);
-
-            if (dictSettings.Count == 0)
-            {
-                return "Unable to get Merchant Partner Settings.  Contact your administrator.";
-            }
-
-            ccinfo.acctid = dictSettings["ACCTID"];
-            ccinfo.subid = dictSettings["SUBACCTID"];
-            ccinfo.merchantpin = dictSettings["MERCHANTPIN"];
-
-            mp_ws.trans.CustomFields cf = new mp_ws.trans.CustomFields();
-            cf.custom1 = transuserid;
-            ccinfo.customizedfields = cf;
-
-            ccinfo.expmon = int.Parse(expiremon);
-            ccinfo.expyear = int.Parse(expireyr);
-            ccinfo.ccname = nameoncard;
-            ccinfo.ccnum = cardnumber;
-            ccinfo.memo = sLoanNumber;
-
-
-            if (cvv2 != "")
-                ccinfo.cvv2 = int.Parse(cvv2);
-
-            ccinfo.amount = float.Parse(paymentamount);
-
-            com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
-            pr = soapTrans.processCCSale(ccinfo);
-            if (pr.status == "Approved")
-            {
-                //post transaction to NLS
-                PaymentReference = pr.orderid;
-                //PayByCCDebit(sLoanNumber, ccinfo.ccnum, ccinfo.expmon + "//" + ccinfo.expyear, ccinfo.ccname, ccinfo.amount, crdebitfeeamt,PaymentReference,transuserid, IncludeFees);
-            }
-            return pr.status + " | " + PaymentReference;
-        }
-
-        public string PayByMerchantPartnersCheck(string sPayersName, string sLoanNumber, string abanumber, string checkingacctnumber,
-            float paymentamount, float achfeeamt, string AcctName, string LegalEntity, string transuserid, bool IncludeFees)
-        {
-            mp_ws.trans.ACHInfo achinfo = new mp_ws.trans.ACHInfo();
-            mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
-
-            string PaymentReference = "";
-
-            sLoanNumber = sLoanNumber.Replace("\r\n", string.Empty);
-
-            Dictionary<string, string> dictSettings = GetMerchantPartnerSettings(LegalEntity);
-            if (dictSettings.Count == 0)
-            {
-                return "Unable to get Merchant Partner Settings.  Contact your administrator.";
-            }
-            achinfo.acctid = dictSettings["ACCTID"];
-            // achinfo.subid = dictSettings["SUBACCTID"];
-            achinfo.merchantpin = dictSettings["MERCHANTPIN"];
-
-
-
-            achinfo.ckaba = abanumber;
-            achinfo.ckacct = checkingacctnumber;
-            achinfo.memo = sLoanNumber;
-            achinfo.ckname = sPayersName;
-            achinfo.cktype = "TEL";
-            achinfo.amount = paymentamount;
-            achinfo.ckno = "0";
-            mp_ws.trans.CustomFields cf = new mp_ws.trans.CustomFields();
-            cf.custom1 = transuserid;
-            achinfo.customizedfields = cf;
-
-
-            com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
-
-            pr = soapTrans.processACHSale(achinfo);
-
-            if (pr.status == "Approved")
-            {
-                //post transaction to NLS
-                PaymentReference = pr.orderid;
-                // string nlsret = PayByCheck(sLoanNumber, achinfo.ckaba, achinfo.ckacct, achinfo.amount, achfeeamt,PaymentReference,transuserid, IncludeFees);
-                return pr.status + " | " + pr.orderid;
-            }
-            else
-            {
-                return "Payment Failed. Status = " + pr.status;
-            }
-
-
-        }
-        public string[] VerifyACH(string MPAccount, float Amount, string ABA, string ChkAccount, string CkName, string CkType, string AccountType)
-        {
-            mp_ws.trans.ACHInfo achinfo = new mp_ws.trans.ACHInfo();
-            mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
-
-            //take config string meant to be used with FirstMile and transform it to a setting that can be used here
-            string[] MPSettings = MPAccount.Split('/');
-            string[] MPAcctID = MPSettings[1].Trim().Split(':');
-
-            string[] MPPinSetting = MPSettings[3].Split(':');
-            string[] AuthCode;
-
-            achinfo.acctid = MPAcctID[1].Trim();
-            achinfo.merchantpin = MPPinSetting[1].Trim();
-            achinfo.amount = Amount;
-            achinfo.ckaba = ABA;
-            achinfo.ckacct = ChkAccount;
-            achinfo.ckname = CkName;
-            achinfo.cktype = CkType;
-            achinfo.ckaccttype = AccountType;
-            try
-            {
-                com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
-                pr = soapTrans.processACHVerification(achinfo);
-                AuthCode = pr.authcode.Split(':');
-                return AuthCode;
-            }
-            catch(Exception ex)
-            {
-                return null;
-            }
-            
-            
-            
-
-        }
+       
         public cCustomerInfo GetCustomerInformation(string sContactNumber)
         {
             XmlDocument xdoc = new XmlDocument();
