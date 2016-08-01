@@ -358,15 +358,12 @@ namespace RDDSMakePayments
                             if (sPaymentPostingEmail.Length > 0 && sPaymentPostingEmail.IndexOf("@") >= 0)
                             {
 
-                                 sBody = "<p>Thank you for calling Avid Acceptance.</p>" +
-                                    "<p>Your payment transaction has been scheduled and will execute on: " + rdtpPaymentDate.Text +  ". </p>" +
-                                    "<p><b>Loan #:</b> " + txtLoanNumber.Text + "<br>" +
-                                    //"<b>Payment Type:</b> " + CardBrand.Text + "<br>" +
-                                    //"<b>Amount:</b> " + Amount.Text + "<br>" +
-                                    // "<b>Fee:</b> " + Fee.Text & "<br>" +
-                                    "<b>Total:</b> " + sTotalAmount + "</p>" +
-                                    "<p>Please Allow 24 hours after scheduled date for your account to update.</p>" +
-                                    "<p><img src=\'cid:companyLogo\' width='104' height='27' /></p>";
+                                sBody = "Thank you for calling Avid Acceptance.\r\n" +
+                                        "Your payment transaction has been scheduled and will execute on: " + rdtpPaymentDate.Text + ". \r\n" +
+                                        "Loan #: " + txtLoanNumber.Text + "\r\n" +
+                                        "Total: " + sTotalAmount + "\r\n" +
+                                        "Please Allow 24 hours after scheduled date for your account to update.";
+
                                 oMail.EmailCustomerReceipt(sPaymentPostingEmail, oSettings.CustomerServiceEmail, "Payment  (CCDEBIT)  Reference: " + sPaymentReference, sBody);
 
                             }
@@ -375,16 +372,12 @@ namespace RDDSMakePayments
                             rtxtPaymentResult.Text = "Payment Posted to Nortridge.\r\nPayment Reference: " + sPaymentReference;
                             if (sPaymentPostingEmail.Length > 0 && sPaymentPostingEmail.IndexOf("@") >= 0)
                             {
+                                sBody = "Thank you for calling Avid Acceptance.\r\n" +
+                                        "Your payment transaction has been scheduled and will execute on: " + rdtpPaymentDate.Text + ". \r\n" +
+                                        "Loan #: " + txtLoanNumber.Text + "\r\n" +
+                                        "Total: " + sTotalAmount + "\r\n" +
+                                        "Please Allow 24 hours after scheduled date for your account to update.";
 
-                                 sBody = "<p>Thank you for calling Avid Acceptance.</p>" +
-                                    "<p>Your payment transaction has processed:</p>" +
-                                    "<p><b>Loan #:</b> " + txtLoanNumber.Text + "<br>" +
-                                    //"<b>Payment Type:</b> " + CardBrand.Text + "<br>" +
-                                    //"<b>Amount:</b> " + Amount.Text + "<br>" +
-                                    // "<b>Fee:</b> " + Fee.Text & "<br>" +
-                                    "<b>Total:</b> " + sTotalAmount + "</p>" +
-                                    "<p>Please Allow 24 hours upon receipt of this confirmation for your account to update.</p>" +
-                                    "<p><img src=\'cid:companyLogo\' width='104' height='27' /></p>";
                                 oMail.EmailCustomerReceipt(sPaymentPostingEmail, oSettings.CustomerServiceEmail, "Payment  (CCDEBIT)  Reference: " + sPaymentReference, sBody);
                                 
                             }
@@ -611,15 +604,14 @@ namespace RDDSMakePayments
 
                             rtxtPaymentResult.Text = "Payment Posted to Nortridge.\r\n The transaction reference number is: " + results;
                             nls.SaveComment(txtLoanNumber.Text, "A Payment Has Been Made:  Amount: $" + sTotalAmount + ",  Reference: " + results, sNLSUserId, "<default>");
-                            sBody = "<p>Thank you for calling Avid Acceptance.</p>" +
-                           "<p>Your payment transaction has been scheduled and will execute on: " + rdtpPaymentDate.Text + ". </p>" +
-                           "<p><b>Loan #:</b> " + txtLoanNumber.Text + "<br>" +
-                           //"<b>Payment Type:</b> " + CardBrand.Text + "<br>" +
-                           //"<b>Amount:</b> " + Amount.Text + "<br>" +
-                           // "<b>Fee:</b> " + Fee.Text & "<br>" +
-                           "<b>Total:</b> " + sTotalAmount + "</p>" +
-                           "<p>Please Allow 24 hours after scheduled date for your account to update.</p>" +
-                           "<p><img src=\'cid:companyLogo\' width='104' height='27' /></p>";
+
+                            sBody = "Thank you for calling Avid Acceptance.\r\n" +
+                           "Your payment transaction has been scheduled and will execute on: " + rdtpPaymentDate.Text + ". \r\n" +
+                           "Loan #: " + txtLoanNumber.Text + "\r\n" +
+                           "Total: " + sTotalAmount + "\r\n" +
+                           "Please Allow 24 hours after scheduled date for your account to update.";
+
+                           //"<img src=\'cid:companyLogo\' width='104' height='27' /></p>";
                             oMail.EmailCustomerReceipt(sPaymentPostingEmail, oSettings.CustomerServiceEmail, "Payment  (ECP)  Reference: " + results, sBody);
                         }
                     }
@@ -629,12 +621,11 @@ namespace RDDSMakePayments
                             rtxtPaymentResult.Text = "Payment Posted to Nortridge.\r\n The transaction reference number is: " + sPaymentReference;
                             nls.SaveComment(txtLoanNumber.Text, "A Payment Has Been Made:  Amount: $" + sTotalAmount + ", Order Id: " + sPaymentReference + "\r\n AuthCode: " + StatusArray[3] + " Reference: " + StatusArray[2], sNLSUserId, "<default>");
 
-                            sBody = "<p>Thank you for calling Avid Acceptance.</p>" +
-                            "<p>Your payment transaction has processed:</p>" +
-                            "<p><b>Loan #:</b> " + txtLoanNumber.Text + "<br>" +
-                            "<b>Total:</b> " + sTotalAmount + "</p>" +
-                            "<p>Please Allow 24 hours upon receipt of this confirmation for your account to update.</p>" +
-                            "<p><img src=\'cid:companyLogo\' width='104' height='27' /></p>";
+                            sBody = "Thank you for calling Avid Acceptance.\r\n" +
+                                    "Your payment transaction has been scheduled and will execute on: " + rdtpPaymentDate.Text + ". \r\n" +
+                                    "Loan #: " + txtLoanNumber.Text + "\r\n" +
+                                    "Total: " + sTotalAmount + "\r\n" +
+                                    "Please Allow 24 hours after scheduled date for your account to update.";
 
                             oMail.EmailCustomerReceipt(sPaymentPostingEmail, oSettings.CustomerServiceEmail, "Payment  (ECP) Reference: " + sPaymentReference, sBody);
                         }
@@ -1246,7 +1237,13 @@ namespace RDDSMakePayments
         private void rbtnTestEmail_Click(object sender, EventArgs e)
         {
             RDSSNLSMPUtilsClasses.cEMail oemail = new RDSSNLSMPUtilsClasses.cEMail();
-            oemail.EmailCustomerReceipt("hilltx@gmail.com", "PaymentConfirmation@AvidAcceptance.com", "Test", "TEST");
+            string sBody = "Thank you for calling Avid Acceptance.\r\n" +
+                            "Your payment transaction has processed:\r\n" +
+                            "Loan #: 34834888 \r\n" +
+                            "Total: $350.00\r\n" +
+                            "Please Allow 24 hours upon receipt of this confirmation for your account to update.\r\n";
+                            //"<img src=\'cid:companyLogo\' width='104' height='27' /></p>";
+            oemail.EmailCustomerReceipt("hilltx@gmail.com", "PaymentConfirmation@AvidAcceptance.com", "Avid Payment Confirmation", sBody);
         }
 
 

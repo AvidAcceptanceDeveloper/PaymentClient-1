@@ -31,14 +31,14 @@ namespace RDSSNLSMPUtilsClasses
         {
             cSettings oSettings = new cSettings(Properties.Settings.Default.SettingsFile);
 
-            var reader = ImageToByte2(Properties.Resources.emailFooter);
-            MemoryStream image1 = new MemoryStream(reader);
-            AlternateView av = AlternateView.CreateAlternateViewFromString(sBody, null, System.Net.Mime.MediaTypeNames.Text.Html);
+            //var reader = ImageToByte2(Properties.Resources.emailFooter);
+            //MemoryStream image1 = new MemoryStream(reader);
+            //AlternateView av = AlternateView.CreateAlternateViewFromString(sBody, null, System.Net.Mime.MediaTypeNames.Text.Html);
 
-            LinkedResource headerImage = new LinkedResource(image1, System.Net.Mime.MediaTypeNames.Image.Jpeg);
-            headerImage.ContentId = "companyLogo";
-            headerImage.ContentType = new ContentType("image/jpg");
-            av.LinkedResources.Add(headerImage);
+            //LinkedResource headerImage = new LinkedResource(image1, System.Net.Mime.MediaTypeNames.Image.Jpeg);
+            //headerImage.ContentId = "companyLogo";
+            //headerImage.ContentType = new ContentType("image/jpg");
+            //av.LinkedResources.Add(headerImage);
 
 
             string sHost = oSettings.smtphost;
@@ -50,14 +50,14 @@ namespace RDSSNLSMPUtilsClasses
             System.Net.Mail.MailAddress oMailAddressFrom = new MailAddress(oSettings.smtpuserid);
             System.Net.Mail.MailMessage oMailMessage = new MailMessage(oMailAddressFrom, oMailAddressTo);
 
-            oMailMessage.AlternateViews.Add(av);
+            //oMailMessage.AlternateViews.Add(av);
             
             
 
             System.Net.Mail.SmtpClient oMailClient = new SmtpClient(sHost, iPort);
             ContentType mimeType = new System.Net.Mime.ContentType("text/html");
-            AlternateView alternate = AlternateView.CreateAlternateViewFromString(sBody, mimeType);
-            oMailMessage.AlternateViews.Add(alternate);
+           // AlternateView alternate = AlternateView.CreateAlternateViewFromString(sBody, mimeType);
+           // oMailMessage.AlternateViews.Add(alternate);
 
             System.Net.NetworkCredential netCred = new System.Net.NetworkCredential(sUser, sPassword);
 
