@@ -662,6 +662,8 @@ namespace RDDSMakePayments
         {
             RDSSNLSMPUtilsClasses.cNortridgeWapper oNLS = new RDSSNLSMPUtilsClasses.cNortridgeWapper();
             RDSSNLSMPUtilsClasses.cSettings oSettings = new RDSSNLSMPUtilsClasses.cSettings(Properties.Settings.Default.SettingsFile);
+            StringBuilder sb = new StringBuilder();
+
             string PAN ="";
 
             if (this.rWizMakeAPayment.SelectedPage == this.rWizMakeAPayment.Pages[1]) //Customer Demographics
@@ -682,6 +684,12 @@ namespace RDDSMakePayments
             {
 
                 string sTotalAmount="";
+                rtxtPaymentResult.Text = "";
+
+                if (rtxtCents.Text == "") { rtxtCents.Text = "00"; }
+
+                sTotalAmount = rtxtDollars.Text + rtxtCents.Text;
+                rbtnOpenPayClient.Text = "Post Payment";
 
                 if (!ValidateCCCheckFields())
                 {
@@ -693,42 +701,79 @@ namespace RDDSMakePayments
                 {
                     PAN = rtxtBankAccount.Text;
                     rtxtBankAccount.Focus();
+
+                    rtxtConfirmMsg.Text = sb.Append(rtxtPayerName.Text)
+                    .Append(", BY PROVIDING US WITH YOUR BANK ACCOUNT INFORMATION AND VERBAL AUTHORIZATION\r\n\r\nTODAY, ")
+                    .Append(String.Format("{0:MM / dd / yyyy}", DateTime.Now))
+                    .Append(", YOU ARE AUTHORIZING AVID ACCEPTANCE TO WITHDRAW THE AMOUNT OF $")
+                    .Append(String.Format("{0:C}", rtxtDollars.Text + "." + rtxtCents.Text))
+                    .Append(" AS A ONE-TIME ACH DEBIT. ")
+                    .Append("\r\n")
+                    .Append("\r\n")
+                    .Append("THE PAYMENT WILL BE POSTED TO YOUR AVID ACCOUNT ON ")
+                    .Append(rdtpPaymentDate.Value.ToShortDateString()).Append("\r\n\r\n")
+                    .Append(" PLEASE ALLOW 1 - 3 BUSINESS DAYS FOR THIS PAYMENT TO BE WITHDRAWN FROM YOUR BANK ACCOUNT. ")
+                    .Append("\r\n")
+                    .Append("\r\n")
+                    .Append("DO YOU AUTHORIZE AVID ACCEPTANCE TO PROCEED WITH THIS PAYMENT TODAY?\r\n")
+                    .Append("\r\n")
+                    .Append(" IF YOU HAVE ANY QUESTIONS REGARDING THIS PAYMENT OR WISH TO REVOKE THE PAYMENT AUTHORIZATION WITHIN ONE HOUR, ")
+                    .Append("YOU MAY REACH US AT 1 - 888 - 777 - 9190.").ToString();
+
+
                 }
                 else
                 {
                     PAN = rtxtCCNumber.Text;
                     rtxtCCNumber.Focus();
+                    rtxtConfirmMsg.Text = sb.Append(rtxtPayerName.Text).Append(", BY PROVIDING US WITH YOUR DEBIT CARD INFORMATION AND VERBAL AUTHORIZATION TODAY, ")
+                    .Append("\r\n")
+                    .Append("\r\n")
+                    .Append(String.Format("{0:MM / dd / yyyy}", DateTime.Now))
+                    .Append(" YOU ARE AUTHORIZING AVID ACCEPTANCE TO WITHDRAW THE AMOUNT OF $")
+                    .Append(String.Format("{0:C}", rtxtDollars.Text + "." + rtxtCents.Text))
+                    .Append(" AS A ONE-TIME DEBIT. ")
+                    .Append("\r\n")
+                    .Append("\r\n")
+                    .Append("THE PAYMENT WILL BE POSTED TO YOUR AVID ACCOUNT ON ")
+                    .Append(rdtpPaymentDate.Value.ToShortDateString())
+                    .Append("\r\n")
+                    .Append("\r\n")
+                    .Append(" DO YOU AUTHORIZE AVID ACCEPTANCE TO PROCEED WITH THIS PAYMENT TODAY?")
+                    .Append("\r\n")
+                    .Append("\r\n")
+                    .Append(" IF YOU HAVE ANY QUESTIONS REGARDING THIS PAYMENT OR WISH TO REVOKE THE PAYMENT AUTHORIZATION WITHIN ")
+                    .Append("\r\n")
+                    .Append("\r\n")
+                    .Append("ONE HOUR, YOU MAY REACH US AT 1 - 888 - 777 - 9190.").ToString();
+
+                   
+
                 }
 
-                rtxtPaymentResult.Text = "";
-                
-                if (rtxtCents.Text == "") { rtxtCents.Text = "00"; }
 
-                sTotalAmount = rtxtDollars.Text + rtxtCents.Text;
-                rbtnOpenPayClient.Text = "Post Payment";
 
-                rtxtConfirmMsg.Text = "A payment in the amount of $" + rtxtDollars.Text + "." + rtxtCents.Text + " is about to be applied to loan number " + txtLoanNumber.Text + 
-                    " using Card or Bank Account number " + PAN + ".\r\n";
-                rtxtConfirmMsg.Text += "\r\n";
-                rtxtConfirmMsg.Text += "The payment will be executed on this date:  " + rdtpPaymentDate.Value.ToShortDateString() + "\r\n";
-                rtxtConfirmMsg.Text += "\r\n";
-                rtxtConfirmMsg.Text += rtxtPayerName.Text + "\r\n";
-                rtxtConfirmMsg.Text += rtxtAddress1.Text + "\r\n";
-                rtxtConfirmMsg.Text += rtxtCity.Text + " " + rddlState.Text + " " + rtxtZip.Text;
-                rtxtConfirmMsg.Text += "\r\n";
-                rtxtConfirmMsg.Text += "\r\n";
-                if (rpvPaymethod.SelectedPage==rpvCheck)
-                {
-                    rtxtConfirmMsg.Text += "Click Post Payment to complete this transaction\r\n";
-                }
-                else
-                {
-                    rtxtConfirmMsg.Text += "Click Post Payment to complete this transaction\r\n";
-                }
-                    
-                rtxtConfirmMsg.Text += "or use the Back button to make changes.\r\n";
+                //rtxtConfirmMsg.Text = "A payment in the amount of $" + rtxtDollars.Text + "." + rtxtCents.Text + " is about to be applied to loan number " + txtLoanNumber.Text + 
+                //    " using Card or Bank Account number " + PAN + ".\r\n";
+                //rtxtConfirmMsg.Text += "\r\n";
+                //rtxtConfirmMsg.Text += "The payment will be executed on this date:  " + rdtpPaymentDate.Value.ToShortDateString() + "\r\n";
+                //rtxtConfirmMsg.Text += "\r\n";
+                //rtxtConfirmMsg.Text += rtxtPayerName.Text + "\r\n";
+                //rtxtConfirmMsg.Text += rtxtAddress1.Text + "\r\n";
+                //rtxtConfirmMsg.Text += rtxtCity.Text + " " + rddlState.Text + " " + rtxtZip.Text;
+                //rtxtConfirmMsg.Text += "\r\n";
+                //rtxtConfirmMsg.Text += "\r\n";
 
-              
+
+
+
+
+
+
+
+
+
+
 
                 rbtnOpenPayClient.Visibility = Telerik.WinControls.ElementVisibility.Visible;
                 rWizMakeAPayment.FinishButton.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
@@ -1039,6 +1084,7 @@ namespace RDDSMakePayments
 
             rtxtPaymentResult.Text = "";
 
+            rbtnOpenPayClient.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
             rWizMakeAPayment.BackButton.Visibility = Telerik.WinControls.ElementVisibility.Visible;
 
             if (rpvPaymethod.SelectedPage==rpvCheck)

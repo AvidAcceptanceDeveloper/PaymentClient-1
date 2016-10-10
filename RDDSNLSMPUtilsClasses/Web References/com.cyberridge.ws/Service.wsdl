@@ -2,6 +2,418 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://nortridge.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://nortridge.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://nortridge.com/">
+      <s:element name="NLSAuthenticateByContactType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipaddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSAuthenticateByContactTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSAuthenticateByContactTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGlobalAuthentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGlobalAuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGlobalAuthenticationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetLoanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeRelatedLoans" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetLoanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGetLoanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetLoanDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetLoanDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGetLoanDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetLoanCreditLines">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetLoanCreditLinesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGetLoanCreditLinesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGetContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSStatementImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSStatementImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSStatementImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSStatementImageBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSStatementImageBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSStatementImageBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLoanPendingTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLoanPendingTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSLoanPendingTransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLogOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSLogOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSLogOutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSVerifyContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SSNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSVerifyContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSVerifyContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSCreateCredentials">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSCreateCredentialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSCreateCredentialsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSCreateCredentialsByContactType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSCreateCredentialsByContactTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSCreateCredentialsByContactTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryByEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryByEmailByContactType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryByEmailByContactTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryByEmailByContactTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryHints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryHintsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryHintsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryHintsByContactType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryHintsByContactTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryHintsByContactTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryAnswers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryAnswersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryAnswersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryAnswersByContactType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSPasswordRecoveryAnswersByContactTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryAnswersByContactTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSForceChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSForceChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSForceChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetContactTaskList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetContactTaskListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGetContactTaskListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetContactTaskRelationshipsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetContactTaskRelationshipsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGetContactTaskRelationshipsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetTaskDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskRefno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NLSGetTaskDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NLSGetTaskDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="NLSContactUDF">
         <s:complexType>
           <s:sequence>
@@ -800,409 +1212,156 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="NLSAuthenticateByContactType">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="contact_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ipaddress" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSAuthenticateByContactTypeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSAuthenticateByContactTypeResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGlobalAuthentication">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGlobalAuthenticationResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSGlobalAuthenticationResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetLoanList">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="IncludeRelatedLoans" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetLoanListResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSGetLoanListResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetLoanDetail">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetLoanDetailResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSGetLoanDetailResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetContact">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetContactResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSGetContactResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSStatementImage">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSStatementImageResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSStatementImageResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSStatementImageBase64">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="DocumentID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSStatementImageBase64Response">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSStatementImageBase64Result" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLoanPendingTransactions">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLoanPendingTransactionsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSLoanPendingTransactionsResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLogOut">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSLogOutResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSLogOutResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSVerifyContact">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SSNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LoanNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSVerifyContactResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSVerifyContactResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSCreateCredentials">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactPassword" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer2" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSCreateCredentialsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSCreateCredentialsResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSCreateCredentialsByContactType">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactPassword" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordHint2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PasswordAnswer2" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSCreateCredentialsByContactTypeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSCreateCredentialsByContactTypeResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryByEmail">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryByEmailResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryByEmailResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryByEmailByContactType">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryByEmailByContactTypeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryByEmailByContactTypeResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryHints">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryHintsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryHintsResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryHintsByContactType">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryHintsByContactTypeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryHintsByContactTypeResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryAnswers">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer2" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryAnswersResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryAnswersResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryAnswersByContactType">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ContactType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="db_type" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="server_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="database_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactUserName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="HintAnswer2" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSPasswordRecoveryAnswersByContactTypeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSPasswordRecoveryAnswersByContactTypeResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSChangePassword">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OldPassword" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSChangePasswordResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSChangePasswordResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSForceChangePassword">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSForceChangePasswordResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSForceChangePasswordResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetContactTaskList">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetContactTaskListResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSGetContactTaskListResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetContactTaskRelationshipsList">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetContactTaskRelationshipsListResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSGetContactTaskRelationshipsListResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetTaskDetail">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="TaskRefno" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NLSGetTaskDetailResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NLSGetTaskDetailResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="string" nillable="true" type="s:string" />
       <s:element name="double" type="s:double" />
       <s:element name="int" type="s:int" />
       <s:element name="boolean" type="s:boolean" />
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="NLSAuthenticateByContactTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSAuthenticateByContactType" />
+  </wsdl:message>
+  <wsdl:message name="NLSAuthenticateByContactTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSAuthenticateByContactTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGlobalAuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGlobalAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="NLSGlobalAuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGlobalAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetLoanListSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGetLoanList" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetLoanListSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGetLoanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetLoanDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGetLoanDetail" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetLoanDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGetLoanDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetLoanCreditLinesSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGetLoanCreditLines" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetLoanCreditLinesSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGetLoanCreditLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetContactSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGetContact" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetContactSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGetContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSStatementImageSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSStatementImage" />
+  </wsdl:message>
+  <wsdl:message name="NLSStatementImageSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSStatementImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSStatementImageBase64SoapIn">
+    <wsdl:part name="parameters" element="tns:NLSStatementImageBase64" />
+  </wsdl:message>
+  <wsdl:message name="NLSStatementImageBase64SoapOut">
+    <wsdl:part name="parameters" element="tns:NLSStatementImageBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="NLSLoanPendingTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSLoanPendingTransactions" />
+  </wsdl:message>
+  <wsdl:message name="NLSLoanPendingTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSLoanPendingTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSLogOutSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSLogOut" />
+  </wsdl:message>
+  <wsdl:message name="NLSLogOutSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSLogOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSVerifyContactSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSVerifyContact" />
+  </wsdl:message>
+  <wsdl:message name="NLSVerifyContactSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSVerifyContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSCreateCredentialsSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSCreateCredentials" />
+  </wsdl:message>
+  <wsdl:message name="NLSCreateCredentialsSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSCreateCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSCreateCredentialsByContactTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSCreateCredentialsByContactType" />
+  </wsdl:message>
+  <wsdl:message name="NLSCreateCredentialsByContactTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSCreateCredentialsByContactTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmail" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmailByContactType" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmailByContactTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryHintsSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHints" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryHintsSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHintsResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHintsByContactType" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHintsByContactTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryAnswersSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswers" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryAnswersSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswersResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswersByContactType" />
+  </wsdl:message>
+  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswersByContactTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="NLSChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSForceChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSForceChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="NLSForceChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSForceChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetContactTaskListSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGetContactTaskList" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetContactTaskListSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGetContactTaskListResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetContactTaskRelationshipsListSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGetContactTaskRelationshipsList" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetContactTaskRelationshipsListSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGetContactTaskRelationshipsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetTaskDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:NLSGetTaskDetail" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetTaskDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:NLSGetTaskDetailResponse" />
+  </wsdl:message>
   <wsdl:message name="NLSContactUDFSoapIn">
     <wsdl:part name="parameters" element="tns:NLSContactUDF" />
   </wsdl:message>
@@ -1479,143 +1638,225 @@
   <wsdl:message name="NLSAuthenticateSoapOut">
     <wsdl:part name="parameters" element="tns:NLSAuthenticateResponse" />
   </wsdl:message>
-  <wsdl:message name="NLSAuthenticateByContactTypeSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSAuthenticateByContactType" />
+  <wsdl:message name="NLSAuthenticateByContactTypeHttpGetIn">
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="contact_type" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="ipaddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSAuthenticateByContactTypeSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSAuthenticateByContactTypeResponse" />
+  <wsdl:message name="NLSAuthenticateByContactTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGlobalAuthenticationSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSGlobalAuthentication" />
+  <wsdl:message name="NLSGlobalAuthenticationHttpGetIn">
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGlobalAuthenticationSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSGlobalAuthenticationResponse" />
+  <wsdl:message name="NLSGlobalAuthenticationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanListSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSGetLoanList" />
+  <wsdl:message name="NLSGetLoanListHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="ContactNumber" type="s:string" />
+    <wsdl:part name="IncludeRelatedLoans" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanListSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSGetLoanListResponse" />
+  <wsdl:message name="NLSGetLoanListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanDetailSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSGetLoanDetail" />
+  <wsdl:message name="NLSGetLoanDetailHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanDetailSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSGetLoanDetailResponse" />
+  <wsdl:message name="NLSGetLoanDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSGetContact" />
+  <wsdl:message name="NLSGetLoanCreditLinesHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSGetContactResponse" />
+  <wsdl:message name="NLSGetLoanCreditLinesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSStatementImage" />
+  <wsdl:message name="NLSGetContactHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="ContactNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSStatementImageResponse" />
+  <wsdl:message name="NLSGetContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageBase64SoapIn">
-    <wsdl:part name="parameters" element="tns:NLSStatementImageBase64" />
+  <wsdl:message name="NLSStatementImageHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
+    <wsdl:part name="DocumentID" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageBase64SoapOut">
-    <wsdl:part name="parameters" element="tns:NLSStatementImageBase64Response" />
+  <wsdl:message name="NLSStatementImageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPendingTransactionsSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSLoanPendingTransactions" />
+  <wsdl:message name="NLSStatementImageBase64HttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
+    <wsdl:part name="DocumentID" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPendingTransactionsSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSLoanPendingTransactionsResponse" />
+  <wsdl:message name="NLSStatementImageBase64HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLogOutSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSLogOut" />
+  <wsdl:message name="NLSLoanPendingTransactionsHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLogOutSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSLogOutResponse" />
+  <wsdl:message name="NLSLoanPendingTransactionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSVerifyContactSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSVerifyContact" />
+  <wsdl:message name="NLSLogOutHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSVerifyContactSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSVerifyContactResponse" />
+  <wsdl:message name="NLSLogOutHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSCreateCredentials" />
+  <wsdl:message name="NLSVerifyContactHttpGetIn">
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="SSNumber" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSCreateCredentialsResponse" />
+  <wsdl:message name="NLSVerifyContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsByContactTypeSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSCreateCredentialsByContactType" />
+  <wsdl:message name="NLSCreateCredentialsHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
+    <wsdl:part name="ContactPassword" type="s:string" />
+    <wsdl:part name="PasswordHint1" type="s:string" />
+    <wsdl:part name="PasswordAnswer1" type="s:string" />
+    <wsdl:part name="PasswordHint2" type="s:string" />
+    <wsdl:part name="PasswordAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsByContactTypeSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSCreateCredentialsByContactTypeResponse" />
+  <wsdl:message name="NLSCreateCredentialsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmail" />
+  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="ContactType" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
+    <wsdl:part name="ContactPassword" type="s:string" />
+    <wsdl:part name="PasswordHint1" type="s:string" />
+    <wsdl:part name="PasswordAnswer1" type="s:string" />
+    <wsdl:part name="PasswordHint2" type="s:string" />
+    <wsdl:part name="PasswordAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmailResponse" />
+  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmailByContactType" />
+  <wsdl:message name="NLSPasswordRecoveryByEmailHttpGetIn">
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
+    <wsdl:part name="IPAddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryByEmailByContactTypeResponse" />
+  <wsdl:message name="NLSPasswordRecoveryByEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHints" />
+  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpGetIn">
+    <wsdl:part name="ContactType" type="s:string" />
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
+    <wsdl:part name="IPAddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHintsResponse" />
+  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHintsByContactType" />
+  <wsdl:message name="NLSPasswordRecoveryHintsHttpGetIn">
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryHintsByContactTypeResponse" />
+  <wsdl:message name="NLSPasswordRecoveryHintsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswers" />
+  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpGetIn">
+    <wsdl:part name="ContactType" type="s:string" />
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswersResponse" />
+  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswersByContactType" />
+  <wsdl:message name="NLSPasswordRecoveryAnswersHttpGetIn">
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
+    <wsdl:part name="HintAnswer1" type="s:string" />
+    <wsdl:part name="HintAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSPasswordRecoveryAnswersByContactTypeResponse" />
+  <wsdl:message name="NLSPasswordRecoveryAnswersHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSChangePasswordSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSChangePassword" />
+  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpGetIn">
+    <wsdl:part name="ContactType" type="s:string" />
+    <wsdl:part name="db_type" type="s:string" />
+    <wsdl:part name="server_name" type="s:string" />
+    <wsdl:part name="database_name" type="s:string" />
+    <wsdl:part name="ContactUserName" type="s:string" />
+    <wsdl:part name="HintAnswer1" type="s:string" />
+    <wsdl:part name="HintAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSChangePasswordSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSChangePasswordResponse" />
+  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSForceChangePasswordSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSForceChangePassword" />
+  <wsdl:message name="NLSChangePasswordHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="OldPassword" type="s:string" />
+    <wsdl:part name="NewPassword" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSForceChangePasswordSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSForceChangePasswordResponse" />
+  <wsdl:message name="NLSChangePasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskListSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSGetContactTaskList" />
+  <wsdl:message name="NLSForceChangePasswordHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="NewPassword" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskListSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSGetContactTaskListResponse" />
+  <wsdl:message name="NLSForceChangePasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskRelationshipsListSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSGetContactTaskRelationshipsList" />
+  <wsdl:message name="NLSGetContactTaskListHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="ContactNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskRelationshipsListSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSGetContactTaskRelationshipsListResponse" />
+  <wsdl:message name="NLSGetContactTaskListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetTaskDetailSoapIn">
-    <wsdl:part name="parameters" element="tns:NLSGetTaskDetail" />
+  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="ContactNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetTaskDetailSoapOut">
-    <wsdl:part name="parameters" element="tns:NLSGetTaskDetailResponse" />
+  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetTaskDetailHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="TaskRefno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetTaskDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="NLSContactUDFHttpGetIn">
     <wsdl:part name="token" type="s:string" />
@@ -1999,7 +2240,7 @@
   <wsdl:message name="NLSAuthenticateHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSAuthenticateByContactTypeHttpGetIn">
+  <wsdl:message name="NLSAuthenticateByContactTypeHttpPostIn">
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
     <wsdl:part name="database_name" type="s:string" />
@@ -2008,69 +2249,76 @@
     <wsdl:part name="password" type="s:string" />
     <wsdl:part name="ipaddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSAuthenticateByContactTypeHttpGetOut">
+  <wsdl:message name="NLSAuthenticateByContactTypeHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGlobalAuthenticationHttpGetIn">
+  <wsdl:message name="NLSGlobalAuthenticationHttpPostIn">
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
     <wsdl:part name="database_name" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGlobalAuthenticationHttpGetOut">
+  <wsdl:message name="NLSGlobalAuthenticationHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanListHttpGetIn">
+  <wsdl:message name="NLSGetLoanListHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="ContactNumber" type="s:string" />
     <wsdl:part name="IncludeRelatedLoans" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanListHttpGetOut">
+  <wsdl:message name="NLSGetLoanListHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanDetailHttpGetIn">
+  <wsdl:message name="NLSGetLoanDetailHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="LoanNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetLoanDetailHttpGetOut">
+  <wsdl:message name="NLSGetLoanDetailHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactHttpGetIn">
+  <wsdl:message name="NLSGetLoanCreditLinesHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="LoanNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetLoanCreditLinesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="NLSGetContactHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="ContactNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactHttpGetOut">
+  <wsdl:message name="NLSGetContactHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageHttpGetIn">
+  <wsdl:message name="NLSStatementImageHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="LoanNumber" type="s:string" />
     <wsdl:part name="DocumentID" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageHttpGetOut">
+  <wsdl:message name="NLSStatementImageHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageBase64HttpGetIn">
+  <wsdl:message name="NLSStatementImageBase64HttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="LoanNumber" type="s:string" />
     <wsdl:part name="DocumentID" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSStatementImageBase64HttpGetOut">
+  <wsdl:message name="NLSStatementImageBase64HttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPendingTransactionsHttpGetIn">
+  <wsdl:message name="NLSLoanPendingTransactionsHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="LoanNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLoanPendingTransactionsHttpGetOut">
+  <wsdl:message name="NLSLoanPendingTransactionsHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLogOutHttpGetIn">
+  <wsdl:message name="NLSLogOutHttpPostIn">
     <wsdl:part name="token" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSLogOutHttpGetOut">
+  <wsdl:message name="NLSLogOutHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSVerifyContactHttpGetIn">
+  <wsdl:message name="NLSVerifyContactHttpPostIn">
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
     <wsdl:part name="database_name" type="s:string" />
@@ -2085,10 +2333,10 @@
     <wsdl:part name="LoanNumber" type="s:string" />
     <wsdl:part name="EmailAddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSVerifyContactHttpGetOut">
+  <wsdl:message name="NLSVerifyContactHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsHttpGetIn">
+  <wsdl:message name="NLSCreateCredentialsHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="ContactUserName" type="s:string" />
     <wsdl:part name="ContactPassword" type="s:string" />
@@ -2097,10 +2345,10 @@
     <wsdl:part name="PasswordHint2" type="s:string" />
     <wsdl:part name="PasswordAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsHttpGetOut">
+  <wsdl:message name="NLSCreateCredentialsHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpGetIn">
+  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="ContactType" type="s:string" />
     <wsdl:part name="ContactUserName" type="s:string" />
@@ -2110,20 +2358,20 @@
     <wsdl:part name="PasswordHint2" type="s:string" />
     <wsdl:part name="PasswordAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpGetOut">
+  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailHttpGetIn">
+  <wsdl:message name="NLSPasswordRecoveryByEmailHttpPostIn">
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
     <wsdl:part name="database_name" type="s:string" />
     <wsdl:part name="ContactUserName" type="s:string" />
     <wsdl:part name="IPAddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailHttpGetOut">
+  <wsdl:message name="NLSPasswordRecoveryByEmailHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpGetIn">
+  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpPostIn">
     <wsdl:part name="ContactType" type="s:string" />
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
@@ -2131,29 +2379,29 @@
     <wsdl:part name="ContactUserName" type="s:string" />
     <wsdl:part name="IPAddress" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpGetOut">
+  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsHttpGetIn">
+  <wsdl:message name="NLSPasswordRecoveryHintsHttpPostIn">
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
     <wsdl:part name="database_name" type="s:string" />
     <wsdl:part name="ContactUserName" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsHttpGetOut">
+  <wsdl:message name="NLSPasswordRecoveryHintsHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpGetIn">
+  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpPostIn">
     <wsdl:part name="ContactType" type="s:string" />
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
     <wsdl:part name="database_name" type="s:string" />
     <wsdl:part name="ContactUserName" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpGetOut">
+  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersHttpGetIn">
+  <wsdl:message name="NLSPasswordRecoveryAnswersHttpPostIn">
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
     <wsdl:part name="database_name" type="s:string" />
@@ -2161,10 +2409,10 @@
     <wsdl:part name="HintAnswer1" type="s:string" />
     <wsdl:part name="HintAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersHttpGetOut">
+  <wsdl:message name="NLSPasswordRecoveryAnswersHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpGetIn">
+  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpPostIn">
     <wsdl:part name="ContactType" type="s:string" />
     <wsdl:part name="db_type" type="s:string" />
     <wsdl:part name="server_name" type="s:string" />
@@ -2173,43 +2421,43 @@
     <wsdl:part name="HintAnswer1" type="s:string" />
     <wsdl:part name="HintAnswer2" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpGetOut">
+  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSChangePasswordHttpGetIn">
+  <wsdl:message name="NLSChangePasswordHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="OldPassword" type="s:string" />
     <wsdl:part name="NewPassword" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSChangePasswordHttpGetOut">
+  <wsdl:message name="NLSChangePasswordHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSForceChangePasswordHttpGetIn">
+  <wsdl:message name="NLSForceChangePasswordHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="NewPassword" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSForceChangePasswordHttpGetOut">
+  <wsdl:message name="NLSForceChangePasswordHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskListHttpGetIn">
+  <wsdl:message name="NLSGetContactTaskListHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="ContactNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskListHttpGetOut">
+  <wsdl:message name="NLSGetContactTaskListHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpGetIn">
+  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="ContactNumber" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpGetOut">
+  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetTaskDetailHttpGetIn">
+  <wsdl:message name="NLSGetTaskDetailHttpPostIn">
     <wsdl:part name="token" type="s:string" />
     <wsdl:part name="TaskRefno" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="NLSGetTaskDetailHttpGetOut">
+  <wsdl:message name="NLSGetTaskDetailHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="NLSContactUDFHttpPostIn">
@@ -2594,220 +2842,103 @@
   <wsdl:message name="NLSAuthenticateHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="NLSAuthenticateByContactTypeHttpPostIn">
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="contact_type" type="s:string" />
-    <wsdl:part name="username" type="s:string" />
-    <wsdl:part name="password" type="s:string" />
-    <wsdl:part name="ipaddress" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSAuthenticateByContactTypeHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGlobalAuthenticationHttpPostIn">
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGlobalAuthenticationHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetLoanListHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="ContactNumber" type="s:string" />
-    <wsdl:part name="IncludeRelatedLoans" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetLoanListHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetLoanDetailHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="LoanNumber" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetLoanDetailHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetContactHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="ContactNumber" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetContactHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSStatementImageHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="LoanNumber" type="s:string" />
-    <wsdl:part name="DocumentID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSStatementImageHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSStatementImageBase64HttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="LoanNumber" type="s:string" />
-    <wsdl:part name="DocumentID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSStatementImageBase64HttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLoanPendingTransactionsHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="LoanNumber" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLoanPendingTransactionsHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLogOutHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSLogOutHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSVerifyContactHttpPostIn">
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="FirstName" type="s:string" />
-    <wsdl:part name="LastName" type="s:string" />
-    <wsdl:part name="SSNumber" type="s:string" />
-    <wsdl:part name="Address" type="s:string" />
-    <wsdl:part name="City" type="s:string" />
-    <wsdl:part name="State" type="s:string" />
-    <wsdl:part name="Zip" type="s:string" />
-    <wsdl:part name="Phone" type="s:string" />
-    <wsdl:part name="LoanNumber" type="s:string" />
-    <wsdl:part name="EmailAddress" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSVerifyContactHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-    <wsdl:part name="ContactPassword" type="s:string" />
-    <wsdl:part name="PasswordHint1" type="s:string" />
-    <wsdl:part name="PasswordAnswer1" type="s:string" />
-    <wsdl:part name="PasswordHint2" type="s:string" />
-    <wsdl:part name="PasswordAnswer2" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="ContactType" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-    <wsdl:part name="ContactPassword" type="s:string" />
-    <wsdl:part name="PasswordHint1" type="s:string" />
-    <wsdl:part name="PasswordAnswer1" type="s:string" />
-    <wsdl:part name="PasswordHint2" type="s:string" />
-    <wsdl:part name="PasswordAnswer2" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSCreateCredentialsByContactTypeHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailHttpPostIn">
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-    <wsdl:part name="IPAddress" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpPostIn">
-    <wsdl:part name="ContactType" type="s:string" />
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-    <wsdl:part name="IPAddress" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryByEmailByContactTypeHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsHttpPostIn">
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpPostIn">
-    <wsdl:part name="ContactType" type="s:string" />
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryHintsByContactTypeHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersHttpPostIn">
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-    <wsdl:part name="HintAnswer1" type="s:string" />
-    <wsdl:part name="HintAnswer2" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpPostIn">
-    <wsdl:part name="ContactType" type="s:string" />
-    <wsdl:part name="db_type" type="s:string" />
-    <wsdl:part name="server_name" type="s:string" />
-    <wsdl:part name="database_name" type="s:string" />
-    <wsdl:part name="ContactUserName" type="s:string" />
-    <wsdl:part name="HintAnswer1" type="s:string" />
-    <wsdl:part name="HintAnswer2" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSPasswordRecoveryAnswersByContactTypeHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSChangePasswordHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="OldPassword" type="s:string" />
-    <wsdl:part name="NewPassword" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSChangePasswordHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSForceChangePasswordHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="NewPassword" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSForceChangePasswordHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskListHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="ContactNumber" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskListHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="ContactNumber" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetContactTaskRelationshipsListHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetTaskDetailHttpPostIn">
-    <wsdl:part name="token" type="s:string" />
-    <wsdl:part name="TaskRefno" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="NLSGetTaskDetailHttpPostOut">
-    <wsdl:part name="Body" element="tns:string" />
-  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="NLSAuthenticateByContactType">
+      <wsdl:input message="tns:NLSAuthenticateByContactTypeSoapIn" />
+      <wsdl:output message="tns:NLSAuthenticateByContactTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGlobalAuthentication">
+      <wsdl:input message="tns:NLSGlobalAuthenticationSoapIn" />
+      <wsdl:output message="tns:NLSGlobalAuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanList">
+      <wsdl:input message="tns:NLSGetLoanListSoapIn" />
+      <wsdl:output message="tns:NLSGetLoanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanDetail">
+      <wsdl:input message="tns:NLSGetLoanDetailSoapIn" />
+      <wsdl:output message="tns:NLSGetLoanDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanCreditLines">
+      <wsdl:input message="tns:NLSGetLoanCreditLinesSoapIn" />
+      <wsdl:output message="tns:NLSGetLoanCreditLinesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContact">
+      <wsdl:input message="tns:NLSGetContactSoapIn" />
+      <wsdl:output message="tns:NLSGetContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImage">
+      <wsdl:input message="tns:NLSStatementImageSoapIn" />
+      <wsdl:output message="tns:NLSStatementImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImageBase64">
+      <wsdl:input message="tns:NLSStatementImageBase64SoapIn" />
+      <wsdl:output message="tns:NLSStatementImageBase64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPendingTransactions">
+      <wsdl:input message="tns:NLSLoanPendingTransactionsSoapIn" />
+      <wsdl:output message="tns:NLSLoanPendingTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLogOut">
+      <wsdl:input message="tns:NLSLogOutSoapIn" />
+      <wsdl:output message="tns:NLSLogOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSVerifyContact">
+      <wsdl:input message="tns:NLSVerifyContactSoapIn" />
+      <wsdl:output message="tns:NLSVerifyContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentials">
+      <wsdl:input message="tns:NLSCreateCredentialsSoapIn" />
+      <wsdl:output message="tns:NLSCreateCredentialsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentialsByContactType">
+      <wsdl:input message="tns:NLSCreateCredentialsByContactTypeSoapIn" />
+      <wsdl:output message="tns:NLSCreateCredentialsByContactTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmail">
+      <wsdl:input message="tns:NLSPasswordRecoveryByEmailSoapIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryByEmailByContactTypeSoapIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryByEmailByContactTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHints">
+      <wsdl:input message="tns:NLSPasswordRecoveryHintsSoapIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryHintsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryHintsByContactTypeSoapIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryHintsByContactTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswers">
+      <wsdl:input message="tns:NLSPasswordRecoveryAnswersSoapIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryAnswersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryAnswersByContactTypeSoapIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryAnswersByContactTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSChangePassword">
+      <wsdl:input message="tns:NLSChangePasswordSoapIn" />
+      <wsdl:output message="tns:NLSChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSForceChangePassword">
+      <wsdl:input message="tns:NLSForceChangePasswordSoapIn" />
+      <wsdl:output message="tns:NLSForceChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskList">
+      <wsdl:input message="tns:NLSGetContactTaskListSoapIn" />
+      <wsdl:output message="tns:NLSGetContactTaskListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
+      <wsdl:input message="tns:NLSGetContactTaskRelationshipsListSoapIn" />
+      <wsdl:output message="tns:NLSGetContactTaskRelationshipsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetTaskDetail">
+      <wsdl:input message="tns:NLSGetTaskDetailSoapIn" />
+      <wsdl:output message="tns:NLSGetTaskDetailSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="NLSContactUDF">
       <wsdl:input message="tns:NLSContactUDFSoapIn" />
       <wsdl:output message="tns:NLSContactUDFSoapOut" />
@@ -2992,100 +3123,104 @@
       <wsdl:input message="tns:NLSAuthenticateSoapIn" />
       <wsdl:output message="tns:NLSAuthenticateSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="NLSAuthenticateByContactType">
-      <wsdl:input message="tns:NLSAuthenticateByContactTypeSoapIn" />
-      <wsdl:output message="tns:NLSAuthenticateByContactTypeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGlobalAuthentication">
-      <wsdl:input message="tns:NLSGlobalAuthenticationSoapIn" />
-      <wsdl:output message="tns:NLSGlobalAuthenticationSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanList">
-      <wsdl:input message="tns:NLSGetLoanListSoapIn" />
-      <wsdl:output message="tns:NLSGetLoanListSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanDetail">
-      <wsdl:input message="tns:NLSGetLoanDetailSoapIn" />
-      <wsdl:output message="tns:NLSGetLoanDetailSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContact">
-      <wsdl:input message="tns:NLSGetContactSoapIn" />
-      <wsdl:output message="tns:NLSGetContactSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImage">
-      <wsdl:input message="tns:NLSStatementImageSoapIn" />
-      <wsdl:output message="tns:NLSStatementImageSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImageBase64">
-      <wsdl:input message="tns:NLSStatementImageBase64SoapIn" />
-      <wsdl:output message="tns:NLSStatementImageBase64SoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPendingTransactions">
-      <wsdl:input message="tns:NLSLoanPendingTransactionsSoapIn" />
-      <wsdl:output message="tns:NLSLoanPendingTransactionsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLogOut">
-      <wsdl:input message="tns:NLSLogOutSoapIn" />
-      <wsdl:output message="tns:NLSLogOutSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSVerifyContact">
-      <wsdl:input message="tns:NLSVerifyContactSoapIn" />
-      <wsdl:output message="tns:NLSVerifyContactSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentials">
-      <wsdl:input message="tns:NLSCreateCredentialsSoapIn" />
-      <wsdl:output message="tns:NLSCreateCredentialsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentialsByContactType">
-      <wsdl:input message="tns:NLSCreateCredentialsByContactTypeSoapIn" />
-      <wsdl:output message="tns:NLSCreateCredentialsByContactTypeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmail">
-      <wsdl:input message="tns:NLSPasswordRecoveryByEmailSoapIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryByEmailSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryByEmailByContactTypeSoapIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryByEmailByContactTypeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHints">
-      <wsdl:input message="tns:NLSPasswordRecoveryHintsSoapIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryHintsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryHintsByContactTypeSoapIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryHintsByContactTypeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswers">
-      <wsdl:input message="tns:NLSPasswordRecoveryAnswersSoapIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryAnswersSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryAnswersByContactTypeSoapIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryAnswersByContactTypeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSChangePassword">
-      <wsdl:input message="tns:NLSChangePasswordSoapIn" />
-      <wsdl:output message="tns:NLSChangePasswordSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSForceChangePassword">
-      <wsdl:input message="tns:NLSForceChangePasswordSoapIn" />
-      <wsdl:output message="tns:NLSForceChangePasswordSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskList">
-      <wsdl:input message="tns:NLSGetContactTaskListSoapIn" />
-      <wsdl:output message="tns:NLSGetContactTaskListSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
-      <wsdl:input message="tns:NLSGetContactTaskRelationshipsListSoapIn" />
-      <wsdl:output message="tns:NLSGetContactTaskRelationshipsListSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetTaskDetail">
-      <wsdl:input message="tns:NLSGetTaskDetailSoapIn" />
-      <wsdl:output message="tns:NLSGetTaskDetailSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="NLSAuthenticateByContactType">
+      <wsdl:input message="tns:NLSAuthenticateByContactTypeHttpGetIn" />
+      <wsdl:output message="tns:NLSAuthenticateByContactTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGlobalAuthentication">
+      <wsdl:input message="tns:NLSGlobalAuthenticationHttpGetIn" />
+      <wsdl:output message="tns:NLSGlobalAuthenticationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanList">
+      <wsdl:input message="tns:NLSGetLoanListHttpGetIn" />
+      <wsdl:output message="tns:NLSGetLoanListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanDetail">
+      <wsdl:input message="tns:NLSGetLoanDetailHttpGetIn" />
+      <wsdl:output message="tns:NLSGetLoanDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanCreditLines">
+      <wsdl:input message="tns:NLSGetLoanCreditLinesHttpGetIn" />
+      <wsdl:output message="tns:NLSGetLoanCreditLinesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContact">
+      <wsdl:input message="tns:NLSGetContactHttpGetIn" />
+      <wsdl:output message="tns:NLSGetContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImage">
+      <wsdl:input message="tns:NLSStatementImageHttpGetIn" />
+      <wsdl:output message="tns:NLSStatementImageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImageBase64">
+      <wsdl:input message="tns:NLSStatementImageBase64HttpGetIn" />
+      <wsdl:output message="tns:NLSStatementImageBase64HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPendingTransactions">
+      <wsdl:input message="tns:NLSLoanPendingTransactionsHttpGetIn" />
+      <wsdl:output message="tns:NLSLoanPendingTransactionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLogOut">
+      <wsdl:input message="tns:NLSLogOutHttpGetIn" />
+      <wsdl:output message="tns:NLSLogOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSVerifyContact">
+      <wsdl:input message="tns:NLSVerifyContactHttpGetIn" />
+      <wsdl:output message="tns:NLSVerifyContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentials">
+      <wsdl:input message="tns:NLSCreateCredentialsHttpGetIn" />
+      <wsdl:output message="tns:NLSCreateCredentialsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentialsByContactType">
+      <wsdl:input message="tns:NLSCreateCredentialsByContactTypeHttpGetIn" />
+      <wsdl:output message="tns:NLSCreateCredentialsByContactTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmail">
+      <wsdl:input message="tns:NLSPasswordRecoveryByEmailHttpGetIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryByEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpGetIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHints">
+      <wsdl:input message="tns:NLSPasswordRecoveryHintsHttpGetIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryHintsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryHintsByContactTypeHttpGetIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryHintsByContactTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswers">
+      <wsdl:input message="tns:NLSPasswordRecoveryAnswersHttpGetIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryAnswersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpGetIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSChangePassword">
+      <wsdl:input message="tns:NLSChangePasswordHttpGetIn" />
+      <wsdl:output message="tns:NLSChangePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSForceChangePassword">
+      <wsdl:input message="tns:NLSForceChangePasswordHttpGetIn" />
+      <wsdl:output message="tns:NLSForceChangePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskList">
+      <wsdl:input message="tns:NLSGetContactTaskListHttpGetIn" />
+      <wsdl:output message="tns:NLSGetContactTaskListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
+      <wsdl:input message="tns:NLSGetContactTaskRelationshipsListHttpGetIn" />
+      <wsdl:output message="tns:NLSGetContactTaskRelationshipsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetTaskDetail">
+      <wsdl:input message="tns:NLSGetTaskDetailHttpGetIn" />
+      <wsdl:output message="tns:NLSGetTaskDetailHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="NLSContactUDF">
       <wsdl:input message="tns:NLSContactUDFHttpGetIn" />
       <wsdl:output message="tns:NLSContactUDFHttpGetOut" />
@@ -3250,100 +3385,104 @@
       <wsdl:input message="tns:NLSAuthenticateHttpGetIn" />
       <wsdl:output message="tns:NLSAuthenticateHttpGetOut" />
     </wsdl:operation>
-    <wsdl:operation name="NLSAuthenticateByContactType">
-      <wsdl:input message="tns:NLSAuthenticateByContactTypeHttpGetIn" />
-      <wsdl:output message="tns:NLSAuthenticateByContactTypeHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGlobalAuthentication">
-      <wsdl:input message="tns:NLSGlobalAuthenticationHttpGetIn" />
-      <wsdl:output message="tns:NLSGlobalAuthenticationHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanList">
-      <wsdl:input message="tns:NLSGetLoanListHttpGetIn" />
-      <wsdl:output message="tns:NLSGetLoanListHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanDetail">
-      <wsdl:input message="tns:NLSGetLoanDetailHttpGetIn" />
-      <wsdl:output message="tns:NLSGetLoanDetailHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContact">
-      <wsdl:input message="tns:NLSGetContactHttpGetIn" />
-      <wsdl:output message="tns:NLSGetContactHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImage">
-      <wsdl:input message="tns:NLSStatementImageHttpGetIn" />
-      <wsdl:output message="tns:NLSStatementImageHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImageBase64">
-      <wsdl:input message="tns:NLSStatementImageBase64HttpGetIn" />
-      <wsdl:output message="tns:NLSStatementImageBase64HttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPendingTransactions">
-      <wsdl:input message="tns:NLSLoanPendingTransactionsHttpGetIn" />
-      <wsdl:output message="tns:NLSLoanPendingTransactionsHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLogOut">
-      <wsdl:input message="tns:NLSLogOutHttpGetIn" />
-      <wsdl:output message="tns:NLSLogOutHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSVerifyContact">
-      <wsdl:input message="tns:NLSVerifyContactHttpGetIn" />
-      <wsdl:output message="tns:NLSVerifyContactHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentials">
-      <wsdl:input message="tns:NLSCreateCredentialsHttpGetIn" />
-      <wsdl:output message="tns:NLSCreateCredentialsHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentialsByContactType">
-      <wsdl:input message="tns:NLSCreateCredentialsByContactTypeHttpGetIn" />
-      <wsdl:output message="tns:NLSCreateCredentialsByContactTypeHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmail">
-      <wsdl:input message="tns:NLSPasswordRecoveryByEmailHttpGetIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryByEmailHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpGetIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHints">
-      <wsdl:input message="tns:NLSPasswordRecoveryHintsHttpGetIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryHintsHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryHintsByContactTypeHttpGetIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryHintsByContactTypeHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswers">
-      <wsdl:input message="tns:NLSPasswordRecoveryAnswersHttpGetIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryAnswersHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpGetIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSChangePassword">
-      <wsdl:input message="tns:NLSChangePasswordHttpGetIn" />
-      <wsdl:output message="tns:NLSChangePasswordHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSForceChangePassword">
-      <wsdl:input message="tns:NLSForceChangePasswordHttpGetIn" />
-      <wsdl:output message="tns:NLSForceChangePasswordHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskList">
-      <wsdl:input message="tns:NLSGetContactTaskListHttpGetIn" />
-      <wsdl:output message="tns:NLSGetContactTaskListHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
-      <wsdl:input message="tns:NLSGetContactTaskRelationshipsListHttpGetIn" />
-      <wsdl:output message="tns:NLSGetContactTaskRelationshipsListHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetTaskDetail">
-      <wsdl:input message="tns:NLSGetTaskDetailHttpGetIn" />
-      <wsdl:output message="tns:NLSGetTaskDetailHttpGetOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="NLSAuthenticateByContactType">
+      <wsdl:input message="tns:NLSAuthenticateByContactTypeHttpPostIn" />
+      <wsdl:output message="tns:NLSAuthenticateByContactTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGlobalAuthentication">
+      <wsdl:input message="tns:NLSGlobalAuthenticationHttpPostIn" />
+      <wsdl:output message="tns:NLSGlobalAuthenticationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanList">
+      <wsdl:input message="tns:NLSGetLoanListHttpPostIn" />
+      <wsdl:output message="tns:NLSGetLoanListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanDetail">
+      <wsdl:input message="tns:NLSGetLoanDetailHttpPostIn" />
+      <wsdl:output message="tns:NLSGetLoanDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanCreditLines">
+      <wsdl:input message="tns:NLSGetLoanCreditLinesHttpPostIn" />
+      <wsdl:output message="tns:NLSGetLoanCreditLinesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContact">
+      <wsdl:input message="tns:NLSGetContactHttpPostIn" />
+      <wsdl:output message="tns:NLSGetContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImage">
+      <wsdl:input message="tns:NLSStatementImageHttpPostIn" />
+      <wsdl:output message="tns:NLSStatementImageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImageBase64">
+      <wsdl:input message="tns:NLSStatementImageBase64HttpPostIn" />
+      <wsdl:output message="tns:NLSStatementImageBase64HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPendingTransactions">
+      <wsdl:input message="tns:NLSLoanPendingTransactionsHttpPostIn" />
+      <wsdl:output message="tns:NLSLoanPendingTransactionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSLogOut">
+      <wsdl:input message="tns:NLSLogOutHttpPostIn" />
+      <wsdl:output message="tns:NLSLogOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSVerifyContact">
+      <wsdl:input message="tns:NLSVerifyContactHttpPostIn" />
+      <wsdl:output message="tns:NLSVerifyContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentials">
+      <wsdl:input message="tns:NLSCreateCredentialsHttpPostIn" />
+      <wsdl:output message="tns:NLSCreateCredentialsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentialsByContactType">
+      <wsdl:input message="tns:NLSCreateCredentialsByContactTypeHttpPostIn" />
+      <wsdl:output message="tns:NLSCreateCredentialsByContactTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmail">
+      <wsdl:input message="tns:NLSPasswordRecoveryByEmailHttpPostIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryByEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpPostIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHints">
+      <wsdl:input message="tns:NLSPasswordRecoveryHintsHttpPostIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryHintsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryHintsByContactTypeHttpPostIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryHintsByContactTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswers">
+      <wsdl:input message="tns:NLSPasswordRecoveryAnswersHttpPostIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryAnswersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
+      <wsdl:input message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpPostIn" />
+      <wsdl:output message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSChangePassword">
+      <wsdl:input message="tns:NLSChangePasswordHttpPostIn" />
+      <wsdl:output message="tns:NLSChangePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSForceChangePassword">
+      <wsdl:input message="tns:NLSForceChangePasswordHttpPostIn" />
+      <wsdl:output message="tns:NLSForceChangePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskList">
+      <wsdl:input message="tns:NLSGetContactTaskListHttpPostIn" />
+      <wsdl:output message="tns:NLSGetContactTaskListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
+      <wsdl:input message="tns:NLSGetContactTaskRelationshipsListHttpPostIn" />
+      <wsdl:output message="tns:NLSGetContactTaskRelationshipsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetTaskDetail">
+      <wsdl:input message="tns:NLSGetTaskDetailHttpPostIn" />
+      <wsdl:output message="tns:NLSGetTaskDetailHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="NLSContactUDF">
       <wsdl:input message="tns:NLSContactUDFHttpPostIn" />
       <wsdl:output message="tns:NLSContactUDFHttpPostOut" />
@@ -3508,101 +3647,225 @@
       <wsdl:input message="tns:NLSAuthenticateHttpPostIn" />
       <wsdl:output message="tns:NLSAuthenticateHttpPostOut" />
     </wsdl:operation>
-    <wsdl:operation name="NLSAuthenticateByContactType">
-      <wsdl:input message="tns:NLSAuthenticateByContactTypeHttpPostIn" />
-      <wsdl:output message="tns:NLSAuthenticateByContactTypeHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGlobalAuthentication">
-      <wsdl:input message="tns:NLSGlobalAuthenticationHttpPostIn" />
-      <wsdl:output message="tns:NLSGlobalAuthenticationHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanList">
-      <wsdl:input message="tns:NLSGetLoanListHttpPostIn" />
-      <wsdl:output message="tns:NLSGetLoanListHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanDetail">
-      <wsdl:input message="tns:NLSGetLoanDetailHttpPostIn" />
-      <wsdl:output message="tns:NLSGetLoanDetailHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContact">
-      <wsdl:input message="tns:NLSGetContactHttpPostIn" />
-      <wsdl:output message="tns:NLSGetContactHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImage">
-      <wsdl:input message="tns:NLSStatementImageHttpPostIn" />
-      <wsdl:output message="tns:NLSStatementImageHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImageBase64">
-      <wsdl:input message="tns:NLSStatementImageBase64HttpPostIn" />
-      <wsdl:output message="tns:NLSStatementImageBase64HttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPendingTransactions">
-      <wsdl:input message="tns:NLSLoanPendingTransactionsHttpPostIn" />
-      <wsdl:output message="tns:NLSLoanPendingTransactionsHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSLogOut">
-      <wsdl:input message="tns:NLSLogOutHttpPostIn" />
-      <wsdl:output message="tns:NLSLogOutHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSVerifyContact">
-      <wsdl:input message="tns:NLSVerifyContactHttpPostIn" />
-      <wsdl:output message="tns:NLSVerifyContactHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentials">
-      <wsdl:input message="tns:NLSCreateCredentialsHttpPostIn" />
-      <wsdl:output message="tns:NLSCreateCredentialsHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentialsByContactType">
-      <wsdl:input message="tns:NLSCreateCredentialsByContactTypeHttpPostIn" />
-      <wsdl:output message="tns:NLSCreateCredentialsByContactTypeHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmail">
-      <wsdl:input message="tns:NLSPasswordRecoveryByEmailHttpPostIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryByEmailHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpPostIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryByEmailByContactTypeHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHints">
-      <wsdl:input message="tns:NLSPasswordRecoveryHintsHttpPostIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryHintsHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryHintsByContactTypeHttpPostIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryHintsByContactTypeHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswers">
-      <wsdl:input message="tns:NLSPasswordRecoveryAnswersHttpPostIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryAnswersHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
-      <wsdl:input message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpPostIn" />
-      <wsdl:output message="tns:NLSPasswordRecoveryAnswersByContactTypeHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSChangePassword">
-      <wsdl:input message="tns:NLSChangePasswordHttpPostIn" />
-      <wsdl:output message="tns:NLSChangePasswordHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSForceChangePassword">
-      <wsdl:input message="tns:NLSForceChangePasswordHttpPostIn" />
-      <wsdl:output message="tns:NLSForceChangePasswordHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskList">
-      <wsdl:input message="tns:NLSGetContactTaskListHttpPostIn" />
-      <wsdl:output message="tns:NLSGetContactTaskListHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
-      <wsdl:input message="tns:NLSGetContactTaskRelationshipsListHttpPostIn" />
-      <wsdl:output message="tns:NLSGetContactTaskRelationshipsListHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetTaskDetail">
-      <wsdl:input message="tns:NLSGetTaskDetailHttpPostIn" />
-      <wsdl:output message="tns:NLSGetTaskDetailHttpPostOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NLSAuthenticateByContactType">
+      <soap:operation soapAction="http://nortridge.com/NLSAuthenticateByContactType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGlobalAuthentication">
+      <soap:operation soapAction="http://nortridge.com/NLSGlobalAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanList">
+      <soap:operation soapAction="http://nortridge.com/NLSGetLoanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanDetail">
+      <soap:operation soapAction="http://nortridge.com/NLSGetLoanDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanCreditLines">
+      <soap:operation soapAction="http://nortridge.com/NLSGetLoanCreditLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContact">
+      <soap:operation soapAction="http://nortridge.com/NLSGetContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImage">
+      <soap:operation soapAction="http://nortridge.com/NLSStatementImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImageBase64">
+      <soap:operation soapAction="http://nortridge.com/NLSStatementImageBase64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPendingTransactions">
+      <soap:operation soapAction="http://nortridge.com/NLSLoanPendingTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLogOut">
+      <soap:operation soapAction="http://nortridge.com/NLSLogOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSVerifyContact">
+      <soap:operation soapAction="http://nortridge.com/NLSVerifyContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentials">
+      <soap:operation soapAction="http://nortridge.com/NLSCreateCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentialsByContactType">
+      <soap:operation soapAction="http://nortridge.com/NLSCreateCredentialsByContactType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmail">
+      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
+      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmailByContactType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHints">
+      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
+      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHintsByContactType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswers">
+      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
+      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswersByContactType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSChangePassword">
+      <soap:operation soapAction="http://nortridge.com/NLSChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSForceChangePassword">
+      <soap:operation soapAction="http://nortridge.com/NLSForceChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskList">
+      <soap:operation soapAction="http://nortridge.com/NLSGetContactTaskList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
+      <soap:operation soapAction="http://nortridge.com/NLSGetContactTaskRelationshipsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetTaskDetail">
+      <soap:operation soapAction="http://nortridge.com/NLSGetTaskDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSContactUDF">
       <soap:operation soapAction="http://nortridge.com/NLSContactUDF" style="document" />
       <wsdl:input>
@@ -4017,216 +4280,225 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NLSAuthenticateByContactType">
-      <soap:operation soapAction="http://nortridge.com/NLSAuthenticateByContactType" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGlobalAuthentication">
-      <soap:operation soapAction="http://nortridge.com/NLSGlobalAuthentication" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanList">
-      <soap:operation soapAction="http://nortridge.com/NLSGetLoanList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanDetail">
-      <soap:operation soapAction="http://nortridge.com/NLSGetLoanDetail" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContact">
-      <soap:operation soapAction="http://nortridge.com/NLSGetContact" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImage">
-      <soap:operation soapAction="http://nortridge.com/NLSStatementImage" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImageBase64">
-      <soap:operation soapAction="http://nortridge.com/NLSStatementImageBase64" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPendingTransactions">
-      <soap:operation soapAction="http://nortridge.com/NLSLoanPendingTransactions" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLogOut">
-      <soap:operation soapAction="http://nortridge.com/NLSLogOut" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSVerifyContact">
-      <soap:operation soapAction="http://nortridge.com/NLSVerifyContact" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentials">
-      <soap:operation soapAction="http://nortridge.com/NLSCreateCredentials" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentialsByContactType">
-      <soap:operation soapAction="http://nortridge.com/NLSCreateCredentialsByContactType" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmail">
-      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmail" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
-      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmailByContactType" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHints">
-      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHints" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
-      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHintsByContactType" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswers">
-      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswers" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
-      <soap:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswersByContactType" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSChangePassword">
-      <soap:operation soapAction="http://nortridge.com/NLSChangePassword" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSForceChangePassword">
-      <soap:operation soapAction="http://nortridge.com/NLSForceChangePassword" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskList">
-      <soap:operation soapAction="http://nortridge.com/NLSGetContactTaskList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
-      <soap:operation soapAction="http://nortridge.com/NLSGetContactTaskRelationshipsList" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetTaskDetail">
-      <soap:operation soapAction="http://nortridge.com/NLSGetTaskDetail" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NLSAuthenticateByContactType">
+      <soap12:operation soapAction="http://nortridge.com/NLSAuthenticateByContactType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGlobalAuthentication">
+      <soap12:operation soapAction="http://nortridge.com/NLSGlobalAuthentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanList">
+      <soap12:operation soapAction="http://nortridge.com/NLSGetLoanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanDetail">
+      <soap12:operation soapAction="http://nortridge.com/NLSGetLoanDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanCreditLines">
+      <soap12:operation soapAction="http://nortridge.com/NLSGetLoanCreditLines" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContact">
+      <soap12:operation soapAction="http://nortridge.com/NLSGetContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImage">
+      <soap12:operation soapAction="http://nortridge.com/NLSStatementImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImageBase64">
+      <soap12:operation soapAction="http://nortridge.com/NLSStatementImageBase64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPendingTransactions">
+      <soap12:operation soapAction="http://nortridge.com/NLSLoanPendingTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLogOut">
+      <soap12:operation soapAction="http://nortridge.com/NLSLogOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSVerifyContact">
+      <soap12:operation soapAction="http://nortridge.com/NLSVerifyContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentials">
+      <soap12:operation soapAction="http://nortridge.com/NLSCreateCredentials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentialsByContactType">
+      <soap12:operation soapAction="http://nortridge.com/NLSCreateCredentialsByContactType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmail">
+      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
+      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmailByContactType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHints">
+      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
+      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHintsByContactType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswers">
+      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
+      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswersByContactType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSChangePassword">
+      <soap12:operation soapAction="http://nortridge.com/NLSChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSForceChangePassword">
+      <soap12:operation soapAction="http://nortridge.com/NLSForceChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskList">
+      <soap12:operation soapAction="http://nortridge.com/NLSGetContactTaskList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
+      <soap12:operation soapAction="http://nortridge.com/NLSGetContactTaskRelationshipsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetTaskDetail">
+      <soap12:operation soapAction="http://nortridge.com/NLSGetTaskDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSContactUDF">
       <soap12:operation soapAction="http://nortridge.com/NLSContactUDF" style="document" />
       <wsdl:input>
@@ -4641,216 +4913,225 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NLSAuthenticateByContactType">
-      <soap12:operation soapAction="http://nortridge.com/NLSAuthenticateByContactType" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGlobalAuthentication">
-      <soap12:operation soapAction="http://nortridge.com/NLSGlobalAuthentication" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanList">
-      <soap12:operation soapAction="http://nortridge.com/NLSGetLoanList" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanDetail">
-      <soap12:operation soapAction="http://nortridge.com/NLSGetLoanDetail" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContact">
-      <soap12:operation soapAction="http://nortridge.com/NLSGetContact" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImage">
-      <soap12:operation soapAction="http://nortridge.com/NLSStatementImage" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImageBase64">
-      <soap12:operation soapAction="http://nortridge.com/NLSStatementImageBase64" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPendingTransactions">
-      <soap12:operation soapAction="http://nortridge.com/NLSLoanPendingTransactions" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLogOut">
-      <soap12:operation soapAction="http://nortridge.com/NLSLogOut" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSVerifyContact">
-      <soap12:operation soapAction="http://nortridge.com/NLSVerifyContact" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentials">
-      <soap12:operation soapAction="http://nortridge.com/NLSCreateCredentials" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentialsByContactType">
-      <soap12:operation soapAction="http://nortridge.com/NLSCreateCredentialsByContactType" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmail">
-      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmail" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
-      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryByEmailByContactType" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHints">
-      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHints" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
-      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryHintsByContactType" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswers">
-      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswers" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
-      <soap12:operation soapAction="http://nortridge.com/NLSPasswordRecoveryAnswersByContactType" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSChangePassword">
-      <soap12:operation soapAction="http://nortridge.com/NLSChangePassword" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSForceChangePassword">
-      <soap12:operation soapAction="http://nortridge.com/NLSForceChangePassword" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskList">
-      <soap12:operation soapAction="http://nortridge.com/NLSGetContactTaskList" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
-      <soap12:operation soapAction="http://nortridge.com/NLSGetContactTaskRelationshipsList" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetTaskDetail">
-      <soap12:operation soapAction="http://nortridge.com/NLSGetTaskDetail" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
     <http:binding verb="GET" />
+    <wsdl:operation name="NLSAuthenticateByContactType">
+      <http:operation location="/NLSAuthenticateByContactType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGlobalAuthentication">
+      <http:operation location="/NLSGlobalAuthentication" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanList">
+      <http:operation location="/NLSGetLoanList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanDetail">
+      <http:operation location="/NLSGetLoanDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanCreditLines">
+      <http:operation location="/NLSGetLoanCreditLines" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContact">
+      <http:operation location="/NLSGetContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImage">
+      <http:operation location="/NLSStatementImage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImageBase64">
+      <http:operation location="/NLSStatementImageBase64" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPendingTransactions">
+      <http:operation location="/NLSLoanPendingTransactions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLogOut">
+      <http:operation location="/NLSLogOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSVerifyContact">
+      <http:operation location="/NLSVerifyContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentials">
+      <http:operation location="/NLSCreateCredentials" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentialsByContactType">
+      <http:operation location="/NLSCreateCredentialsByContactType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmail">
+      <http:operation location="/NLSPasswordRecoveryByEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
+      <http:operation location="/NLSPasswordRecoveryByEmailByContactType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHints">
+      <http:operation location="/NLSPasswordRecoveryHints" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
+      <http:operation location="/NLSPasswordRecoveryHintsByContactType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswers">
+      <http:operation location="/NLSPasswordRecoveryAnswers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
+      <http:operation location="/NLSPasswordRecoveryAnswersByContactType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSChangePassword">
+      <http:operation location="/NLSChangePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSForceChangePassword">
+      <http:operation location="/NLSForceChangePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskList">
+      <http:operation location="/NLSGetContactTaskList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
+      <http:operation location="/NLSGetContactTaskRelationshipsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetTaskDetail">
+      <http:operation location="/NLSGetTaskDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSContactUDF">
       <http:operation location="/NLSContactUDF" />
       <wsdl:input>
@@ -5213,213 +5494,6 @@
     </wsdl:operation>
     <wsdl:operation name="NLSAuthenticate">
       <http:operation location="/NLSAuthenticate" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSAuthenticateByContactType">
-      <http:operation location="/NLSAuthenticateByContactType" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGlobalAuthentication">
-      <http:operation location="/NLSGlobalAuthentication" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanList">
-      <http:operation location="/NLSGetLoanList" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanDetail">
-      <http:operation location="/NLSGetLoanDetail" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContact">
-      <http:operation location="/NLSGetContact" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImage">
-      <http:operation location="/NLSStatementImage" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImageBase64">
-      <http:operation location="/NLSStatementImageBase64" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPendingTransactions">
-      <http:operation location="/NLSLoanPendingTransactions" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLogOut">
-      <http:operation location="/NLSLogOut" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSVerifyContact">
-      <http:operation location="/NLSVerifyContact" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentials">
-      <http:operation location="/NLSCreateCredentials" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentialsByContactType">
-      <http:operation location="/NLSCreateCredentialsByContactType" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmail">
-      <http:operation location="/NLSPasswordRecoveryByEmail" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
-      <http:operation location="/NLSPasswordRecoveryByEmailByContactType" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHints">
-      <http:operation location="/NLSPasswordRecoveryHints" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
-      <http:operation location="/NLSPasswordRecoveryHintsByContactType" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswers">
-      <http:operation location="/NLSPasswordRecoveryAnswers" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
-      <http:operation location="/NLSPasswordRecoveryAnswersByContactType" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSChangePassword">
-      <http:operation location="/NLSChangePassword" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSForceChangePassword">
-      <http:operation location="/NLSForceChangePassword" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskList">
-      <http:operation location="/NLSGetContactTaskList" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
-      <http:operation location="/NLSGetContactTaskRelationshipsList" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetTaskDetail">
-      <http:operation location="/NLSGetTaskDetail" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -5430,6 +5504,222 @@
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
     <http:binding verb="POST" />
+    <wsdl:operation name="NLSAuthenticateByContactType">
+      <http:operation location="/NLSAuthenticateByContactType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGlobalAuthentication">
+      <http:operation location="/NLSGlobalAuthentication" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanList">
+      <http:operation location="/NLSGetLoanList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanDetail">
+      <http:operation location="/NLSGetLoanDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetLoanCreditLines">
+      <http:operation location="/NLSGetLoanCreditLines" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContact">
+      <http:operation location="/NLSGetContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImage">
+      <http:operation location="/NLSStatementImage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSStatementImageBase64">
+      <http:operation location="/NLSStatementImageBase64" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLoanPendingTransactions">
+      <http:operation location="/NLSLoanPendingTransactions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSLogOut">
+      <http:operation location="/NLSLogOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSVerifyContact">
+      <http:operation location="/NLSVerifyContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentials">
+      <http:operation location="/NLSCreateCredentials" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSCreateCredentialsByContactType">
+      <http:operation location="/NLSCreateCredentialsByContactType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmail">
+      <http:operation location="/NLSPasswordRecoveryByEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
+      <http:operation location="/NLSPasswordRecoveryByEmailByContactType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHints">
+      <http:operation location="/NLSPasswordRecoveryHints" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
+      <http:operation location="/NLSPasswordRecoveryHintsByContactType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswers">
+      <http:operation location="/NLSPasswordRecoveryAnswers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
+      <http:operation location="/NLSPasswordRecoveryAnswersByContactType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSChangePassword">
+      <http:operation location="/NLSChangePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSForceChangePassword">
+      <http:operation location="/NLSForceChangePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskList">
+      <http:operation location="/NLSGetContactTaskList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
+      <http:operation location="/NLSGetContactTaskRelationshipsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NLSGetTaskDetail">
+      <http:operation location="/NLSGetTaskDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NLSContactUDF">
       <http:operation location="/NLSContactUDF" />
       <wsdl:input>
@@ -5799,226 +6089,19 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NLSAuthenticateByContactType">
-      <http:operation location="/NLSAuthenticateByContactType" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGlobalAuthentication">
-      <http:operation location="/NLSGlobalAuthentication" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanList">
-      <http:operation location="/NLSGetLoanList" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetLoanDetail">
-      <http:operation location="/NLSGetLoanDetail" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContact">
-      <http:operation location="/NLSGetContact" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImage">
-      <http:operation location="/NLSStatementImage" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSStatementImageBase64">
-      <http:operation location="/NLSStatementImageBase64" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLoanPendingTransactions">
-      <http:operation location="/NLSLoanPendingTransactions" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSLogOut">
-      <http:operation location="/NLSLogOut" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSVerifyContact">
-      <http:operation location="/NLSVerifyContact" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentials">
-      <http:operation location="/NLSCreateCredentials" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSCreateCredentialsByContactType">
-      <http:operation location="/NLSCreateCredentialsByContactType" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmail">
-      <http:operation location="/NLSPasswordRecoveryByEmail" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryByEmailByContactType">
-      <http:operation location="/NLSPasswordRecoveryByEmailByContactType" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHints">
-      <http:operation location="/NLSPasswordRecoveryHints" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryHintsByContactType">
-      <http:operation location="/NLSPasswordRecoveryHintsByContactType" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswers">
-      <http:operation location="/NLSPasswordRecoveryAnswers" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSPasswordRecoveryAnswersByContactType">
-      <http:operation location="/NLSPasswordRecoveryAnswersByContactType" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSChangePassword">
-      <http:operation location="/NLSChangePassword" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSForceChangePassword">
-      <http:operation location="/NLSForceChangePassword" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskList">
-      <http:operation location="/NLSGetContactTaskList" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetContactTaskRelationshipsList">
-      <http:operation location="/NLSGetContactTaskRelationshipsList" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NLSGetTaskDetail">
-      <http:operation location="/NLSGetTaskDetail" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
-      <soap:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <soap:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
-      <soap12:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <soap12:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
-      <http:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <http:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
-      <http:address location="https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
+      <http:address location="https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

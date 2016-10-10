@@ -29,6 +29,54 @@ namespace RDSSNLSMPUtilsClasses.com.cyberridge.ws {
     [System.Web.Services.WebServiceBindingAttribute(Name="ServiceSoap", Namespace="http://nortridge.com/")]
     public partial class Service : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback NLSAuthenticateByContactTypeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGlobalAuthenticationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGetLoanListOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGetLoanDetailOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGetLoanCreditLinesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGetContactOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSStatementImageOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSStatementImageBase64OperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSLoanPendingTransactionsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSLogOutOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSVerifyContactOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSCreateCredentialsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSCreateCredentialsByContactTypeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSPasswordRecoveryByEmailOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSPasswordRecoveryByEmailByContactTypeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSPasswordRecoveryHintsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSPasswordRecoveryHintsByContactTypeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSPasswordRecoveryAnswersOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSPasswordRecoveryAnswersByContactTypeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSChangePasswordOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSForceChangePasswordOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGetContactTaskListOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGetContactTaskRelationshipsListOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NLSGetTaskDetailOperationCompleted;
+        
         private System.Threading.SendOrPostCallback NLSContactUDFOperationCompleted;
         
         private System.Threading.SendOrPostCallback NLSLoanDetailUDFOperationCompleted;
@@ -121,52 +169,6 @@ namespace RDSSNLSMPUtilsClasses.com.cyberridge.ws {
         
         private System.Threading.SendOrPostCallback NLSAuthenticateOperationCompleted;
         
-        private System.Threading.SendOrPostCallback NLSAuthenticateByContactTypeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSGlobalAuthenticationOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSGetLoanListOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSGetLoanDetailOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSGetContactOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSStatementImageOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSStatementImageBase64OperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSLoanPendingTransactionsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSLogOutOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSVerifyContactOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSCreateCredentialsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSCreateCredentialsByContactTypeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSPasswordRecoveryByEmailOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSPasswordRecoveryByEmailByContactTypeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSPasswordRecoveryHintsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSPasswordRecoveryHintsByContactTypeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSPasswordRecoveryAnswersOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSPasswordRecoveryAnswersByContactTypeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSChangePasswordOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSForceChangePasswordOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSGetContactTaskListOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSGetContactTaskRelationshipsListOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NLSGetTaskDetailOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -204,6 +206,78 @@ namespace RDSSNLSMPUtilsClasses.com.cyberridge.ws {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event NLSAuthenticateByContactTypeCompletedEventHandler NLSAuthenticateByContactTypeCompleted;
+        
+        /// <remarks/>
+        public event NLSGlobalAuthenticationCompletedEventHandler NLSGlobalAuthenticationCompleted;
+        
+        /// <remarks/>
+        public event NLSGetLoanListCompletedEventHandler NLSGetLoanListCompleted;
+        
+        /// <remarks/>
+        public event NLSGetLoanDetailCompletedEventHandler NLSGetLoanDetailCompleted;
+        
+        /// <remarks/>
+        public event NLSGetLoanCreditLinesCompletedEventHandler NLSGetLoanCreditLinesCompleted;
+        
+        /// <remarks/>
+        public event NLSGetContactCompletedEventHandler NLSGetContactCompleted;
+        
+        /// <remarks/>
+        public event NLSStatementImageCompletedEventHandler NLSStatementImageCompleted;
+        
+        /// <remarks/>
+        public event NLSStatementImageBase64CompletedEventHandler NLSStatementImageBase64Completed;
+        
+        /// <remarks/>
+        public event NLSLoanPendingTransactionsCompletedEventHandler NLSLoanPendingTransactionsCompleted;
+        
+        /// <remarks/>
+        public event NLSLogOutCompletedEventHandler NLSLogOutCompleted;
+        
+        /// <remarks/>
+        public event NLSVerifyContactCompletedEventHandler NLSVerifyContactCompleted;
+        
+        /// <remarks/>
+        public event NLSCreateCredentialsCompletedEventHandler NLSCreateCredentialsCompleted;
+        
+        /// <remarks/>
+        public event NLSCreateCredentialsByContactTypeCompletedEventHandler NLSCreateCredentialsByContactTypeCompleted;
+        
+        /// <remarks/>
+        public event NLSPasswordRecoveryByEmailCompletedEventHandler NLSPasswordRecoveryByEmailCompleted;
+        
+        /// <remarks/>
+        public event NLSPasswordRecoveryByEmailByContactTypeCompletedEventHandler NLSPasswordRecoveryByEmailByContactTypeCompleted;
+        
+        /// <remarks/>
+        public event NLSPasswordRecoveryHintsCompletedEventHandler NLSPasswordRecoveryHintsCompleted;
+        
+        /// <remarks/>
+        public event NLSPasswordRecoveryHintsByContactTypeCompletedEventHandler NLSPasswordRecoveryHintsByContactTypeCompleted;
+        
+        /// <remarks/>
+        public event NLSPasswordRecoveryAnswersCompletedEventHandler NLSPasswordRecoveryAnswersCompleted;
+        
+        /// <remarks/>
+        public event NLSPasswordRecoveryAnswersByContactTypeCompletedEventHandler NLSPasswordRecoveryAnswersByContactTypeCompleted;
+        
+        /// <remarks/>
+        public event NLSChangePasswordCompletedEventHandler NLSChangePasswordCompleted;
+        
+        /// <remarks/>
+        public event NLSForceChangePasswordCompletedEventHandler NLSForceChangePasswordCompleted;
+        
+        /// <remarks/>
+        public event NLSGetContactTaskListCompletedEventHandler NLSGetContactTaskListCompleted;
+        
+        /// <remarks/>
+        public event NLSGetContactTaskRelationshipsListCompletedEventHandler NLSGetContactTaskRelationshipsListCompleted;
+        
+        /// <remarks/>
+        public event NLSGetTaskDetailCompletedEventHandler NLSGetTaskDetailCompleted;
         
         /// <remarks/>
         public event NLSContactUDFCompletedEventHandler NLSContactUDFCompleted;
@@ -344,73 +418,852 @@ namespace RDSSNLSMPUtilsClasses.com.cyberridge.ws {
         public event NLSAuthenticateCompletedEventHandler NLSAuthenticateCompleted;
         
         /// <remarks/>
-        public event NLSAuthenticateByContactTypeCompletedEventHandler NLSAuthenticateByContactTypeCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSAuthenticateByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSAuthenticateByContactType(string db_type, string server_name, string database_name, string contact_type, string username, string password, string ipaddress) {
+            object[] results = this.Invoke("NLSAuthenticateByContactType", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        contact_type,
+                        username,
+                        password,
+                        ipaddress});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSGlobalAuthenticationCompletedEventHandler NLSGlobalAuthenticationCompleted;
+        public void NLSAuthenticateByContactTypeAsync(string db_type, string server_name, string database_name, string contact_type, string username, string password, string ipaddress) {
+            this.NLSAuthenticateByContactTypeAsync(db_type, server_name, database_name, contact_type, username, password, ipaddress, null);
+        }
         
         /// <remarks/>
-        public event NLSGetLoanListCompletedEventHandler NLSGetLoanListCompleted;
+        public void NLSAuthenticateByContactTypeAsync(string db_type, string server_name, string database_name, string contact_type, string username, string password, string ipaddress, object userState) {
+            if ((this.NLSAuthenticateByContactTypeOperationCompleted == null)) {
+                this.NLSAuthenticateByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSAuthenticateByContactTypeOperationCompleted);
+            }
+            this.InvokeAsync("NLSAuthenticateByContactType", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        contact_type,
+                        username,
+                        password,
+                        ipaddress}, this.NLSAuthenticateByContactTypeOperationCompleted, userState);
+        }
+        
+        private void OnNLSAuthenticateByContactTypeOperationCompleted(object arg) {
+            if ((this.NLSAuthenticateByContactTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSAuthenticateByContactTypeCompleted(this, new NLSAuthenticateByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event NLSGetLoanDetailCompletedEventHandler NLSGetLoanDetailCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGlobalAuthentication", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGlobalAuthentication(string db_type, string server_name, string database_name) {
+            object[] results = this.Invoke("NLSGlobalAuthentication", new object[] {
+                        db_type,
+                        server_name,
+                        database_name});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSGetContactCompletedEventHandler NLSGetContactCompleted;
+        public void NLSGlobalAuthenticationAsync(string db_type, string server_name, string database_name) {
+            this.NLSGlobalAuthenticationAsync(db_type, server_name, database_name, null);
+        }
         
         /// <remarks/>
-        public event NLSStatementImageCompletedEventHandler NLSStatementImageCompleted;
+        public void NLSGlobalAuthenticationAsync(string db_type, string server_name, string database_name, object userState) {
+            if ((this.NLSGlobalAuthenticationOperationCompleted == null)) {
+                this.NLSGlobalAuthenticationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGlobalAuthenticationOperationCompleted);
+            }
+            this.InvokeAsync("NLSGlobalAuthentication", new object[] {
+                        db_type,
+                        server_name,
+                        database_name}, this.NLSGlobalAuthenticationOperationCompleted, userState);
+        }
+        
+        private void OnNLSGlobalAuthenticationOperationCompleted(object arg) {
+            if ((this.NLSGlobalAuthenticationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGlobalAuthenticationCompleted(this, new NLSGlobalAuthenticationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event NLSStatementImageBase64CompletedEventHandler NLSStatementImageBase64Completed;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetLoanList", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGetLoanList(string token, string ContactNumber, bool IncludeRelatedLoans) {
+            object[] results = this.Invoke("NLSGetLoanList", new object[] {
+                        token,
+                        ContactNumber,
+                        IncludeRelatedLoans});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSLoanPendingTransactionsCompletedEventHandler NLSLoanPendingTransactionsCompleted;
+        public void NLSGetLoanListAsync(string token, string ContactNumber, bool IncludeRelatedLoans) {
+            this.NLSGetLoanListAsync(token, ContactNumber, IncludeRelatedLoans, null);
+        }
         
         /// <remarks/>
-        public event NLSLogOutCompletedEventHandler NLSLogOutCompleted;
+        public void NLSGetLoanListAsync(string token, string ContactNumber, bool IncludeRelatedLoans, object userState) {
+            if ((this.NLSGetLoanListOperationCompleted == null)) {
+                this.NLSGetLoanListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetLoanListOperationCompleted);
+            }
+            this.InvokeAsync("NLSGetLoanList", new object[] {
+                        token,
+                        ContactNumber,
+                        IncludeRelatedLoans}, this.NLSGetLoanListOperationCompleted, userState);
+        }
+        
+        private void OnNLSGetLoanListOperationCompleted(object arg) {
+            if ((this.NLSGetLoanListCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGetLoanListCompleted(this, new NLSGetLoanListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event NLSVerifyContactCompletedEventHandler NLSVerifyContactCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetLoanDetail", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGetLoanDetail(string token, string LoanNumber) {
+            object[] results = this.Invoke("NLSGetLoanDetail", new object[] {
+                        token,
+                        LoanNumber});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSCreateCredentialsCompletedEventHandler NLSCreateCredentialsCompleted;
+        public void NLSGetLoanDetailAsync(string token, string LoanNumber) {
+            this.NLSGetLoanDetailAsync(token, LoanNumber, null);
+        }
         
         /// <remarks/>
-        public event NLSCreateCredentialsByContactTypeCompletedEventHandler NLSCreateCredentialsByContactTypeCompleted;
+        public void NLSGetLoanDetailAsync(string token, string LoanNumber, object userState) {
+            if ((this.NLSGetLoanDetailOperationCompleted == null)) {
+                this.NLSGetLoanDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetLoanDetailOperationCompleted);
+            }
+            this.InvokeAsync("NLSGetLoanDetail", new object[] {
+                        token,
+                        LoanNumber}, this.NLSGetLoanDetailOperationCompleted, userState);
+        }
+        
+        private void OnNLSGetLoanDetailOperationCompleted(object arg) {
+            if ((this.NLSGetLoanDetailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGetLoanDetailCompleted(this, new NLSGetLoanDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event NLSPasswordRecoveryByEmailCompletedEventHandler NLSPasswordRecoveryByEmailCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetLoanCreditLines", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGetLoanCreditLines(string token, string LoanNumber) {
+            object[] results = this.Invoke("NLSGetLoanCreditLines", new object[] {
+                        token,
+                        LoanNumber});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSPasswordRecoveryByEmailByContactTypeCompletedEventHandler NLSPasswordRecoveryByEmailByContactTypeCompleted;
+        public void NLSGetLoanCreditLinesAsync(string token, string LoanNumber) {
+            this.NLSGetLoanCreditLinesAsync(token, LoanNumber, null);
+        }
         
         /// <remarks/>
-        public event NLSPasswordRecoveryHintsCompletedEventHandler NLSPasswordRecoveryHintsCompleted;
+        public void NLSGetLoanCreditLinesAsync(string token, string LoanNumber, object userState) {
+            if ((this.NLSGetLoanCreditLinesOperationCompleted == null)) {
+                this.NLSGetLoanCreditLinesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetLoanCreditLinesOperationCompleted);
+            }
+            this.InvokeAsync("NLSGetLoanCreditLines", new object[] {
+                        token,
+                        LoanNumber}, this.NLSGetLoanCreditLinesOperationCompleted, userState);
+        }
+        
+        private void OnNLSGetLoanCreditLinesOperationCompleted(object arg) {
+            if ((this.NLSGetLoanCreditLinesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGetLoanCreditLinesCompleted(this, new NLSGetLoanCreditLinesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event NLSPasswordRecoveryHintsByContactTypeCompletedEventHandler NLSPasswordRecoveryHintsByContactTypeCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetContact", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGetContact(string token, string ContactNumber) {
+            object[] results = this.Invoke("NLSGetContact", new object[] {
+                        token,
+                        ContactNumber});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSPasswordRecoveryAnswersCompletedEventHandler NLSPasswordRecoveryAnswersCompleted;
+        public void NLSGetContactAsync(string token, string ContactNumber) {
+            this.NLSGetContactAsync(token, ContactNumber, null);
+        }
         
         /// <remarks/>
-        public event NLSPasswordRecoveryAnswersByContactTypeCompletedEventHandler NLSPasswordRecoveryAnswersByContactTypeCompleted;
+        public void NLSGetContactAsync(string token, string ContactNumber, object userState) {
+            if ((this.NLSGetContactOperationCompleted == null)) {
+                this.NLSGetContactOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetContactOperationCompleted);
+            }
+            this.InvokeAsync("NLSGetContact", new object[] {
+                        token,
+                        ContactNumber}, this.NLSGetContactOperationCompleted, userState);
+        }
+        
+        private void OnNLSGetContactOperationCompleted(object arg) {
+            if ((this.NLSGetContactCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGetContactCompleted(this, new NLSGetContactCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event NLSChangePasswordCompletedEventHandler NLSChangePasswordCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSStatementImage", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSStatementImage(string token, string LoanNumber, int DocumentID) {
+            object[] results = this.Invoke("NLSStatementImage", new object[] {
+                        token,
+                        LoanNumber,
+                        DocumentID});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSForceChangePasswordCompletedEventHandler NLSForceChangePasswordCompleted;
+        public void NLSStatementImageAsync(string token, string LoanNumber, int DocumentID) {
+            this.NLSStatementImageAsync(token, LoanNumber, DocumentID, null);
+        }
         
         /// <remarks/>
-        public event NLSGetContactTaskListCompletedEventHandler NLSGetContactTaskListCompleted;
+        public void NLSStatementImageAsync(string token, string LoanNumber, int DocumentID, object userState) {
+            if ((this.NLSStatementImageOperationCompleted == null)) {
+                this.NLSStatementImageOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSStatementImageOperationCompleted);
+            }
+            this.InvokeAsync("NLSStatementImage", new object[] {
+                        token,
+                        LoanNumber,
+                        DocumentID}, this.NLSStatementImageOperationCompleted, userState);
+        }
+        
+        private void OnNLSStatementImageOperationCompleted(object arg) {
+            if ((this.NLSStatementImageCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSStatementImageCompleted(this, new NLSStatementImageCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event NLSGetContactTaskRelationshipsListCompletedEventHandler NLSGetContactTaskRelationshipsListCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSStatementImageBase64", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSStatementImageBase64(string token, string LoanNumber, int DocumentID) {
+            object[] results = this.Invoke("NLSStatementImageBase64", new object[] {
+                        token,
+                        LoanNumber,
+                        DocumentID});
+            return ((string)(results[0]));
+        }
         
         /// <remarks/>
-        public event NLSGetTaskDetailCompletedEventHandler NLSGetTaskDetailCompleted;
+        public void NLSStatementImageBase64Async(string token, string LoanNumber, int DocumentID) {
+            this.NLSStatementImageBase64Async(token, LoanNumber, DocumentID, null);
+        }
+        
+        /// <remarks/>
+        public void NLSStatementImageBase64Async(string token, string LoanNumber, int DocumentID, object userState) {
+            if ((this.NLSStatementImageBase64OperationCompleted == null)) {
+                this.NLSStatementImageBase64OperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSStatementImageBase64OperationCompleted);
+            }
+            this.InvokeAsync("NLSStatementImageBase64", new object[] {
+                        token,
+                        LoanNumber,
+                        DocumentID}, this.NLSStatementImageBase64OperationCompleted, userState);
+        }
+        
+        private void OnNLSStatementImageBase64OperationCompleted(object arg) {
+            if ((this.NLSStatementImageBase64Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSStatementImageBase64Completed(this, new NLSStatementImageBase64CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSLoanPendingTransactions", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSLoanPendingTransactions(string token, string LoanNumber) {
+            object[] results = this.Invoke("NLSLoanPendingTransactions", new object[] {
+                        token,
+                        LoanNumber});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSLoanPendingTransactionsAsync(string token, string LoanNumber) {
+            this.NLSLoanPendingTransactionsAsync(token, LoanNumber, null);
+        }
+        
+        /// <remarks/>
+        public void NLSLoanPendingTransactionsAsync(string token, string LoanNumber, object userState) {
+            if ((this.NLSLoanPendingTransactionsOperationCompleted == null)) {
+                this.NLSLoanPendingTransactionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSLoanPendingTransactionsOperationCompleted);
+            }
+            this.InvokeAsync("NLSLoanPendingTransactions", new object[] {
+                        token,
+                        LoanNumber}, this.NLSLoanPendingTransactionsOperationCompleted, userState);
+        }
+        
+        private void OnNLSLoanPendingTransactionsOperationCompleted(object arg) {
+            if ((this.NLSLoanPendingTransactionsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSLoanPendingTransactionsCompleted(this, new NLSLoanPendingTransactionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSLogOut", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSLogOut(string token) {
+            object[] results = this.Invoke("NLSLogOut", new object[] {
+                        token});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSLogOutAsync(string token) {
+            this.NLSLogOutAsync(token, null);
+        }
+        
+        /// <remarks/>
+        public void NLSLogOutAsync(string token, object userState) {
+            if ((this.NLSLogOutOperationCompleted == null)) {
+                this.NLSLogOutOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSLogOutOperationCompleted);
+            }
+            this.InvokeAsync("NLSLogOut", new object[] {
+                        token}, this.NLSLogOutOperationCompleted, userState);
+        }
+        
+        private void OnNLSLogOutOperationCompleted(object arg) {
+            if ((this.NLSLogOutCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSLogOutCompleted(this, new NLSLogOutCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSVerifyContact", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSVerifyContact(string db_type, string server_name, string database_name, string FirstName, string LastName, string SSNumber, string Address, string City, string State, string Zip, string Phone, string LoanNumber, string EmailAddress) {
+            object[] results = this.Invoke("NLSVerifyContact", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        FirstName,
+                        LastName,
+                        SSNumber,
+                        Address,
+                        City,
+                        State,
+                        Zip,
+                        Phone,
+                        LoanNumber,
+                        EmailAddress});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSVerifyContactAsync(string db_type, string server_name, string database_name, string FirstName, string LastName, string SSNumber, string Address, string City, string State, string Zip, string Phone, string LoanNumber, string EmailAddress) {
+            this.NLSVerifyContactAsync(db_type, server_name, database_name, FirstName, LastName, SSNumber, Address, City, State, Zip, Phone, LoanNumber, EmailAddress, null);
+        }
+        
+        /// <remarks/>
+        public void NLSVerifyContactAsync(string db_type, string server_name, string database_name, string FirstName, string LastName, string SSNumber, string Address, string City, string State, string Zip, string Phone, string LoanNumber, string EmailAddress, object userState) {
+            if ((this.NLSVerifyContactOperationCompleted == null)) {
+                this.NLSVerifyContactOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSVerifyContactOperationCompleted);
+            }
+            this.InvokeAsync("NLSVerifyContact", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        FirstName,
+                        LastName,
+                        SSNumber,
+                        Address,
+                        City,
+                        State,
+                        Zip,
+                        Phone,
+                        LoanNumber,
+                        EmailAddress}, this.NLSVerifyContactOperationCompleted, userState);
+        }
+        
+        private void OnNLSVerifyContactOperationCompleted(object arg) {
+            if ((this.NLSVerifyContactCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSVerifyContactCompleted(this, new NLSVerifyContactCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSCreateCredentials", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSCreateCredentials(string token, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
+            object[] results = this.Invoke("NLSCreateCredentials", new object[] {
+                        token,
+                        ContactUserName,
+                        ContactPassword,
+                        PasswordHint1,
+                        PasswordAnswer1,
+                        PasswordHint2,
+                        PasswordAnswer2});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSCreateCredentialsAsync(string token, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
+            this.NLSCreateCredentialsAsync(token, ContactUserName, ContactPassword, PasswordHint1, PasswordAnswer1, PasswordHint2, PasswordAnswer2, null);
+        }
+        
+        /// <remarks/>
+        public void NLSCreateCredentialsAsync(string token, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2, object userState) {
+            if ((this.NLSCreateCredentialsOperationCompleted == null)) {
+                this.NLSCreateCredentialsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSCreateCredentialsOperationCompleted);
+            }
+            this.InvokeAsync("NLSCreateCredentials", new object[] {
+                        token,
+                        ContactUserName,
+                        ContactPassword,
+                        PasswordHint1,
+                        PasswordAnswer1,
+                        PasswordHint2,
+                        PasswordAnswer2}, this.NLSCreateCredentialsOperationCompleted, userState);
+        }
+        
+        private void OnNLSCreateCredentialsOperationCompleted(object arg) {
+            if ((this.NLSCreateCredentialsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSCreateCredentialsCompleted(this, new NLSCreateCredentialsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSCreateCredentialsByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSCreateCredentialsByContactType(string token, string ContactType, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
+            object[] results = this.Invoke("NLSCreateCredentialsByContactType", new object[] {
+                        token,
+                        ContactType,
+                        ContactUserName,
+                        ContactPassword,
+                        PasswordHint1,
+                        PasswordAnswer1,
+                        PasswordHint2,
+                        PasswordAnswer2});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSCreateCredentialsByContactTypeAsync(string token, string ContactType, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
+            this.NLSCreateCredentialsByContactTypeAsync(token, ContactType, ContactUserName, ContactPassword, PasswordHint1, PasswordAnswer1, PasswordHint2, PasswordAnswer2, null);
+        }
+        
+        /// <remarks/>
+        public void NLSCreateCredentialsByContactTypeAsync(string token, string ContactType, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2, object userState) {
+            if ((this.NLSCreateCredentialsByContactTypeOperationCompleted == null)) {
+                this.NLSCreateCredentialsByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSCreateCredentialsByContactTypeOperationCompleted);
+            }
+            this.InvokeAsync("NLSCreateCredentialsByContactType", new object[] {
+                        token,
+                        ContactType,
+                        ContactUserName,
+                        ContactPassword,
+                        PasswordHint1,
+                        PasswordAnswer1,
+                        PasswordHint2,
+                        PasswordAnswer2}, this.NLSCreateCredentialsByContactTypeOperationCompleted, userState);
+        }
+        
+        private void OnNLSCreateCredentialsByContactTypeOperationCompleted(object arg) {
+            if ((this.NLSCreateCredentialsByContactTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSCreateCredentialsByContactTypeCompleted(this, new NLSCreateCredentialsByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryByEmail", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSPasswordRecoveryByEmail(string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
+            object[] results = this.Invoke("NLSPasswordRecoveryByEmail", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        IPAddress});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryByEmailAsync(string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
+            this.NLSPasswordRecoveryByEmailAsync(db_type, server_name, database_name, ContactUserName, IPAddress, null);
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryByEmailAsync(string db_type, string server_name, string database_name, string ContactUserName, string IPAddress, object userState) {
+            if ((this.NLSPasswordRecoveryByEmailOperationCompleted == null)) {
+                this.NLSPasswordRecoveryByEmailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryByEmailOperationCompleted);
+            }
+            this.InvokeAsync("NLSPasswordRecoveryByEmail", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        IPAddress}, this.NLSPasswordRecoveryByEmailOperationCompleted, userState);
+        }
+        
+        private void OnNLSPasswordRecoveryByEmailOperationCompleted(object arg) {
+            if ((this.NLSPasswordRecoveryByEmailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSPasswordRecoveryByEmailCompleted(this, new NLSPasswordRecoveryByEmailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryByEmailByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSPasswordRecoveryByEmailByContactType(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
+            object[] results = this.Invoke("NLSPasswordRecoveryByEmailByContactType", new object[] {
+                        ContactType,
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        IPAddress});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryByEmailByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
+            this.NLSPasswordRecoveryByEmailByContactTypeAsync(ContactType, db_type, server_name, database_name, ContactUserName, IPAddress, null);
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryByEmailByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string IPAddress, object userState) {
+            if ((this.NLSPasswordRecoveryByEmailByContactTypeOperationCompleted == null)) {
+                this.NLSPasswordRecoveryByEmailByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryByEmailByContactTypeOperationCompleted);
+            }
+            this.InvokeAsync("NLSPasswordRecoveryByEmailByContactType", new object[] {
+                        ContactType,
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        IPAddress}, this.NLSPasswordRecoveryByEmailByContactTypeOperationCompleted, userState);
+        }
+        
+        private void OnNLSPasswordRecoveryByEmailByContactTypeOperationCompleted(object arg) {
+            if ((this.NLSPasswordRecoveryByEmailByContactTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSPasswordRecoveryByEmailByContactTypeCompleted(this, new NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryHints", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSPasswordRecoveryHints(string db_type, string server_name, string database_name, string ContactUserName) {
+            object[] results = this.Invoke("NLSPasswordRecoveryHints", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryHintsAsync(string db_type, string server_name, string database_name, string ContactUserName) {
+            this.NLSPasswordRecoveryHintsAsync(db_type, server_name, database_name, ContactUserName, null);
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryHintsAsync(string db_type, string server_name, string database_name, string ContactUserName, object userState) {
+            if ((this.NLSPasswordRecoveryHintsOperationCompleted == null)) {
+                this.NLSPasswordRecoveryHintsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryHintsOperationCompleted);
+            }
+            this.InvokeAsync("NLSPasswordRecoveryHints", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName}, this.NLSPasswordRecoveryHintsOperationCompleted, userState);
+        }
+        
+        private void OnNLSPasswordRecoveryHintsOperationCompleted(object arg) {
+            if ((this.NLSPasswordRecoveryHintsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSPasswordRecoveryHintsCompleted(this, new NLSPasswordRecoveryHintsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryHintsByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSPasswordRecoveryHintsByContactType(string ContactType, string db_type, string server_name, string database_name, string ContactUserName) {
+            object[] results = this.Invoke("NLSPasswordRecoveryHintsByContactType", new object[] {
+                        ContactType,
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryHintsByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName) {
+            this.NLSPasswordRecoveryHintsByContactTypeAsync(ContactType, db_type, server_name, database_name, ContactUserName, null);
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryHintsByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, object userState) {
+            if ((this.NLSPasswordRecoveryHintsByContactTypeOperationCompleted == null)) {
+                this.NLSPasswordRecoveryHintsByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryHintsByContactTypeOperationCompleted);
+            }
+            this.InvokeAsync("NLSPasswordRecoveryHintsByContactType", new object[] {
+                        ContactType,
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName}, this.NLSPasswordRecoveryHintsByContactTypeOperationCompleted, userState);
+        }
+        
+        private void OnNLSPasswordRecoveryHintsByContactTypeOperationCompleted(object arg) {
+            if ((this.NLSPasswordRecoveryHintsByContactTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSPasswordRecoveryHintsByContactTypeCompleted(this, new NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryAnswers", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSPasswordRecoveryAnswers(string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
+            object[] results = this.Invoke("NLSPasswordRecoveryAnswers", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        HintAnswer1,
+                        HintAnswer2});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryAnswersAsync(string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
+            this.NLSPasswordRecoveryAnswersAsync(db_type, server_name, database_name, ContactUserName, HintAnswer1, HintAnswer2, null);
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryAnswersAsync(string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2, object userState) {
+            if ((this.NLSPasswordRecoveryAnswersOperationCompleted == null)) {
+                this.NLSPasswordRecoveryAnswersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryAnswersOperationCompleted);
+            }
+            this.InvokeAsync("NLSPasswordRecoveryAnswers", new object[] {
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        HintAnswer1,
+                        HintAnswer2}, this.NLSPasswordRecoveryAnswersOperationCompleted, userState);
+        }
+        
+        private void OnNLSPasswordRecoveryAnswersOperationCompleted(object arg) {
+            if ((this.NLSPasswordRecoveryAnswersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSPasswordRecoveryAnswersCompleted(this, new NLSPasswordRecoveryAnswersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryAnswersByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSPasswordRecoveryAnswersByContactType(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
+            object[] results = this.Invoke("NLSPasswordRecoveryAnswersByContactType", new object[] {
+                        ContactType,
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        HintAnswer1,
+                        HintAnswer2});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryAnswersByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
+            this.NLSPasswordRecoveryAnswersByContactTypeAsync(ContactType, db_type, server_name, database_name, ContactUserName, HintAnswer1, HintAnswer2, null);
+        }
+        
+        /// <remarks/>
+        public void NLSPasswordRecoveryAnswersByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2, object userState) {
+            if ((this.NLSPasswordRecoveryAnswersByContactTypeOperationCompleted == null)) {
+                this.NLSPasswordRecoveryAnswersByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryAnswersByContactTypeOperationCompleted);
+            }
+            this.InvokeAsync("NLSPasswordRecoveryAnswersByContactType", new object[] {
+                        ContactType,
+                        db_type,
+                        server_name,
+                        database_name,
+                        ContactUserName,
+                        HintAnswer1,
+                        HintAnswer2}, this.NLSPasswordRecoveryAnswersByContactTypeOperationCompleted, userState);
+        }
+        
+        private void OnNLSPasswordRecoveryAnswersByContactTypeOperationCompleted(object arg) {
+            if ((this.NLSPasswordRecoveryAnswersByContactTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSPasswordRecoveryAnswersByContactTypeCompleted(this, new NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSChangePassword", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSChangePassword(string token, string OldPassword, string NewPassword) {
+            object[] results = this.Invoke("NLSChangePassword", new object[] {
+                        token,
+                        OldPassword,
+                        NewPassword});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSChangePasswordAsync(string token, string OldPassword, string NewPassword) {
+            this.NLSChangePasswordAsync(token, OldPassword, NewPassword, null);
+        }
+        
+        /// <remarks/>
+        public void NLSChangePasswordAsync(string token, string OldPassword, string NewPassword, object userState) {
+            if ((this.NLSChangePasswordOperationCompleted == null)) {
+                this.NLSChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSChangePasswordOperationCompleted);
+            }
+            this.InvokeAsync("NLSChangePassword", new object[] {
+                        token,
+                        OldPassword,
+                        NewPassword}, this.NLSChangePasswordOperationCompleted, userState);
+        }
+        
+        private void OnNLSChangePasswordOperationCompleted(object arg) {
+            if ((this.NLSChangePasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSChangePasswordCompleted(this, new NLSChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSForceChangePassword", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSForceChangePassword(string token, string NewPassword) {
+            object[] results = this.Invoke("NLSForceChangePassword", new object[] {
+                        token,
+                        NewPassword});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSForceChangePasswordAsync(string token, string NewPassword) {
+            this.NLSForceChangePasswordAsync(token, NewPassword, null);
+        }
+        
+        /// <remarks/>
+        public void NLSForceChangePasswordAsync(string token, string NewPassword, object userState) {
+            if ((this.NLSForceChangePasswordOperationCompleted == null)) {
+                this.NLSForceChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSForceChangePasswordOperationCompleted);
+            }
+            this.InvokeAsync("NLSForceChangePassword", new object[] {
+                        token,
+                        NewPassword}, this.NLSForceChangePasswordOperationCompleted, userState);
+        }
+        
+        private void OnNLSForceChangePasswordOperationCompleted(object arg) {
+            if ((this.NLSForceChangePasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSForceChangePasswordCompleted(this, new NLSForceChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetContactTaskList", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGetContactTaskList(string token, string ContactNumber) {
+            object[] results = this.Invoke("NLSGetContactTaskList", new object[] {
+                        token,
+                        ContactNumber});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSGetContactTaskListAsync(string token, string ContactNumber) {
+            this.NLSGetContactTaskListAsync(token, ContactNumber, null);
+        }
+        
+        /// <remarks/>
+        public void NLSGetContactTaskListAsync(string token, string ContactNumber, object userState) {
+            if ((this.NLSGetContactTaskListOperationCompleted == null)) {
+                this.NLSGetContactTaskListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetContactTaskListOperationCompleted);
+            }
+            this.InvokeAsync("NLSGetContactTaskList", new object[] {
+                        token,
+                        ContactNumber}, this.NLSGetContactTaskListOperationCompleted, userState);
+        }
+        
+        private void OnNLSGetContactTaskListOperationCompleted(object arg) {
+            if ((this.NLSGetContactTaskListCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGetContactTaskListCompleted(this, new NLSGetContactTaskListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetContactTaskRelationshipsList", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGetContactTaskRelationshipsList(string token, string ContactNumber) {
+            object[] results = this.Invoke("NLSGetContactTaskRelationshipsList", new object[] {
+                        token,
+                        ContactNumber});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSGetContactTaskRelationshipsListAsync(string token, string ContactNumber) {
+            this.NLSGetContactTaskRelationshipsListAsync(token, ContactNumber, null);
+        }
+        
+        /// <remarks/>
+        public void NLSGetContactTaskRelationshipsListAsync(string token, string ContactNumber, object userState) {
+            if ((this.NLSGetContactTaskRelationshipsListOperationCompleted == null)) {
+                this.NLSGetContactTaskRelationshipsListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetContactTaskRelationshipsListOperationCompleted);
+            }
+            this.InvokeAsync("NLSGetContactTaskRelationshipsList", new object[] {
+                        token,
+                        ContactNumber}, this.NLSGetContactTaskRelationshipsListOperationCompleted, userState);
+        }
+        
+        private void OnNLSGetContactTaskRelationshipsListOperationCompleted(object arg) {
+            if ((this.NLSGetContactTaskRelationshipsListCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGetContactTaskRelationshipsListCompleted(this, new NLSGetContactTaskRelationshipsListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetTaskDetail", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NLSGetTaskDetail(string token, int TaskRefno) {
+            object[] results = this.Invoke("NLSGetTaskDetail", new object[] {
+                        token,
+                        TaskRefno});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NLSGetTaskDetailAsync(string token, int TaskRefno) {
+            this.NLSGetTaskDetailAsync(token, TaskRefno, null);
+        }
+        
+        /// <remarks/>
+        public void NLSGetTaskDetailAsync(string token, int TaskRefno, object userState) {
+            if ((this.NLSGetTaskDetailOperationCompleted == null)) {
+                this.NLSGetTaskDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetTaskDetailOperationCompleted);
+            }
+            this.InvokeAsync("NLSGetTaskDetail", new object[] {
+                        token,
+                        TaskRefno}, this.NLSGetTaskDetailOperationCompleted, userState);
+        }
+        
+        private void OnNLSGetTaskDetailOperationCompleted(object arg) {
+            if ((this.NLSGetTaskDetailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NLSGetTaskDetailCompleted(this, new NLSGetTaskDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSContactUDF", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -2105,823 +2958,6 @@ namespace RDSSNLSMPUtilsClasses.com.cyberridge.ws {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSAuthenticateByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSAuthenticateByContactType(string db_type, string server_name, string database_name, string contact_type, string username, string password, string ipaddress) {
-            object[] results = this.Invoke("NLSAuthenticateByContactType", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        contact_type,
-                        username,
-                        password,
-                        ipaddress});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSAuthenticateByContactTypeAsync(string db_type, string server_name, string database_name, string contact_type, string username, string password, string ipaddress) {
-            this.NLSAuthenticateByContactTypeAsync(db_type, server_name, database_name, contact_type, username, password, ipaddress, null);
-        }
-        
-        /// <remarks/>
-        public void NLSAuthenticateByContactTypeAsync(string db_type, string server_name, string database_name, string contact_type, string username, string password, string ipaddress, object userState) {
-            if ((this.NLSAuthenticateByContactTypeOperationCompleted == null)) {
-                this.NLSAuthenticateByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSAuthenticateByContactTypeOperationCompleted);
-            }
-            this.InvokeAsync("NLSAuthenticateByContactType", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        contact_type,
-                        username,
-                        password,
-                        ipaddress}, this.NLSAuthenticateByContactTypeOperationCompleted, userState);
-        }
-        
-        private void OnNLSAuthenticateByContactTypeOperationCompleted(object arg) {
-            if ((this.NLSAuthenticateByContactTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSAuthenticateByContactTypeCompleted(this, new NLSAuthenticateByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGlobalAuthentication", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSGlobalAuthentication(string db_type, string server_name, string database_name) {
-            object[] results = this.Invoke("NLSGlobalAuthentication", new object[] {
-                        db_type,
-                        server_name,
-                        database_name});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSGlobalAuthenticationAsync(string db_type, string server_name, string database_name) {
-            this.NLSGlobalAuthenticationAsync(db_type, server_name, database_name, null);
-        }
-        
-        /// <remarks/>
-        public void NLSGlobalAuthenticationAsync(string db_type, string server_name, string database_name, object userState) {
-            if ((this.NLSGlobalAuthenticationOperationCompleted == null)) {
-                this.NLSGlobalAuthenticationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGlobalAuthenticationOperationCompleted);
-            }
-            this.InvokeAsync("NLSGlobalAuthentication", new object[] {
-                        db_type,
-                        server_name,
-                        database_name}, this.NLSGlobalAuthenticationOperationCompleted, userState);
-        }
-        
-        private void OnNLSGlobalAuthenticationOperationCompleted(object arg) {
-            if ((this.NLSGlobalAuthenticationCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSGlobalAuthenticationCompleted(this, new NLSGlobalAuthenticationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetLoanList", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSGetLoanList(string token, string ContactNumber, bool IncludeRelatedLoans) {
-            object[] results = this.Invoke("NLSGetLoanList", new object[] {
-                        token,
-                        ContactNumber,
-                        IncludeRelatedLoans});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSGetLoanListAsync(string token, string ContactNumber, bool IncludeRelatedLoans) {
-            this.NLSGetLoanListAsync(token, ContactNumber, IncludeRelatedLoans, null);
-        }
-        
-        /// <remarks/>
-        public void NLSGetLoanListAsync(string token, string ContactNumber, bool IncludeRelatedLoans, object userState) {
-            if ((this.NLSGetLoanListOperationCompleted == null)) {
-                this.NLSGetLoanListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetLoanListOperationCompleted);
-            }
-            this.InvokeAsync("NLSGetLoanList", new object[] {
-                        token,
-                        ContactNumber,
-                        IncludeRelatedLoans}, this.NLSGetLoanListOperationCompleted, userState);
-        }
-        
-        private void OnNLSGetLoanListOperationCompleted(object arg) {
-            if ((this.NLSGetLoanListCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSGetLoanListCompleted(this, new NLSGetLoanListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetLoanDetail", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSGetLoanDetail(string token, string LoanNumber) {
-            object[] results = this.Invoke("NLSGetLoanDetail", new object[] {
-                        token,
-                        LoanNumber});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSGetLoanDetailAsync(string token, string LoanNumber) {
-            this.NLSGetLoanDetailAsync(token, LoanNumber, null);
-        }
-        
-        /// <remarks/>
-        public void NLSGetLoanDetailAsync(string token, string LoanNumber, object userState) {
-            if ((this.NLSGetLoanDetailOperationCompleted == null)) {
-                this.NLSGetLoanDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetLoanDetailOperationCompleted);
-            }
-            this.InvokeAsync("NLSGetLoanDetail", new object[] {
-                        token,
-                        LoanNumber}, this.NLSGetLoanDetailOperationCompleted, userState);
-        }
-        
-        private void OnNLSGetLoanDetailOperationCompleted(object arg) {
-            if ((this.NLSGetLoanDetailCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSGetLoanDetailCompleted(this, new NLSGetLoanDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetContact", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSGetContact(string token, string ContactNumber) {
-            object[] results = this.Invoke("NLSGetContact", new object[] {
-                        token,
-                        ContactNumber});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSGetContactAsync(string token, string ContactNumber) {
-            this.NLSGetContactAsync(token, ContactNumber, null);
-        }
-        
-        /// <remarks/>
-        public void NLSGetContactAsync(string token, string ContactNumber, object userState) {
-            if ((this.NLSGetContactOperationCompleted == null)) {
-                this.NLSGetContactOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetContactOperationCompleted);
-            }
-            this.InvokeAsync("NLSGetContact", new object[] {
-                        token,
-                        ContactNumber}, this.NLSGetContactOperationCompleted, userState);
-        }
-        
-        private void OnNLSGetContactOperationCompleted(object arg) {
-            if ((this.NLSGetContactCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSGetContactCompleted(this, new NLSGetContactCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSStatementImage", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSStatementImage(string token, string LoanNumber, int DocumentID) {
-            object[] results = this.Invoke("NLSStatementImage", new object[] {
-                        token,
-                        LoanNumber,
-                        DocumentID});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSStatementImageAsync(string token, string LoanNumber, int DocumentID) {
-            this.NLSStatementImageAsync(token, LoanNumber, DocumentID, null);
-        }
-        
-        /// <remarks/>
-        public void NLSStatementImageAsync(string token, string LoanNumber, int DocumentID, object userState) {
-            if ((this.NLSStatementImageOperationCompleted == null)) {
-                this.NLSStatementImageOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSStatementImageOperationCompleted);
-            }
-            this.InvokeAsync("NLSStatementImage", new object[] {
-                        token,
-                        LoanNumber,
-                        DocumentID}, this.NLSStatementImageOperationCompleted, userState);
-        }
-        
-        private void OnNLSStatementImageOperationCompleted(object arg) {
-            if ((this.NLSStatementImageCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSStatementImageCompleted(this, new NLSStatementImageCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSStatementImageBase64", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSStatementImageBase64(string token, string LoanNumber, int DocumentID) {
-            object[] results = this.Invoke("NLSStatementImageBase64", new object[] {
-                        token,
-                        LoanNumber,
-                        DocumentID});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSStatementImageBase64Async(string token, string LoanNumber, int DocumentID) {
-            this.NLSStatementImageBase64Async(token, LoanNumber, DocumentID, null);
-        }
-        
-        /// <remarks/>
-        public void NLSStatementImageBase64Async(string token, string LoanNumber, int DocumentID, object userState) {
-            if ((this.NLSStatementImageBase64OperationCompleted == null)) {
-                this.NLSStatementImageBase64OperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSStatementImageBase64OperationCompleted);
-            }
-            this.InvokeAsync("NLSStatementImageBase64", new object[] {
-                        token,
-                        LoanNumber,
-                        DocumentID}, this.NLSStatementImageBase64OperationCompleted, userState);
-        }
-        
-        private void OnNLSStatementImageBase64OperationCompleted(object arg) {
-            if ((this.NLSStatementImageBase64Completed != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSStatementImageBase64Completed(this, new NLSStatementImageBase64CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSLoanPendingTransactions", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSLoanPendingTransactions(string token, string LoanNumber) {
-            object[] results = this.Invoke("NLSLoanPendingTransactions", new object[] {
-                        token,
-                        LoanNumber});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSLoanPendingTransactionsAsync(string token, string LoanNumber) {
-            this.NLSLoanPendingTransactionsAsync(token, LoanNumber, null);
-        }
-        
-        /// <remarks/>
-        public void NLSLoanPendingTransactionsAsync(string token, string LoanNumber, object userState) {
-            if ((this.NLSLoanPendingTransactionsOperationCompleted == null)) {
-                this.NLSLoanPendingTransactionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSLoanPendingTransactionsOperationCompleted);
-            }
-            this.InvokeAsync("NLSLoanPendingTransactions", new object[] {
-                        token,
-                        LoanNumber}, this.NLSLoanPendingTransactionsOperationCompleted, userState);
-        }
-        
-        private void OnNLSLoanPendingTransactionsOperationCompleted(object arg) {
-            if ((this.NLSLoanPendingTransactionsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSLoanPendingTransactionsCompleted(this, new NLSLoanPendingTransactionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSLogOut", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSLogOut(string token) {
-            object[] results = this.Invoke("NLSLogOut", new object[] {
-                        token});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSLogOutAsync(string token) {
-            this.NLSLogOutAsync(token, null);
-        }
-        
-        /// <remarks/>
-        public void NLSLogOutAsync(string token, object userState) {
-            if ((this.NLSLogOutOperationCompleted == null)) {
-                this.NLSLogOutOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSLogOutOperationCompleted);
-            }
-            this.InvokeAsync("NLSLogOut", new object[] {
-                        token}, this.NLSLogOutOperationCompleted, userState);
-        }
-        
-        private void OnNLSLogOutOperationCompleted(object arg) {
-            if ((this.NLSLogOutCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSLogOutCompleted(this, new NLSLogOutCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSVerifyContact", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSVerifyContact(string db_type, string server_name, string database_name, string FirstName, string LastName, string SSNumber, string Address, string City, string State, string Zip, string Phone, string LoanNumber, string EmailAddress) {
-            object[] results = this.Invoke("NLSVerifyContact", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        FirstName,
-                        LastName,
-                        SSNumber,
-                        Address,
-                        City,
-                        State,
-                        Zip,
-                        Phone,
-                        LoanNumber,
-                        EmailAddress});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSVerifyContactAsync(string db_type, string server_name, string database_name, string FirstName, string LastName, string SSNumber, string Address, string City, string State, string Zip, string Phone, string LoanNumber, string EmailAddress) {
-            this.NLSVerifyContactAsync(db_type, server_name, database_name, FirstName, LastName, SSNumber, Address, City, State, Zip, Phone, LoanNumber, EmailAddress, null);
-        }
-        
-        /// <remarks/>
-        public void NLSVerifyContactAsync(string db_type, string server_name, string database_name, string FirstName, string LastName, string SSNumber, string Address, string City, string State, string Zip, string Phone, string LoanNumber, string EmailAddress, object userState) {
-            if ((this.NLSVerifyContactOperationCompleted == null)) {
-                this.NLSVerifyContactOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSVerifyContactOperationCompleted);
-            }
-            this.InvokeAsync("NLSVerifyContact", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        FirstName,
-                        LastName,
-                        SSNumber,
-                        Address,
-                        City,
-                        State,
-                        Zip,
-                        Phone,
-                        LoanNumber,
-                        EmailAddress}, this.NLSVerifyContactOperationCompleted, userState);
-        }
-        
-        private void OnNLSVerifyContactOperationCompleted(object arg) {
-            if ((this.NLSVerifyContactCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSVerifyContactCompleted(this, new NLSVerifyContactCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSCreateCredentials", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSCreateCredentials(string token, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
-            object[] results = this.Invoke("NLSCreateCredentials", new object[] {
-                        token,
-                        ContactUserName,
-                        ContactPassword,
-                        PasswordHint1,
-                        PasswordAnswer1,
-                        PasswordHint2,
-                        PasswordAnswer2});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSCreateCredentialsAsync(string token, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
-            this.NLSCreateCredentialsAsync(token, ContactUserName, ContactPassword, PasswordHint1, PasswordAnswer1, PasswordHint2, PasswordAnswer2, null);
-        }
-        
-        /// <remarks/>
-        public void NLSCreateCredentialsAsync(string token, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2, object userState) {
-            if ((this.NLSCreateCredentialsOperationCompleted == null)) {
-                this.NLSCreateCredentialsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSCreateCredentialsOperationCompleted);
-            }
-            this.InvokeAsync("NLSCreateCredentials", new object[] {
-                        token,
-                        ContactUserName,
-                        ContactPassword,
-                        PasswordHint1,
-                        PasswordAnswer1,
-                        PasswordHint2,
-                        PasswordAnswer2}, this.NLSCreateCredentialsOperationCompleted, userState);
-        }
-        
-        private void OnNLSCreateCredentialsOperationCompleted(object arg) {
-            if ((this.NLSCreateCredentialsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSCreateCredentialsCompleted(this, new NLSCreateCredentialsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSCreateCredentialsByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSCreateCredentialsByContactType(string token, string ContactType, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
-            object[] results = this.Invoke("NLSCreateCredentialsByContactType", new object[] {
-                        token,
-                        ContactType,
-                        ContactUserName,
-                        ContactPassword,
-                        PasswordHint1,
-                        PasswordAnswer1,
-                        PasswordHint2,
-                        PasswordAnswer2});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSCreateCredentialsByContactTypeAsync(string token, string ContactType, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2) {
-            this.NLSCreateCredentialsByContactTypeAsync(token, ContactType, ContactUserName, ContactPassword, PasswordHint1, PasswordAnswer1, PasswordHint2, PasswordAnswer2, null);
-        }
-        
-        /// <remarks/>
-        public void NLSCreateCredentialsByContactTypeAsync(string token, string ContactType, string ContactUserName, string ContactPassword, string PasswordHint1, string PasswordAnswer1, string PasswordHint2, string PasswordAnswer2, object userState) {
-            if ((this.NLSCreateCredentialsByContactTypeOperationCompleted == null)) {
-                this.NLSCreateCredentialsByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSCreateCredentialsByContactTypeOperationCompleted);
-            }
-            this.InvokeAsync("NLSCreateCredentialsByContactType", new object[] {
-                        token,
-                        ContactType,
-                        ContactUserName,
-                        ContactPassword,
-                        PasswordHint1,
-                        PasswordAnswer1,
-                        PasswordHint2,
-                        PasswordAnswer2}, this.NLSCreateCredentialsByContactTypeOperationCompleted, userState);
-        }
-        
-        private void OnNLSCreateCredentialsByContactTypeOperationCompleted(object arg) {
-            if ((this.NLSCreateCredentialsByContactTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSCreateCredentialsByContactTypeCompleted(this, new NLSCreateCredentialsByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryByEmail", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSPasswordRecoveryByEmail(string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
-            object[] results = this.Invoke("NLSPasswordRecoveryByEmail", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        IPAddress});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryByEmailAsync(string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
-            this.NLSPasswordRecoveryByEmailAsync(db_type, server_name, database_name, ContactUserName, IPAddress, null);
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryByEmailAsync(string db_type, string server_name, string database_name, string ContactUserName, string IPAddress, object userState) {
-            if ((this.NLSPasswordRecoveryByEmailOperationCompleted == null)) {
-                this.NLSPasswordRecoveryByEmailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryByEmailOperationCompleted);
-            }
-            this.InvokeAsync("NLSPasswordRecoveryByEmail", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        IPAddress}, this.NLSPasswordRecoveryByEmailOperationCompleted, userState);
-        }
-        
-        private void OnNLSPasswordRecoveryByEmailOperationCompleted(object arg) {
-            if ((this.NLSPasswordRecoveryByEmailCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSPasswordRecoveryByEmailCompleted(this, new NLSPasswordRecoveryByEmailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryByEmailByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSPasswordRecoveryByEmailByContactType(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
-            object[] results = this.Invoke("NLSPasswordRecoveryByEmailByContactType", new object[] {
-                        ContactType,
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        IPAddress});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryByEmailByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string IPAddress) {
-            this.NLSPasswordRecoveryByEmailByContactTypeAsync(ContactType, db_type, server_name, database_name, ContactUserName, IPAddress, null);
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryByEmailByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string IPAddress, object userState) {
-            if ((this.NLSPasswordRecoveryByEmailByContactTypeOperationCompleted == null)) {
-                this.NLSPasswordRecoveryByEmailByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryByEmailByContactTypeOperationCompleted);
-            }
-            this.InvokeAsync("NLSPasswordRecoveryByEmailByContactType", new object[] {
-                        ContactType,
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        IPAddress}, this.NLSPasswordRecoveryByEmailByContactTypeOperationCompleted, userState);
-        }
-        
-        private void OnNLSPasswordRecoveryByEmailByContactTypeOperationCompleted(object arg) {
-            if ((this.NLSPasswordRecoveryByEmailByContactTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSPasswordRecoveryByEmailByContactTypeCompleted(this, new NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryHints", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSPasswordRecoveryHints(string db_type, string server_name, string database_name, string ContactUserName) {
-            object[] results = this.Invoke("NLSPasswordRecoveryHints", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryHintsAsync(string db_type, string server_name, string database_name, string ContactUserName) {
-            this.NLSPasswordRecoveryHintsAsync(db_type, server_name, database_name, ContactUserName, null);
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryHintsAsync(string db_type, string server_name, string database_name, string ContactUserName, object userState) {
-            if ((this.NLSPasswordRecoveryHintsOperationCompleted == null)) {
-                this.NLSPasswordRecoveryHintsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryHintsOperationCompleted);
-            }
-            this.InvokeAsync("NLSPasswordRecoveryHints", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName}, this.NLSPasswordRecoveryHintsOperationCompleted, userState);
-        }
-        
-        private void OnNLSPasswordRecoveryHintsOperationCompleted(object arg) {
-            if ((this.NLSPasswordRecoveryHintsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSPasswordRecoveryHintsCompleted(this, new NLSPasswordRecoveryHintsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryHintsByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSPasswordRecoveryHintsByContactType(string ContactType, string db_type, string server_name, string database_name, string ContactUserName) {
-            object[] results = this.Invoke("NLSPasswordRecoveryHintsByContactType", new object[] {
-                        ContactType,
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryHintsByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName) {
-            this.NLSPasswordRecoveryHintsByContactTypeAsync(ContactType, db_type, server_name, database_name, ContactUserName, null);
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryHintsByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, object userState) {
-            if ((this.NLSPasswordRecoveryHintsByContactTypeOperationCompleted == null)) {
-                this.NLSPasswordRecoveryHintsByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryHintsByContactTypeOperationCompleted);
-            }
-            this.InvokeAsync("NLSPasswordRecoveryHintsByContactType", new object[] {
-                        ContactType,
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName}, this.NLSPasswordRecoveryHintsByContactTypeOperationCompleted, userState);
-        }
-        
-        private void OnNLSPasswordRecoveryHintsByContactTypeOperationCompleted(object arg) {
-            if ((this.NLSPasswordRecoveryHintsByContactTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSPasswordRecoveryHintsByContactTypeCompleted(this, new NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryAnswers", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSPasswordRecoveryAnswers(string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
-            object[] results = this.Invoke("NLSPasswordRecoveryAnswers", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        HintAnswer1,
-                        HintAnswer2});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryAnswersAsync(string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
-            this.NLSPasswordRecoveryAnswersAsync(db_type, server_name, database_name, ContactUserName, HintAnswer1, HintAnswer2, null);
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryAnswersAsync(string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2, object userState) {
-            if ((this.NLSPasswordRecoveryAnswersOperationCompleted == null)) {
-                this.NLSPasswordRecoveryAnswersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryAnswersOperationCompleted);
-            }
-            this.InvokeAsync("NLSPasswordRecoveryAnswers", new object[] {
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        HintAnswer1,
-                        HintAnswer2}, this.NLSPasswordRecoveryAnswersOperationCompleted, userState);
-        }
-        
-        private void OnNLSPasswordRecoveryAnswersOperationCompleted(object arg) {
-            if ((this.NLSPasswordRecoveryAnswersCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSPasswordRecoveryAnswersCompleted(this, new NLSPasswordRecoveryAnswersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSPasswordRecoveryAnswersByContactType", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSPasswordRecoveryAnswersByContactType(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
-            object[] results = this.Invoke("NLSPasswordRecoveryAnswersByContactType", new object[] {
-                        ContactType,
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        HintAnswer1,
-                        HintAnswer2});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryAnswersByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2) {
-            this.NLSPasswordRecoveryAnswersByContactTypeAsync(ContactType, db_type, server_name, database_name, ContactUserName, HintAnswer1, HintAnswer2, null);
-        }
-        
-        /// <remarks/>
-        public void NLSPasswordRecoveryAnswersByContactTypeAsync(string ContactType, string db_type, string server_name, string database_name, string ContactUserName, string HintAnswer1, string HintAnswer2, object userState) {
-            if ((this.NLSPasswordRecoveryAnswersByContactTypeOperationCompleted == null)) {
-                this.NLSPasswordRecoveryAnswersByContactTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSPasswordRecoveryAnswersByContactTypeOperationCompleted);
-            }
-            this.InvokeAsync("NLSPasswordRecoveryAnswersByContactType", new object[] {
-                        ContactType,
-                        db_type,
-                        server_name,
-                        database_name,
-                        ContactUserName,
-                        HintAnswer1,
-                        HintAnswer2}, this.NLSPasswordRecoveryAnswersByContactTypeOperationCompleted, userState);
-        }
-        
-        private void OnNLSPasswordRecoveryAnswersByContactTypeOperationCompleted(object arg) {
-            if ((this.NLSPasswordRecoveryAnswersByContactTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSPasswordRecoveryAnswersByContactTypeCompleted(this, new NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSChangePassword", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSChangePassword(string token, string OldPassword, string NewPassword) {
-            object[] results = this.Invoke("NLSChangePassword", new object[] {
-                        token,
-                        OldPassword,
-                        NewPassword});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSChangePasswordAsync(string token, string OldPassword, string NewPassword) {
-            this.NLSChangePasswordAsync(token, OldPassword, NewPassword, null);
-        }
-        
-        /// <remarks/>
-        public void NLSChangePasswordAsync(string token, string OldPassword, string NewPassword, object userState) {
-            if ((this.NLSChangePasswordOperationCompleted == null)) {
-                this.NLSChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSChangePasswordOperationCompleted);
-            }
-            this.InvokeAsync("NLSChangePassword", new object[] {
-                        token,
-                        OldPassword,
-                        NewPassword}, this.NLSChangePasswordOperationCompleted, userState);
-        }
-        
-        private void OnNLSChangePasswordOperationCompleted(object arg) {
-            if ((this.NLSChangePasswordCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSChangePasswordCompleted(this, new NLSChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSForceChangePassword", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSForceChangePassword(string token, string NewPassword) {
-            object[] results = this.Invoke("NLSForceChangePassword", new object[] {
-                        token,
-                        NewPassword});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSForceChangePasswordAsync(string token, string NewPassword) {
-            this.NLSForceChangePasswordAsync(token, NewPassword, null);
-        }
-        
-        /// <remarks/>
-        public void NLSForceChangePasswordAsync(string token, string NewPassword, object userState) {
-            if ((this.NLSForceChangePasswordOperationCompleted == null)) {
-                this.NLSForceChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSForceChangePasswordOperationCompleted);
-            }
-            this.InvokeAsync("NLSForceChangePassword", new object[] {
-                        token,
-                        NewPassword}, this.NLSForceChangePasswordOperationCompleted, userState);
-        }
-        
-        private void OnNLSForceChangePasswordOperationCompleted(object arg) {
-            if ((this.NLSForceChangePasswordCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSForceChangePasswordCompleted(this, new NLSForceChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetContactTaskList", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSGetContactTaskList(string token, string ContactNumber) {
-            object[] results = this.Invoke("NLSGetContactTaskList", new object[] {
-                        token,
-                        ContactNumber});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSGetContactTaskListAsync(string token, string ContactNumber) {
-            this.NLSGetContactTaskListAsync(token, ContactNumber, null);
-        }
-        
-        /// <remarks/>
-        public void NLSGetContactTaskListAsync(string token, string ContactNumber, object userState) {
-            if ((this.NLSGetContactTaskListOperationCompleted == null)) {
-                this.NLSGetContactTaskListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetContactTaskListOperationCompleted);
-            }
-            this.InvokeAsync("NLSGetContactTaskList", new object[] {
-                        token,
-                        ContactNumber}, this.NLSGetContactTaskListOperationCompleted, userState);
-        }
-        
-        private void OnNLSGetContactTaskListOperationCompleted(object arg) {
-            if ((this.NLSGetContactTaskListCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSGetContactTaskListCompleted(this, new NLSGetContactTaskListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetContactTaskRelationshipsList", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSGetContactTaskRelationshipsList(string token, string ContactNumber) {
-            object[] results = this.Invoke("NLSGetContactTaskRelationshipsList", new object[] {
-                        token,
-                        ContactNumber});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSGetContactTaskRelationshipsListAsync(string token, string ContactNumber) {
-            this.NLSGetContactTaskRelationshipsListAsync(token, ContactNumber, null);
-        }
-        
-        /// <remarks/>
-        public void NLSGetContactTaskRelationshipsListAsync(string token, string ContactNumber, object userState) {
-            if ((this.NLSGetContactTaskRelationshipsListOperationCompleted == null)) {
-                this.NLSGetContactTaskRelationshipsListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetContactTaskRelationshipsListOperationCompleted);
-            }
-            this.InvokeAsync("NLSGetContactTaskRelationshipsList", new object[] {
-                        token,
-                        ContactNumber}, this.NLSGetContactTaskRelationshipsListOperationCompleted, userState);
-        }
-        
-        private void OnNLSGetContactTaskRelationshipsListOperationCompleted(object arg) {
-            if ((this.NLSGetContactTaskRelationshipsListCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSGetContactTaskRelationshipsListCompleted(this, new NLSGetContactTaskRelationshipsListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://nortridge.com/NLSGetTaskDetail", RequestNamespace="http://nortridge.com/", ResponseNamespace="http://nortridge.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string NLSGetTaskDetail(string token, int TaskRefno) {
-            object[] results = this.Invoke("NLSGetTaskDetail", new object[] {
-                        token,
-                        TaskRefno});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NLSGetTaskDetailAsync(string token, int TaskRefno) {
-            this.NLSGetTaskDetailAsync(token, TaskRefno, null);
-        }
-        
-        /// <remarks/>
-        public void NLSGetTaskDetailAsync(string token, int TaskRefno, object userState) {
-            if ((this.NLSGetTaskDetailOperationCompleted == null)) {
-                this.NLSGetTaskDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNLSGetTaskDetailOperationCompleted);
-            }
-            this.InvokeAsync("NLSGetTaskDetail", new object[] {
-                        token,
-                        TaskRefno}, this.NLSGetTaskDetailOperationCompleted, userState);
-        }
-        
-        private void OnNLSGetTaskDetailOperationCompleted(object arg) {
-            if ((this.NLSGetTaskDetailCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NLSGetTaskDetailCompleted(this, new NLSGetTaskDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -2937,6 +2973,630 @@ namespace RDSSNLSMPUtilsClasses.com.cyberridge.ws {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSAuthenticateByContactTypeCompletedEventHandler(object sender, NLSAuthenticateByContactTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSAuthenticateByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSAuthenticateByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGlobalAuthenticationCompletedEventHandler(object sender, NLSGlobalAuthenticationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGlobalAuthenticationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGlobalAuthenticationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGetLoanListCompletedEventHandler(object sender, NLSGetLoanListCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGetLoanListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGetLoanListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGetLoanDetailCompletedEventHandler(object sender, NLSGetLoanDetailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGetLoanDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGetLoanDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGetLoanCreditLinesCompletedEventHandler(object sender, NLSGetLoanCreditLinesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGetLoanCreditLinesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGetLoanCreditLinesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGetContactCompletedEventHandler(object sender, NLSGetContactCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGetContactCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGetContactCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSStatementImageCompletedEventHandler(object sender, NLSStatementImageCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSStatementImageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSStatementImageCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSStatementImageBase64CompletedEventHandler(object sender, NLSStatementImageBase64CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSStatementImageBase64CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSStatementImageBase64CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSLoanPendingTransactionsCompletedEventHandler(object sender, NLSLoanPendingTransactionsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSLoanPendingTransactionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSLoanPendingTransactionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSLogOutCompletedEventHandler(object sender, NLSLogOutCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSLogOutCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSLogOutCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSVerifyContactCompletedEventHandler(object sender, NLSVerifyContactCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSVerifyContactCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSVerifyContactCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSCreateCredentialsCompletedEventHandler(object sender, NLSCreateCredentialsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSCreateCredentialsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSCreateCredentialsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSCreateCredentialsByContactTypeCompletedEventHandler(object sender, NLSCreateCredentialsByContactTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSCreateCredentialsByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSCreateCredentialsByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSPasswordRecoveryByEmailCompletedEventHandler(object sender, NLSPasswordRecoveryByEmailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSPasswordRecoveryByEmailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSPasswordRecoveryByEmailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSPasswordRecoveryByEmailByContactTypeCompletedEventHandler(object sender, NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSPasswordRecoveryHintsCompletedEventHandler(object sender, NLSPasswordRecoveryHintsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSPasswordRecoveryHintsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSPasswordRecoveryHintsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSPasswordRecoveryHintsByContactTypeCompletedEventHandler(object sender, NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSPasswordRecoveryAnswersCompletedEventHandler(object sender, NLSPasswordRecoveryAnswersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSPasswordRecoveryAnswersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSPasswordRecoveryAnswersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSPasswordRecoveryAnswersByContactTypeCompletedEventHandler(object sender, NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSChangePasswordCompletedEventHandler(object sender, NLSChangePasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSForceChangePasswordCompletedEventHandler(object sender, NLSForceChangePasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSForceChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSForceChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGetContactTaskListCompletedEventHandler(object sender, NLSGetContactTaskListCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGetContactTaskListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGetContactTaskListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGetContactTaskRelationshipsListCompletedEventHandler(object sender, NLSGetContactTaskRelationshipsListCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGetContactTaskRelationshipsListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGetContactTaskRelationshipsListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NLSGetTaskDetailCompletedEventHandler(object sender, NLSGetTaskDetailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NLSGetTaskDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NLSGetTaskDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
         }
     }
     
@@ -4163,604 +4823,6 @@ namespace RDSSNLSMPUtilsClasses.com.cyberridge.ws {
         private object[] results;
         
         internal NLSAuthenticateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSAuthenticateByContactTypeCompletedEventHandler(object sender, NLSAuthenticateByContactTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSAuthenticateByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSAuthenticateByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSGlobalAuthenticationCompletedEventHandler(object sender, NLSGlobalAuthenticationCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSGlobalAuthenticationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSGlobalAuthenticationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSGetLoanListCompletedEventHandler(object sender, NLSGetLoanListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSGetLoanListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSGetLoanListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSGetLoanDetailCompletedEventHandler(object sender, NLSGetLoanDetailCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSGetLoanDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSGetLoanDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSGetContactCompletedEventHandler(object sender, NLSGetContactCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSGetContactCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSGetContactCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSStatementImageCompletedEventHandler(object sender, NLSStatementImageCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSStatementImageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSStatementImageCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSStatementImageBase64CompletedEventHandler(object sender, NLSStatementImageBase64CompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSStatementImageBase64CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSStatementImageBase64CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSLoanPendingTransactionsCompletedEventHandler(object sender, NLSLoanPendingTransactionsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSLoanPendingTransactionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSLoanPendingTransactionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSLogOutCompletedEventHandler(object sender, NLSLogOutCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSLogOutCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSLogOutCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSVerifyContactCompletedEventHandler(object sender, NLSVerifyContactCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSVerifyContactCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSVerifyContactCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSCreateCredentialsCompletedEventHandler(object sender, NLSCreateCredentialsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSCreateCredentialsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSCreateCredentialsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSCreateCredentialsByContactTypeCompletedEventHandler(object sender, NLSCreateCredentialsByContactTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSCreateCredentialsByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSCreateCredentialsByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSPasswordRecoveryByEmailCompletedEventHandler(object sender, NLSPasswordRecoveryByEmailCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSPasswordRecoveryByEmailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSPasswordRecoveryByEmailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSPasswordRecoveryByEmailByContactTypeCompletedEventHandler(object sender, NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSPasswordRecoveryByEmailByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSPasswordRecoveryHintsCompletedEventHandler(object sender, NLSPasswordRecoveryHintsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSPasswordRecoveryHintsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSPasswordRecoveryHintsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSPasswordRecoveryHintsByContactTypeCompletedEventHandler(object sender, NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSPasswordRecoveryHintsByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSPasswordRecoveryAnswersCompletedEventHandler(object sender, NLSPasswordRecoveryAnswersCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSPasswordRecoveryAnswersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSPasswordRecoveryAnswersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSPasswordRecoveryAnswersByContactTypeCompletedEventHandler(object sender, NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSPasswordRecoveryAnswersByContactTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSChangePasswordCompletedEventHandler(object sender, NLSChangePasswordCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSForceChangePasswordCompletedEventHandler(object sender, NLSForceChangePasswordCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSForceChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSForceChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSGetContactTaskListCompletedEventHandler(object sender, NLSGetContactTaskListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSGetContactTaskListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSGetContactTaskListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSGetContactTaskRelationshipsListCompletedEventHandler(object sender, NLSGetContactTaskRelationshipsListCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSGetContactTaskRelationshipsListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSGetContactTaskRelationshipsListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void NLSGetTaskDetailCompletedEventHandler(object sender, NLSGetTaskDetailCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NLSGetTaskDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NLSGetTaskDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

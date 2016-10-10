@@ -49,20 +49,20 @@ namespace RDSSNLSMPUtilsClasses.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://db.cyberridge.com/AvidAcceptancewebservice/Service.asmx")]
-        public string RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://wsvar.paymentech.net/PaymentechGateway")]
+        public string RDDSNLSMPUtilsClasses_net_paymentech_wsvar_PaymentechGateway {
             get {
-                return ((string)(this["RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service"]));
+                return ((string)(this["RDDSNLSMPUtilsClasses_net_paymentech_wsvar_PaymentechGateway"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://wsvar.paymentech.net/PaymentechGateway")]
-        public string RDDSNLSMPUtilsClasses_net_paymentech_wsvar_PaymentechGateway {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://ws.cyberridge.com/AvidAcceptancewebservice/Service.asmx")]
+        public string RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service {
             get {
-                return ((string)(this["RDDSNLSMPUtilsClasses_net_paymentech_wsvar_PaymentechGateway"]));
+                return ((string)(this["RDDSNLSMPUtilsClasses_com_cyberridge_ws_Service"]));
             }
         }
     }

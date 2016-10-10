@@ -64,69 +64,73 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.dll</HintPath>
+    <Reference Include="Telerik.WinControls, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.ChartView, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.ChartView.dll</HintPath>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.ChartView.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.GridView, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.GridView.dll</HintPath>
+    <Reference Include="Telerik.WinControls.GridView, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.PdfViewer, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.PdfViewer.dll</HintPath>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.PdfViewer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.PivotGrid, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.PivotGrid.dll</HintPath>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.PivotGrid.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadChart, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.RadChart.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.RadChart.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadDiagram, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.RadDiagram.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.RadDiagram.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadDock, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.RadDock.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.RadDock.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadMap, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.RadMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.RichTextEditor.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Scheduler, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.Scheduler.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.RichTextEditor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.Scheduler.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.UI.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.UI.Design, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\Telerik.WinControls.UI.Design.dll</HintPath>
+    <Reference Include="Telerik.WinControls.UI, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\Telerik.WinControls.UI.Design.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls, Version=2015.2.623.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\TelerikCommon.dll</HintPath>
+    <Reference Include="TelerikCommon, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\TelerikCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="TelerikData, Version=2016.1.216.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2016.1.216.40\TelerikData.dll</HintPath>
+    <Reference Include="TelerikData, Version=2016.3.913.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2016.3.913.40\TelerikData.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -274,10 +278,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>RDDSNLSMPUtilsClasses_com_merchantpartners_trans1_TransactionSOAPBindingImplService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="https://db.cyberridge.com/AvidAcceptancewebservice/">
+    <WebReferenceUrl Include="https://ws.cyberridge.com/AvidAcceptancewebservice/">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\com.cyberridge.ws\</RelPath>
-      <UpdateFromURL>https://db.cyberridge.com/AvidAcceptancewebservice/</UpdateFromURL>
+      <UpdateFromURL>https://ws.cyberridge.com/AvidAcceptancewebservice/</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

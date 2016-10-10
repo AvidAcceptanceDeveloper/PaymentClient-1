@@ -51,7 +51,6 @@ namespace RDDSMakePayments
             this.rWizMakeAPayment = new Telerik.WinControls.UI.RadWizard();
             this.wizardCompletionPage1 = new Telerik.WinControls.UI.WizardCompletionPage();
             this.pnlConfirm = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.rtxtPaymentResult = new Telerik.WinControls.UI.RadTextBox();
             this.rtxtReceiptEmailAddr = new Telerik.WinControls.UI.RadTextBox();
             this.rbtnSendReceipt = new Telerik.WinControls.UI.RadButton();
@@ -121,7 +120,6 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rWizMakeAPayment)).BeginInit();
             this.rWizMakeAPayment.SuspendLayout();
             this.pnlConfirm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtPaymentResult)).BeginInit();
             this.rtxtPaymentResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtReceiptEmailAddr)).BeginInit();
@@ -228,7 +226,6 @@ namespace RDDSMakePayments
             // pnlConfirm
             // 
             this.pnlConfirm.BackColor = System.Drawing.Color.White;
-            this.pnlConfirm.Controls.Add(this.pictureBox3);
             this.pnlConfirm.Controls.Add(this.rtxtPaymentResult);
             this.pnlConfirm.Controls.Add(this.rtxtConfirmMsg);
             this.pnlConfirm.Location = new System.Drawing.Point(150, 56);
@@ -237,31 +234,22 @@ namespace RDDSMakePayments
             this.pnlConfirm.TabIndex = 2;
             this.pnlConfirm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlConfirm_Paint);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::RDDSMakePayments.Properties.Resources.avid_logo;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(287, 171);
-            this.pictureBox3.TabIndex = 3015;
-            this.pictureBox3.TabStop = false;
-            // 
             // rtxtPaymentResult
             // 
             this.rtxtPaymentResult.AutoSize = false;
             this.rtxtPaymentResult.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.rtxtPaymentResult.Controls.Add(this.rtxtReceiptEmailAddr);
             this.rtxtPaymentResult.Controls.Add(this.rbtnSendReceipt);
-            this.rtxtPaymentResult.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtPaymentResult.Location = new System.Drawing.Point(303, 180);
+            this.rtxtPaymentResult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtPaymentResult.Location = new System.Drawing.Point(73, 244);
             this.rtxtPaymentResult.Multiline = true;
             this.rtxtPaymentResult.Name = "rtxtPaymentResult";
             this.rtxtPaymentResult.ReadOnly = true;
             // 
             // 
             // 
-            this.rtxtPaymentResult.RootElement.ControlBounds = new System.Drawing.Rectangle(303, 180, 100, 20);
-            this.rtxtPaymentResult.Size = new System.Drawing.Size(479, 235);
+            this.rtxtPaymentResult.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 244, 100, 20);
+            this.rtxtPaymentResult.Size = new System.Drawing.Size(709, 171);
             this.rtxtPaymentResult.TabIndex = 79;
             // 
             // rtxtReceiptEmailAddr
@@ -284,16 +272,16 @@ namespace RDDSMakePayments
             this.rtxtConfirmMsg.AutoSize = false;
             this.rtxtConfirmMsg.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.rtxtConfirmMsg.Enabled = false;
-            this.rtxtConfirmMsg.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtConfirmMsg.Location = new System.Drawing.Point(303, 3);
+            this.rtxtConfirmMsg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtConfirmMsg.Location = new System.Drawing.Point(73, 3);
             this.rtxtConfirmMsg.Multiline = true;
             this.rtxtConfirmMsg.Name = "rtxtConfirmMsg";
             // 
             // 
             // 
-            this.rtxtConfirmMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(303, 3, 100, 20);
+            this.rtxtConfirmMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 3, 100, 20);
             this.rtxtConfirmMsg.RootElement.Enabled = false;
-            this.rtxtConfirmMsg.Size = new System.Drawing.Size(479, 171);
+            this.rtxtConfirmMsg.Size = new System.Drawing.Size(709, 235);
             this.rtxtConfirmMsg.TabIndex = 78;
             // 
             // pnlCLN
@@ -937,6 +925,7 @@ namespace RDDSMakePayments
             // rddlMonth
             // 
             this.rddlMonth.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rddlMonth.DropDownAnimationEnabled = false;
             radListDataItem1.Text = "01";
             radListDataItem2.Text = "02";
             radListDataItem3.Text = "03";
@@ -975,6 +964,7 @@ namespace RDDSMakePayments
             // rddlYear
             // 
             this.rddlYear.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rddlYear.DropDownAnimationEnabled = false;
             this.rddlYear.Location = new System.Drawing.Point(435, 84);
             this.rddlYear.Margin = new System.Windows.Forms.Padding(2);
             this.rddlYear.Name = "rddlYear";
@@ -1221,7 +1211,6 @@ namespace RDDSMakePayments
             ((System.ComponentModel.ISupportInitialize)(this.rWizMakeAPayment)).EndInit();
             this.rWizMakeAPayment.ResumeLayout(false);
             this.pnlConfirm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rtxtPaymentResult)).EndInit();
             this.rtxtPaymentResult.ResumeLayout(false);
             this.rtxtPaymentResult.PerformLayout();
@@ -1338,7 +1327,6 @@ namespace RDDSMakePayments
         private RadTextBoxControl rtxtPayerName;
         private RadLabel rlblPayerName;
         private RadLabel rlblAlertMessage;
-        private System.Windows.Forms.PictureBox pictureBox3;
 
         private RadLabel rlblValidationMsg;
         private System.Windows.Forms.Panel pnlCommon;
