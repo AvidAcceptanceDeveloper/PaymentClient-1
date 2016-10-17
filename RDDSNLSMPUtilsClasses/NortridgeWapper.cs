@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using nlsws = RDSSNLSMPUtilsClasses.com.cyberridge.ws;
-using mp_ws = RDSSNLSMPUtilsClasses.com.merchantpartners;
 using System.Xml;
 using System.Data;
 using System.Data.OleDb;
@@ -19,53 +18,53 @@ namespace RDSSNLSMPUtilsClasses
         RDSSNLSMPUtilsClasses.cSettings oSettings = new cSettings(Properties.Settings.Default.SettingsFile.ToString());
 
 
-        public string CreateMPCCRecurring(string sLoanNumber, string cardnumber, string expiremon, string expireyr, string nameoncard,
-                                          string paymentamount, string crdebitfeeamt, string cvv2, string LegalEntity, string transuserid, string IncludeFees)
-        {
-            mp_ws.trans.CreditCardInfo ccinfo = new mp_ws.trans.CreditCardInfo();
-            mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
+        //public string CreateMPCCRecurring(string sLoanNumber, string cardnumber, string expiremon, string expireyr, string nameoncard,
+        //                                  string paymentamount, string crdebitfeeamt, string cvv2, string LegalEntity, string transuserid, string IncludeFees)
+        //{
+        //    mp_ws.trans.CreditCardInfo ccinfo = new mp_ws.trans.CreditCardInfo();
+        //    mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
 
-            sLoanNumber = sLoanNumber.Replace("\r\n", string.Empty);
+        //    sLoanNumber = sLoanNumber.Replace("\r\n", string.Empty);
 
-            string PaymentReference = "";
+        //    string PaymentReference = "";
 
-            Dictionary<string, string> dictSettings = GetMerchantPartnerSettings(LegalEntity);
+        //    Dictionary<string, string> dictSettings = GetMerchantPartnerSettings(LegalEntity);
 
-            if (dictSettings.Count == 0)
-            {
-                return "Unable to get Merchant Partner Settings.  Contact your administrator.";
-            }
+        //    if (dictSettings.Count == 0)
+        //    {
+        //        return "Unable to get Merchant Partner Settings.  Contact your administrator.";
+        //    }
 
-            ccinfo.acctid = dictSettings["ACCTID"];
-            ccinfo.subid = dictSettings["SUBACCTID"];
-            ccinfo.merchantpin = dictSettings["MERCHANTPIN"];
+        //    ccinfo.acctid = dictSettings["ACCTID"];
+        //    ccinfo.subid = dictSettings["SUBACCTID"];
+        //    ccinfo.merchantpin = dictSettings["MERCHANTPIN"];
 
-            mp_ws.trans.CustomFields cf = new mp_ws.trans.CustomFields();
-            cf.custom1 = transuserid;
-            ccinfo.customizedfields = cf;
+        //    mp_ws.trans.CustomFields cf = new mp_ws.trans.CustomFields();
+        //    cf.custom1 = transuserid;
+        //    ccinfo.customizedfields = cf;
 
-            ccinfo.expmon = int.Parse(expiremon);
-            ccinfo.expyear = int.Parse(expireyr);
-            ccinfo.ccname = nameoncard;
-            ccinfo.ccnum = cardnumber;
-            ccinfo.memo = sLoanNumber;
+        //    ccinfo.expmon = int.Parse(expiremon);
+        //    ccinfo.expyear = int.Parse(expireyr);
+        //    ccinfo.ccname = nameoncard;
+        //    ccinfo.ccnum = cardnumber;
+        //    ccinfo.memo = sLoanNumber;
 
 
-            if (cvv2 != "")
-                ccinfo.cvv2 = int.Parse(cvv2);
+        //    if (cvv2 != "")
+        //        ccinfo.cvv2 = int.Parse(cvv2);
 
-            ccinfo.amount = float.Parse(paymentamount);
+        //    ccinfo.amount = float.Parse(paymentamount);
 
-            com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
-            pr = soapTrans.processCCSale(ccinfo);
-            if (pr.status == "Approved")
-            {
-                //post transaction to NLS
-                PaymentReference = pr.orderid;
-                //PayByCCDebit(sLoanNumber, ccinfo.ccnum, ccinfo.expmon + "//" + ccinfo.expyear, ccinfo.ccname, ccinfo.amount, crdebitfeeamt,PaymentReference,transuserid, IncludeFees);
-            }
-            return pr.status + " | " + PaymentReference;
-        }
+        //    com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
+        //    pr = soapTrans.processCCSale(ccinfo);
+        //    if (pr.status == "Approved")
+        //    {
+        //        //post transaction to NLS
+        //        PaymentReference = pr.orderid;
+        //        //PayByCCDebit(sLoanNumber, ccinfo.ccnum, ccinfo.expmon + "//" + ccinfo.expyear, ccinfo.ccname, ccinfo.amount, crdebitfeeamt,PaymentReference,transuserid, IncludeFees);
+        //    }
+        //    return pr.status + " | " + PaymentReference;
+        //}
 
 
 
@@ -560,45 +559,45 @@ namespace RDSSNLSMPUtilsClasses
 
 
         //}
-        public string[] VerifyACH(string MPAccount, float Amount, string ABA, string ChkAccount, string CkName, string CkType, string AccountType)
-        {
+        //public string[] VerifyACH(string MPAccount, float Amount, string ABA, string ChkAccount, string CkName, string CkType, string AccountType)
+        //{
 
             
             
-            mp_ws.trans.ACHInfo achinfo = new mp_ws.trans.ACHInfo();
-            mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
+        //    mp_ws.trans.ACHInfo achinfo = new mp_ws.trans.ACHInfo();
+        //    mp_ws.trans.ProcessResult pr = new mp_ws.trans.ProcessResult();
 
-            //take config string meant to be used with FirstMile and transform it to a setting that can be used here
-            string[] MPSettings = MPAccount.Split('/');
-            string[] MPAcctID = MPSettings[1].Trim().Split(':');
+        //    //take config string meant to be used with FirstMile and transform it to a setting that can be used here
+        //    string[] MPSettings = MPAccount.Split('/');
+        //    string[] MPAcctID = MPSettings[1].Trim().Split(':');
 
-            string[] MPPinSetting = MPSettings[3].Split(':');
-            string[] AuthCode;
+        //    string[] MPPinSetting = MPSettings[3].Split(':');
+        //    string[] AuthCode;
 
-            achinfo.acctid = MPAcctID[1].Trim();
-            achinfo.merchantpin = MPPinSetting[1].Trim();
-            achinfo.amount = Amount;
-            achinfo.ckaba = ABA;
-            achinfo.ckacct = ChkAccount;
-            achinfo.ckname = CkName;
-            achinfo.cktype = CkType;
-            achinfo.ckaccttype = AccountType;
-            try
-            {
-                com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
-                pr = soapTrans.processACHVerification(achinfo);
-                AuthCode = pr.authcode.Split(':');
-                return AuthCode;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-
-
+        //    achinfo.acctid = MPAcctID[1].Trim();
+        //    achinfo.merchantpin = MPPinSetting[1].Trim();
+        //    achinfo.amount = Amount;
+        //    achinfo.ckaba = ABA;
+        //    achinfo.ckacct = ChkAccount;
+        //    achinfo.ckname = CkName;
+        //    achinfo.cktype = CkType;
+        //    achinfo.ckaccttype = AccountType;
+        //    try
+        //    {
+        //        com.merchantpartners.trans.TransactionSOAPBindingImplService soapTrans = new mp_ws.trans.TransactionSOAPBindingImplService();
+        //        pr = soapTrans.processACHVerification(achinfo);
+        //        AuthCode = pr.authcode.Split(':');
+        //        return AuthCode;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
 
 
-        }
+
+
+        //}
         public cCustomerInfo GetCustomerInformation(string sContactNumber)
         {
             XmlDocument xdoc = new XmlDocument();
