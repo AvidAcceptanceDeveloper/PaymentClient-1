@@ -53,7 +53,7 @@ namespace RDSSNLSMPUtilsClasses
                 string sql = "select b.cifnumber from cif_web a inner join cif b on a.cifno = b.cifno ";
                 string strSQLWhere = " a.user_name = '" + strUser + "'";
                 DataSet ds = oData.GetRowsByWhereClause(sql, strSQLWhere);
-            
+
                 return ds.Tables[0].Rows[0][0].ToString();
 
             }
@@ -115,40 +115,40 @@ namespace RDSSNLSMPUtilsClasses
             
 
         }
-        public Dictionary<string, string> GetMerchantPartnerSettings(string LegalEntity)
-        {
-            XmlNodeList xnodelist = null;
+        //public Dictionary<string, string> GetMerchantPartnerSettings(string LegalEntity)
+        //{
+        //    XmlNodeList xnodelist = null;
 
-            if (LegalEntity.Length == 0)
-            {
-                throw new Exception("LegalEntity has not been setup on Loan Detail 2.UDF47.(Loan Group)");
+        //    if (LegalEntity.Length == 0)
+        //    {
+        //        throw new Exception("LegalEntity has not been setup on Loan Detail 2.UDF47.(Loan Group)");
 
-            }
-            cSettings oSettings = new cSettings(Properties.Settings.Default.SettingsFile);
-            Dictionary<string, string> dictSettings = new Dictionary<string, string>();
-            string sTestFlag = oSettings.SelectSingleNode(@"//RDSS[@mode='test']").ToString();
-            var fileName = "";
+        //    }
+        //    cSettings oSettings = new cSettings(Properties.Settings.Default.SettingsFile);
+        //    Dictionary<string, string> dictSettings = new Dictionary<string, string>();
+        //    string sTestFlag = oSettings.SelectSingleNode(@"//RDSS[@mode='test']").ToString();
+        //    var fileName = "";
 
-            if (sTestFlag == "test")
-            {
-                xnodelist = oSettings.SelectNodes("//appsettings[@environment = 'test']");
-            }
-            else
-            {
-                xnodelist = oSettings.SelectNodes("//appsettings[@environment = 'production']");
-            }
+        //    if (sTestFlag == "test")
+        //    {
+        //        xnodelist = oSettings.SelectNodes("//appsettings[@environment = 'test']");
+        //    }
+        //    else
+        //    {
+        //        xnodelist = oSettings.SelectNodes("//appsettings[@environment = 'production']");
+        //    }
 
-            foreach (XmlNode e in xnodelist)
-            {
-               XmlNode xnode = e.SelectSingleNode("//merchantpartners[@type='account'][@loangroup='" + LegalEntity + "']");
-            dictSettings.Add("ACCTID",xnode.Attributes.GetNamedItem("ATSID" ).ToString());
-            dictSettings.Add("SUBACCTID", xnode.Attributes.GetNamedItem("ATSSubID").ToString());
-            dictSettings.Add("MERCHANTPIN", xnode.Attributes.GetNamedItem("merchantpin").ToString());
-            }
+        //    foreach (XmlNode e in xnodelist)
+        //    {
+        //       XmlNode xnode = e.SelectSingleNode("//merchantpartners[@type='account'][@loangroup='" + LegalEntity + "']");
+        //    dictSettings.Add("ACCTID",xnode.Attributes.GetNamedItem("ATSID" ).ToString());
+        //    dictSettings.Add("SUBACCTID", xnode.Attributes.GetNamedItem("ATSSubID").ToString());
+        //    dictSettings.Add("MERCHANTPIN", xnode.Attributes.GetNamedItem("merchantpin").ToString());
+        //    }
             
-            oSettings = null;
-            return dictSettings;
-        }
+        //    oSettings = null;
+        //    return dictSettings;
+        //}
         //public Dictionary<string, string> GetFlashMessages()
         //{
         //    Dictionary<string, string> dictMessages = new Dictionary<string, string>();

@@ -56,6 +56,7 @@ namespace RDDSMakePayments
             this.rbtnSendReceipt = new Telerik.WinControls.UI.RadButton();
             this.rtxtConfirmMsg = new Telerik.WinControls.UI.RadTextBox();
             this.pnlCLN = new System.Windows.Forms.Panel();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.rbtnTestEmail = new Telerik.WinControls.UI.RadButton();
             this.rlblLogonId = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -207,8 +208,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rWizMakeAPayment.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 0, 600, 400);
-            this.rWizMakeAPayment.Size = new System.Drawing.Size(946, 529);
+            this.rWizMakeAPayment.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 0, 900, 600);
+            this.rWizMakeAPayment.Size = new System.Drawing.Size(1099, 529);
             this.rWizMakeAPayment.TabIndex = 3;
             this.rWizMakeAPayment.WelcomePage = this.wizardWelcomePage1;
             this.rWizMakeAPayment.Next += new Telerik.WinControls.UI.WizardCancelEventHandler(this.rWizMakeAPayment_Next);
@@ -228,9 +229,9 @@ namespace RDDSMakePayments
             this.pnlConfirm.BackColor = System.Drawing.Color.White;
             this.pnlConfirm.Controls.Add(this.rtxtPaymentResult);
             this.pnlConfirm.Controls.Add(this.rtxtConfirmMsg);
-            this.pnlConfirm.Location = new System.Drawing.Point(150, 56);
+            this.pnlConfirm.Location = new System.Drawing.Point(150, 69);
             this.pnlConfirm.Name = "pnlConfirm";
-            this.pnlConfirm.Size = new System.Drawing.Size(796, 425);
+            this.pnlConfirm.Size = new System.Drawing.Size(949, 412);
             this.pnlConfirm.TabIndex = 2;
             this.pnlConfirm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlConfirm_Paint);
             // 
@@ -241,22 +242,22 @@ namespace RDDSMakePayments
             this.rtxtPaymentResult.Controls.Add(this.rtxtReceiptEmailAddr);
             this.rtxtPaymentResult.Controls.Add(this.rbtnSendReceipt);
             this.rtxtPaymentResult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtPaymentResult.Location = new System.Drawing.Point(73, 244);
+            this.rtxtPaymentResult.Location = new System.Drawing.Point(3, 244);
             this.rtxtPaymentResult.Multiline = true;
             this.rtxtPaymentResult.Name = "rtxtPaymentResult";
             this.rtxtPaymentResult.ReadOnly = true;
             // 
             // 
             // 
-            this.rtxtPaymentResult.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 244, 100, 20);
-            this.rtxtPaymentResult.Size = new System.Drawing.Size(709, 171);
+            this.rtxtPaymentResult.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 244, 150, 30);
+            this.rtxtPaymentResult.Size = new System.Drawing.Size(943, 171);
             this.rtxtPaymentResult.TabIndex = 79;
             // 
             // rtxtReceiptEmailAddr
             // 
             this.rtxtReceiptEmailAddr.Location = new System.Drawing.Point(150, 191);
             this.rtxtReceiptEmailAddr.Name = "rtxtReceiptEmailAddr";
-            this.rtxtReceiptEmailAddr.Size = new System.Drawing.Size(314, 20);
+            this.rtxtReceiptEmailAddr.Size = new System.Drawing.Size(314, 27);
             this.rtxtReceiptEmailAddr.TabIndex = 4;
             // 
             // rbtnSendReceipt
@@ -273,20 +274,22 @@ namespace RDDSMakePayments
             this.rtxtConfirmMsg.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.rtxtConfirmMsg.Enabled = false;
             this.rtxtConfirmMsg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtConfirmMsg.Location = new System.Drawing.Point(73, 3);
+            this.rtxtConfirmMsg.Location = new System.Drawing.Point(3, 3);
             this.rtxtConfirmMsg.Multiline = true;
             this.rtxtConfirmMsg.Name = "rtxtConfirmMsg";
             // 
             // 
             // 
-            this.rtxtConfirmMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 3, 100, 20);
+            this.rtxtConfirmMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 3, 150, 30);
             this.rtxtConfirmMsg.RootElement.Enabled = false;
-            this.rtxtConfirmMsg.Size = new System.Drawing.Size(709, 235);
+            this.rtxtConfirmMsg.Size = new System.Drawing.Size(943, 235);
             this.rtxtConfirmMsg.TabIndex = 78;
+            this.rtxtConfirmMsg.TextChanged += new System.EventHandler(this.rtxtConfirmMsg_TextChanged);
             // 
             // pnlCLN
             // 
             this.pnlCLN.BackColor = System.Drawing.Color.White;
+            this.pnlCLN.Controls.Add(this.lblVersion);
             this.pnlCLN.Controls.Add(this.rbtnTestEmail);
             this.pnlCLN.Controls.Add(this.rlblLogonId);
             this.pnlCLN.Controls.Add(this.radLabel2);
@@ -296,11 +299,22 @@ namespace RDDSMakePayments
             this.pnlCLN.Controls.Add(this.lbLoanNumber);
             this.pnlCLN.Controls.Add(this.txtLoanNumber);
             this.pnlCLN.Controls.Add(this.btnFindLoan);
-            this.pnlCLN.Location = new System.Drawing.Point(258, 56);
+            this.pnlCLN.Location = new System.Drawing.Point(258, 69);
             this.pnlCLN.Name = "pnlCLN";
-            this.pnlCLN.Size = new System.Drawing.Size(688, 425);
+            this.pnlCLN.Size = new System.Drawing.Size(688, 412);
             this.pnlCLN.TabIndex = 0;
             this.pnlCLN.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCLN_Paint);
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lblVersion.Location = new System.Drawing.Point(517, 392);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(79, 13);
+            this.lblVersion.TabIndex = 4;
+            this.lblVersion.Text = "Current Version";
+            this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
             // rbtnTestEmail
             // 
@@ -320,7 +334,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblLogonId.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 111, 100, 18);
+            this.rlblLogonId.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 111, 150, 27);
             this.rlblLogonId.Size = new System.Drawing.Size(2, 2);
             this.rlblLogonId.TabIndex = 4;
             // 
@@ -332,7 +346,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.radLabel2.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 103, 100, 18);
+            this.radLabel2.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 103, 150, 27);
             this.radLabel2.Size = new System.Drawing.Size(2, 2);
             this.radLabel2.TabIndex = 1004;
             // 
@@ -356,8 +370,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblCustomerName.RootElement.ControlBounds = new System.Drawing.Rectangle(243, 164, 100, 18);
-            this.rlblCustomerName.Size = new System.Drawing.Size(57, 18);
+            this.rlblCustomerName.RootElement.ControlBounds = new System.Drawing.Rectangle(243, 164, 150, 27);
+            this.rlblCustomerName.Size = new System.Drawing.Size(84, 26);
             this.rlblCustomerName.TabIndex = 39;
             this.rlblCustomerName.Text = "Customer:";
             // 
@@ -374,7 +388,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtCustomerName.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 162, 100, 20);
+            this.rtxtCustomerName.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 162, 150, 30);
             this.rtxtCustomerName.RootElement.Enabled = false;
             this.rtxtCustomerName.Size = new System.Drawing.Size(231, 67);
             this.rtxtCustomerName.TabIndex = 41;
@@ -390,8 +404,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.lbLoanNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(221, 136, 100, 18);
-            this.lbLoanNumber.Size = new System.Drawing.Size(77, 18);
+            this.lbLoanNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(221, 136, 150, 27);
+            this.lbLoanNumber.Size = new System.Drawing.Size(114, 26);
             this.lbLoanNumber.TabIndex = 38;
             this.lbLoanNumber.Text = "Loan Number:";
             // 
@@ -404,7 +418,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.txtLoanNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 135, 125, 20);
+            this.txtLoanNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(322, 135, 187, 30);
             this.txtLoanNumber.Size = new System.Drawing.Size(171, 23);
             this.txtLoanNumber.TabIndex = 1001;
             // 
@@ -417,7 +431,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.btnFindLoan.RootElement.ControlBounds = new System.Drawing.Rectangle(495, 134, 110, 24);
+            this.btnFindLoan.RootElement.ControlBounds = new System.Drawing.Rectangle(495, 134, 165, 36);
             this.btnFindLoan.Size = new System.Drawing.Size(58, 24);
             this.btnFindLoan.TabIndex = 1002;
             this.btnFindLoan.Text = "&Find";
@@ -430,9 +444,9 @@ namespace RDDSMakePayments
             this.pnlDemo.Controls.Add(this.rlblValidationMsg);
             this.pnlDemo.Controls.Add(this.rpnlDemographics);
             this.pnlDemo.Controls.Add(this.pictureBox1);
-            this.pnlDemo.Location = new System.Drawing.Point(0, 81);
+            this.pnlDemo.Location = new System.Drawing.Point(0, 103);
             this.pnlDemo.Name = "pnlDemo";
-            this.pnlDemo.Size = new System.Drawing.Size(946, 400);
+            this.pnlDemo.Size = new System.Drawing.Size(946, 378);
             this.pnlDemo.TabIndex = 1;
             // 
             // rlblValidationMsg
@@ -446,7 +460,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblValidationMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 0, 944, 18);
+            this.rlblValidationMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 0, 944, 27);
             this.rlblValidationMsg.RootElement.MinSize = new System.Drawing.Size(944, 0);
             this.rlblValidationMsg.Size = new System.Drawing.Size(946, 2);
             this.rlblValidationMsg.TabIndex = 2010;
@@ -475,7 +489,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rpnlDemographics.RootElement.ControlBounds = new System.Drawing.Rectangle(252, 77, 200, 100);
+            this.rpnlDemographics.RootElement.ControlBounds = new System.Drawing.Rectangle(252, 77, 300, 150);
             this.rpnlDemographics.Size = new System.Drawing.Size(527, 178);
             this.rpnlDemographics.TabIndex = 2009;
             // 
@@ -491,7 +505,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtEmail.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 109, 100, 20);
+            this.rtxtEmail.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 109, 150, 30);
             this.rtxtEmail.Size = new System.Drawing.Size(402, 24);
             this.rtxtEmail.TabIndex = 2007;
             // 
@@ -504,8 +518,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblEmail.RootElement.ControlBounds = new System.Drawing.Rectangle(19, 112, 100, 18);
-            this.rlblEmail.Size = new System.Drawing.Size(79, 18);
+            this.rlblEmail.RootElement.ControlBounds = new System.Drawing.Rectangle(19, 112, 150, 27);
+            this.rlblEmail.Size = new System.Drawing.Size(117, 26);
             this.rlblEmail.TabIndex = 2015;
             this.rlblEmail.Text = "Email Address:";
             // 
@@ -518,8 +532,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblAddr2.RootElement.ControlBounds = new System.Drawing.Rectangle(379, 51, 100, 18);
-            this.rlblAddr2.Size = new System.Drawing.Size(42, 18);
+            this.rlblAddr2.RootElement.ControlBounds = new System.Drawing.Rectangle(379, 51, 150, 27);
+            this.rlblAddr2.Size = new System.Drawing.Size(62, 26);
             this.rlblAddr2.TabIndex = 2014;
             this.rlblAddr2.Text = "Addr 2:";
             this.rlblAddr2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -530,7 +544,7 @@ namespace RDDSMakePayments
             this.lnklblClear.AutoSize = true;
             this.lnklblClear.Location = new System.Drawing.Point(104, 141);
             this.lnklblClear.Name = "lnklblClear";
-            this.lnklblClear.Size = new System.Drawing.Size(57, 13);
+            this.lnklblClear.Size = new System.Drawing.Size(93, 23);
             this.lnklblClear.TabIndex = 2008;
             this.lnklblClear.TabStop = true;
             this.lnklblClear.Text = "Clear Form";
@@ -546,8 +560,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblState.RootElement.ControlBounds = new System.Drawing.Rectangle(260, 79, 100, 18);
-            this.rlblState.Size = new System.Drawing.Size(49, 18);
+            this.rlblState.RootElement.ControlBounds = new System.Drawing.Rectangle(260, 79, 150, 27);
+            this.rlblState.Size = new System.Drawing.Size(65, 26);
             this.rlblState.TabIndex = 2013;
             this.rlblState.Text = "State:";
             this.rlblState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -557,11 +571,11 @@ namespace RDDSMakePayments
             this.rddlState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rddlState.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rddlState.FormattingEnabled = true;
-            this.rddlState.ItemHeight = 13;
+            this.rddlState.ItemHeight = 23;
             this.rddlState.Location = new System.Drawing.Point(313, 78);
             this.rddlState.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.rddlState.Name = "rddlState";
-            this.rddlState.Size = new System.Drawing.Size(50, 21);
+            this.rddlState.Size = new System.Drawing.Size(50, 31);
             this.rddlState.TabIndex = 2005;
             // 
             // rlblZip
@@ -574,8 +588,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblZip.RootElement.ControlBounds = new System.Drawing.Rectangle(379, 83, 100, 18);
-            this.rlblZip.Size = new System.Drawing.Size(39, 18);
+            this.rlblZip.RootElement.ControlBounds = new System.Drawing.Rectangle(379, 83, 150, 27);
+            this.rlblZip.Size = new System.Drawing.Size(50, 26);
             this.rlblZip.TabIndex = 2012;
             this.rlblZip.Text = "Zip:";
             this.rlblZip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -590,7 +604,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtZip.RootElement.ControlBounds = new System.Drawing.Rectangle(440, 75, 125, 20);
+            this.rtxtZip.RootElement.ControlBounds = new System.Drawing.Rectangle(440, 75, 187, 30);
             this.rtxtZip.Size = new System.Drawing.Size(69, 26);
             this.rtxtZip.TabIndex = 2006;
             // 
@@ -604,7 +618,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtCity.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 75, 125, 20);
+            this.rtxtCity.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 75, 187, 30);
             this.rtxtCity.Size = new System.Drawing.Size(149, 26);
             this.rtxtCity.TabIndex = 2004;
             // 
@@ -618,8 +632,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblCity.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 83, 100, 18);
-            this.rlblCity.Size = new System.Drawing.Size(43, 18);
+            this.rlblCity.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 83, 150, 27);
+            this.rlblCity.Size = new System.Drawing.Size(55, 26);
             this.rlblCity.TabIndex = 2011;
             this.rlblCity.Text = "City:";
             this.rlblCity.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -635,7 +649,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtAddress2.RootElement.ControlBounds = new System.Drawing.Rectangle(440, 43, 125, 20);
+            this.rtxtAddress2.RootElement.ControlBounds = new System.Drawing.Rectangle(440, 43, 187, 30);
             this.rtxtAddress2.Size = new System.Drawing.Size(69, 26);
             this.rtxtAddress2.TabIndex = 2003;
             // 
@@ -650,7 +664,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtAddress1.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 43, 125, 20);
+            this.rtxtAddress1.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 43, 187, 30);
             this.rtxtAddress1.Size = new System.Drawing.Size(245, 26);
             this.rtxtAddress1.TabIndex = 2002;
             // 
@@ -664,8 +678,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblAddress1.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 51, 100, 18);
-            this.rlblAddress1.Size = new System.Drawing.Size(73, 18);
+            this.rlblAddress1.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 51, 150, 27);
+            this.rlblAddress1.Size = new System.Drawing.Size(101, 26);
             this.rlblAddress1.TabIndex = 2010;
             this.rlblAddress1.Text = "Address 1:";
             this.rlblAddress1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -681,7 +695,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtPayerName.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 13, 125, 20);
+            this.rtxtPayerName.RootElement.ControlBounds = new System.Drawing.Rectangle(107, 13, 187, 30);
             this.rtxtPayerName.Size = new System.Drawing.Size(402, 26);
             this.rtxtPayerName.TabIndex = 2001;
             // 
@@ -696,8 +710,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblPayerName.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 19, 100, 18);
-            this.rlblPayerName.Size = new System.Drawing.Size(84, 18);
+            this.rlblPayerName.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 19, 150, 27);
+            this.rlblPayerName.Size = new System.Drawing.Size(117, 26);
             this.rlblPayerName.TabIndex = 2009;
             this.rlblPayerName.Text = "Payer Name:";
             this.rlblPayerName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -720,9 +734,9 @@ namespace RDDSMakePayments
             this.pnlAcct.Controls.Add(this.rlblAlertMessage);
             this.pnlAcct.Controls.Add(this.rlblMsgWinPayment);
             this.pnlAcct.Controls.Add(this.pictureBox2);
-            this.pnlAcct.Location = new System.Drawing.Point(0, 81);
+            this.pnlAcct.Location = new System.Drawing.Point(0, 103);
             this.pnlAcct.Name = "pnlAcct";
-            this.pnlAcct.Size = new System.Drawing.Size(946, 400);
+            this.pnlAcct.Size = new System.Drawing.Size(946, 378);
             this.pnlAcct.TabIndex = 3;
             this.pnlAcct.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -773,7 +787,7 @@ namespace RDDSMakePayments
             // 
             this.radLabel1.Location = new System.Drawing.Point(556, 17);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(9, 18);
+            this.radLabel1.Size = new System.Drawing.Size(12, 26);
             this.radLabel1.TabIndex = 6003;
             this.radLabel1.Text = ".";
             // 
@@ -786,7 +800,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rbtnCalcTotal.RootElement.ControlBounds = new System.Drawing.Rectangle(64, 30, 110, 24);
+            this.rbtnCalcTotal.RootElement.ControlBounds = new System.Drawing.Rectangle(64, 30, 165, 36);
             this.rbtnCalcTotal.Size = new System.Drawing.Size(101, 20);
             this.rbtnCalcTotal.TabIndex = 3054;
             this.rbtnCalcTotal.Text = "Calc Total";
@@ -802,8 +816,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblPaymentDate.RootElement.ControlBounds = new System.Drawing.Rectangle(89, 11, 100, 18);
-            this.rlblPaymentDate.Size = new System.Drawing.Size(94, 18);
+            this.rlblPaymentDate.RootElement.ControlBounds = new System.Drawing.Rectangle(89, 11, 150, 27);
+            this.rlblPaymentDate.Size = new System.Drawing.Size(132, 26);
             this.rlblPaymentDate.TabIndex = 3049;
             this.rlblPaymentDate.Text = "Payment Date:";
             this.rlblPaymentDate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -818,7 +832,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rdtpPaymentDate.RootElement.ControlBounds = new System.Drawing.Rectangle(187, 9, 164, 20);
+            this.rdtpPaymentDate.RootElement.ControlBounds = new System.Drawing.Rectangle(187, 9, 246, 30);
             this.rdtpPaymentDate.RootElement.StretchVertically = true;
             this.rdtpPaymentDate.Size = new System.Drawing.Size(206, 24);
             this.rdtpPaymentDate.TabIndex = 3020;
@@ -838,7 +852,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rpvPaymethod.RootElement.ControlBounds = new System.Drawing.Rectangle(248, 2, 400, 300);
+            this.rpvPaymethod.RootElement.ControlBounds = new System.Drawing.Rectangle(248, 2, 600, 450);
             this.rpvPaymethod.SelectedPage = this.rpvCCDebit;
             this.rpvPaymethod.Size = new System.Drawing.Size(687, 292);
             this.rpvPaymethod.TabIndex = 3055;
@@ -855,10 +869,11 @@ namespace RDDSMakePayments
             this.rpvCCDebit.Controls.Add(this.rddlYear);
             this.rpvCCDebit.Controls.Add(this.rtxtCCNumber);
             this.rpvCCDebit.Controls.Add(this.rlblCCNumber);
-            this.rpvCCDebit.Location = new System.Drawing.Point(5, 29);
+            this.rpvCCDebit.ItemSize = new System.Drawing.SizeF(687F, 40F);
+            this.rpvCCDebit.Location = new System.Drawing.Point(5, 40);
             this.rpvCCDebit.Margin = new System.Windows.Forms.Padding(2);
             this.rpvCCDebit.Name = "rpvCCDebit";
-            this.rpvCCDebit.Size = new System.Drawing.Size(677, 197);
+            this.rpvCCDebit.Size = new System.Drawing.Size(677, 170);
             this.rpvCCDebit.Text = "Credit/Debit";
             this.rpvCCDebit.Paint += new System.Windows.Forms.PaintEventHandler(this.rpvCCDebit_Paint);
             // 
@@ -872,7 +887,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtSecCode.RootElement.ControlBounds = new System.Drawing.Rectangle(610, 84, 125, 20);
+            this.rtxtSecCode.RootElement.ControlBounds = new System.Drawing.Rectangle(610, 84, 187, 30);
             this.rtxtSecCode.Size = new System.Drawing.Size(58, 20);
             this.rtxtSecCode.TabIndex = 3004;
             // 
@@ -886,8 +901,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblSecCode.RootElement.ControlBounds = new System.Drawing.Rectangle(520, 86, 100, 18);
-            this.rlblSecCode.Size = new System.Drawing.Size(90, 18);
+            this.rlblSecCode.RootElement.ControlBounds = new System.Drawing.Rectangle(520, 86, 150, 27);
+            this.rlblSecCode.Size = new System.Drawing.Size(126, 26);
             this.rlblSecCode.TabIndex = 3068;
             this.rlblSecCode.Text = "Security Code";
             this.rlblSecCode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -901,8 +916,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblslash.RootElement.ControlBounds = new System.Drawing.Rectangle(423, 84, 100, 18);
-            this.rlblslash.Size = new System.Drawing.Size(11, 18);
+            this.rlblslash.RootElement.ControlBounds = new System.Drawing.Rectangle(423, 84, 150, 27);
+            this.rlblslash.Size = new System.Drawing.Size(15, 26);
             this.rlblslash.TabIndex = 3067;
             this.rlblslash.Text = "/";
             // 
@@ -916,8 +931,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblExpDte.RootElement.ControlBounds = new System.Drawing.Rectangle(259, 86, 100, 18);
-            this.rlblExpDte.Size = new System.Drawing.Size(100, 18);
+            this.rlblExpDte.RootElement.ControlBounds = new System.Drawing.Rectangle(259, 86, 150, 27);
+            this.rlblExpDte.Size = new System.Drawing.Size(141, 26);
             this.rlblExpDte.TabIndex = 3066;
             this.rlblExpDte.Text = "Expiration Date:";
             this.rlblExpDte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -956,7 +971,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rddlMonth.RootElement.ControlBounds = new System.Drawing.Rectangle(364, 84, 125, 20);
+            this.rddlMonth.RootElement.ControlBounds = new System.Drawing.Rectangle(364, 84, 187, 30);
             this.rddlMonth.RootElement.StretchVertically = true;
             this.rddlMonth.Size = new System.Drawing.Size(57, 20);
             this.rddlMonth.TabIndex = 3002;
@@ -971,7 +986,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rddlYear.RootElement.ControlBounds = new System.Drawing.Rectangle(435, 84, 125, 20);
+            this.rddlYear.RootElement.ControlBounds = new System.Drawing.Rectangle(435, 84, 187, 30);
             this.rddlYear.RootElement.StretchVertically = true;
             this.rddlYear.Size = new System.Drawing.Size(81, 20);
             this.rddlYear.TabIndex = 3003;
@@ -986,7 +1001,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtCCNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(110, 84, 125, 20);
+            this.rtxtCCNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(110, 84, 187, 30);
             this.rtxtCCNumber.Size = new System.Drawing.Size(138, 20);
             this.rtxtCCNumber.TabIndex = 3001;
             // 
@@ -1000,8 +1015,8 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblCCNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 84, 100, 18);
-            this.rlblCCNumber.Size = new System.Drawing.Size(91, 18);
+            this.rlblCCNumber.RootElement.ControlBounds = new System.Drawing.Rectangle(16, 84, 150, 27);
+            this.rlblCCNumber.Size = new System.Drawing.Size(128, 26);
             this.rlblCCNumber.TabIndex = 3062;
             this.rlblCCNumber.Text = "Card Number:";
             this.rlblCCNumber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1014,6 +1029,7 @@ namespace RDDSMakePayments
             this.rpvCheck.Controls.Add(this.rtxtBankAccount);
             this.rpvCheck.Controls.Add(this.rlblBankAccount);
             this.rpvCheck.Controls.Add(this.rlblABANumber);
+            this.rpvCheck.ItemSize = new System.Drawing.SizeF(687F, 40F);
             this.rpvCheck.Location = new System.Drawing.Point(5, 29);
             this.rpvCheck.Margin = new System.Windows.Forms.Padding(2);
             this.rpvCheck.Name = "rpvCheck";
@@ -1030,7 +1046,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblChkSav.RootElement.ControlBounds = new System.Drawing.Rectangle(466, 84, 100, 18);
+            this.rlblChkSav.RootElement.ControlBounds = new System.Drawing.Rectangle(466, 84, 150, 27);
             this.rlblChkSav.Size = new System.Drawing.Size(92, 18);
             this.rlblChkSav.TabIndex = 3045;
             this.rlblChkSav.Text = "Account Type:";
@@ -1050,7 +1066,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rddlChkSav.RootElement.ControlBounds = new System.Drawing.Rectangle(564, 84, 125, 20);
+            this.rddlChkSav.RootElement.ControlBounds = new System.Drawing.Rectangle(564, 84, 187, 30);
             this.rddlChkSav.RootElement.StretchVertically = true;
             this.rddlChkSav.Size = new System.Drawing.Size(90, 20);
             this.rddlChkSav.SortStyle = Telerik.WinControls.Enumerations.SortStyle.Ascending;
@@ -1067,7 +1083,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtABANumber.RootElement.ControlBounds = new System.Drawing.Rectangle(131, 84, 125, 20);
+            this.rtxtABANumber.RootElement.ControlBounds = new System.Drawing.Rectangle(131, 84, 187, 30);
             this.rtxtABANumber.Size = new System.Drawing.Size(102, 20);
             this.rtxtABANumber.TabIndex = 3010;
             // 
@@ -1081,7 +1097,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtBankAccount.RootElement.ControlBounds = new System.Drawing.Rectangle(313, 84, 125, 20);
+            this.rtxtBankAccount.RootElement.ControlBounds = new System.Drawing.Rectangle(313, 84, 187, 30);
             this.rtxtBankAccount.Size = new System.Drawing.Size(145, 20);
             this.rtxtBankAccount.TabIndex = 3011;
             // 
@@ -1095,7 +1111,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblBankAccount.RootElement.ControlBounds = new System.Drawing.Rectangle(244, 84, 100, 18);
+            this.rlblBankAccount.RootElement.ControlBounds = new System.Drawing.Rectangle(244, 84, 150, 27);
             this.rlblBankAccount.Size = new System.Drawing.Size(65, 18);
             this.rlblBankAccount.TabIndex = 3041;
             this.rlblBankAccount.Text = "Account:";
@@ -1111,7 +1127,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblABANumber.RootElement.ControlBounds = new System.Drawing.Rectangle(81, 84, 100, 18);
+            this.rlblABANumber.RootElement.ControlBounds = new System.Drawing.Rectangle(81, 84, 150, 27);
             this.rlblABANumber.Size = new System.Drawing.Size(45, 18);
             this.rlblABANumber.TabIndex = 3040;
             this.rlblABANumber.Text = "ABA:";
@@ -1125,7 +1141,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblAlertMessage.RootElement.ControlBounds = new System.Drawing.Rectangle(398, 283, 100, 18);
+            this.rlblAlertMessage.RootElement.ControlBounds = new System.Drawing.Rectangle(398, 283, 150, 27);
             this.rlblAlertMessage.Size = new System.Drawing.Size(2, 2);
             this.rlblAlertMessage.TabIndex = 3016;
             // 
@@ -1140,7 +1156,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rlblMsgWinPayment.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 0, 944, 18);
+            this.rlblMsgWinPayment.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 0, 944, 27);
             this.rlblMsgWinPayment.RootElement.MinSize = new System.Drawing.Size(944, 0);
             this.rlblMsgWinPayment.Size = new System.Drawing.Size(946, 2);
             this.rlblMsgWinPayment.TabIndex = 97;
@@ -1199,7 +1215,7 @@ namespace RDDSMakePayments
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(946, 529);
+            this.ClientSize = new System.Drawing.Size(1099, 529);
             this.Controls.Add(this.rWizMakeAPayment);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1357,5 +1373,6 @@ namespace RDDSMakePayments
         private RadTextBox rtxtReceiptEmailAddr;
         private RadButton rbtnSendReceipt;
         private RadButton rbtnTestEmail;
+        private Label lblVersion;
     }
 }
