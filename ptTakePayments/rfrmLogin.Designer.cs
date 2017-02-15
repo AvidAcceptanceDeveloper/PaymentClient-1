@@ -77,23 +77,25 @@
             // 
             this.rtxtUserId.Location = new System.Drawing.Point(134, 89);
             this.rtxtUserId.Name = "rtxtUserId";
-            this.rtxtUserId.Size = new System.Drawing.Size(208, 24);
+            this.rtxtUserId.Size = new System.Drawing.Size(208, 27);
             this.rtxtUserId.TabIndex = 1;
+            this.rtxtUserId.TextChanged += new System.EventHandler(this.rtxtUserId_TextChanged);
             // 
             // rtxtPassword
             // 
             this.rtxtPassword.Location = new System.Drawing.Point(134, 115);
             this.rtxtPassword.Name = "rtxtPassword";
             this.rtxtPassword.PasswordChar = '●';
-            this.rtxtPassword.Size = new System.Drawing.Size(208, 24);
+            //this.rtxtPassword.Size = new System.Drawing.Size(208, 27);
             this.rtxtPassword.TabIndex = 2;
             this.rtxtPassword.UseSystemPasswordChar = true;
+            this.rtxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtPassword_KeyPress);
             // 
             // rlblUserId
             // 
             this.rlblUserId.Location = new System.Drawing.Point(73, 90);
             this.rlblUserId.Name = "rlblUserId";
-            this.rlblUserId.Size = new System.Drawing.Size(51, 22);
+            this.rlblUserId.Size = new System.Drawing.Size(61, 26);
             this.rlblUserId.TabIndex = 3;
             this.rlblUserId.Text = "User Id";
             // 
@@ -101,7 +103,7 @@
             // 
             this.rlblPassword.Location = new System.Drawing.Point(73, 114);
             this.rlblPassword.Name = "rlblPassword";
-            this.rlblPassword.Size = new System.Drawing.Size(66, 22);
+            this.rlblPassword.Size = new System.Drawing.Size(79, 26);
             this.rlblPassword.TabIndex = 4;
             this.rlblPassword.Text = "Password";
             // 

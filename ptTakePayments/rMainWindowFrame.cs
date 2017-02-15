@@ -38,8 +38,10 @@ namespace RDDSMakePayments
 
         private void rMainWindowFrame_Load(object sender, EventArgs e)
         {
+ 
             try
             {
+
                 //Get reference to the settings object
                 RDSSNLSMPUtilsClasses.cSettings oSettings = new RDSSNLSMPUtilsClasses.cSettings(Properties.Settings.Default.SettingsFile.ToString());
 

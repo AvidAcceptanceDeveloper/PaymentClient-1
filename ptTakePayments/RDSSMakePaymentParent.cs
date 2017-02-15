@@ -45,11 +45,11 @@ namespace RDDSMakePayments
             rtxtCents.KeyPress += new KeyPressEventHandler(rtxtCents_KeyPress);
 
 
-            if( System.Diagnostics.Debugger.IsAttached) 
-                lblVersion.Text = "Debug Mode";
+            if( System.Diagnostics.Debugger.IsAttached)
+                this.Text += "Debug Mode";
             else{
                 ApplicationIdentity ai = new ApplicationIdentity("RDSS - Payment Client (Avid)");
-                lblVersion.Text = "Current Application Version: " + ApplicationDeployment.CurrentDeployment.CurrentVersion.Major.ToString() + "." + ApplicationDeployment.CurrentDeployment.CurrentVersion.Minor.ToString() + "." + ApplicationDeployment.CurrentDeployment.CurrentVersion.Revision.ToString();
+                this.Text += "Current Application Version: " + ApplicationDeployment.CurrentDeployment.CurrentVersion.Major.ToString() + "." + ApplicationDeployment.CurrentDeployment.CurrentVersion.Minor.ToString() + "." + ApplicationDeployment.CurrentDeployment.CurrentVersion.Revision.ToString();
             }
                 
 
@@ -734,7 +734,7 @@ namespace RDDSMakePayments
                     .Append("DO YOU AUTHORIZE AVID ACCEPTANCE TO PROCEED WITH THIS PAYMENT TODAY?\r\n")
                     .Append("\r\n")
                     .Append("IF YOU HAVE ANY QUESTIONS REGARDING THIS PAYMENT OR WISH TO REVOKE THE PAYMENT AUTHORIZATION WITHIN ONE HOUR\r\n\r\n")
-                    .Append("YOU MAY REACH US AT 1 - 888 - 777 - 9190.\r\n\r\n").Append(sDisclaimer).ToString();
+                    .Append("YOU MAY REACH US AT 1 - 888 - 777 - 9190.\r\n\r\n").ToString();
 
                 }
                 else
@@ -778,6 +778,8 @@ namespace RDDSMakePayments
         {
             RDSSNLSMPUtilsClasses.cNortridgeWapper nls = new RDSSNLSMPUtilsClasses.cNortridgeWapper();
             RDSSNLSMPUtilsClasses.cSettings oSettings = new RDSSNLSMPUtilsClasses.cSettings(Properties.Settings.Default.SettingsFile);
+
+            this.Text = "RDSS Make Payment: Current Environment is " + oSettings.TestMode.ToUpper();
 
             string CurrentCompany = oSettings.Company;
             int currentYear;

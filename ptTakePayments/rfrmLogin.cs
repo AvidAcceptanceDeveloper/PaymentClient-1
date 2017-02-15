@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace RDDSMakePayments
@@ -32,6 +33,10 @@ namespace RDDSMakePayments
             catch (Exception lgnEx)
             {
                 rlblErrorMsg.Text = "Error obtaining log-in token from NLS. ERROR: " + lgnEx.Message;
+
+                rbtnCancel.Enabled = true;
+                rbtnLogin.Enabled = true;
+
                 return;
             }
             if (sToken.Length > 0)
@@ -56,6 +61,8 @@ namespace RDDSMakePayments
                 else
                 {
                     rlblErrorMsg.Text = "Error logging into system.\r\nCheck your user id and password and try again.";
+                    rbtnCancel.Enabled = true;
+                    rbtnLogin.Enabled = true;
                 }
 
             }
@@ -65,6 +72,27 @@ namespace RDDSMakePayments
         {
             RDSSNLSMPUtilsClasses.cSettings oSettings = new RDSSNLSMPUtilsClasses.cSettings(Properties.Settings.Default.SettingsFile);
             this.Text   = "RDSS Make Payment: Current Environment is " + oSettings.TestMode.ToUpper();
+
+        }
+        private void rtxtPassword_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            
+                if (e.KeyChar == (char)Keys.Return)
+
+                {
+                    rbtnLogin.Enabled = false;
+                    rbtnCancel.Enabled = false;
+                    rbtnLogin_Click(sender, e);
+                }
+           
+        }
+        
+        private void DisplayLoginMessage()
+        {
+            rlblErrorMsg.Text = "Logging In, Please Wait.";
+        }
+        private void rtxtUserId_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
