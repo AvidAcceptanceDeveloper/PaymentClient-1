@@ -249,7 +249,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtPaymentResult.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 244, 150, 30);
+            this.rtxtPaymentResult.RootElement.ControlBounds = new System.Drawing.Rectangle(3, 244, 150, 30);
             this.rtxtPaymentResult.Size = new System.Drawing.Size(943, 171);
             this.rtxtPaymentResult.TabIndex = 79;
             // 
@@ -280,7 +280,7 @@ namespace RDDSMakePayments
             // 
             // 
             // 
-            this.rtxtConfirmMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(73, 3, 150, 30);
+            this.rtxtConfirmMsg.RootElement.ControlBounds = new System.Drawing.Rectangle(3, 3, 150, 30);
             this.rtxtConfirmMsg.RootElement.Enabled = false;
             this.rtxtConfirmMsg.Size = new System.Drawing.Size(943, 235);
             this.rtxtConfirmMsg.TabIndex = 78;
@@ -301,7 +301,7 @@ namespace RDDSMakePayments
             this.pnlCLN.Controls.Add(this.btnFindLoan);
             this.pnlCLN.Location = new System.Drawing.Point(258, 69);
             this.pnlCLN.Name = "pnlCLN";
-            this.pnlCLN.Size = new System.Drawing.Size(688, 412);
+            this.pnlCLN.Size = new System.Drawing.Size(841, 412);
             this.pnlCLN.TabIndex = 0;
             this.pnlCLN.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCLN_Paint);
             // 
@@ -314,6 +314,7 @@ namespace RDDSMakePayments
             this.lblVersion.Size = new System.Drawing.Size(79, 13);
             this.lblVersion.TabIndex = 4;
             this.lblVersion.Text = "Current Version";
+            this.lblVersion.Visible = false;
             this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
             // rbtnTestEmail
@@ -544,7 +545,7 @@ namespace RDDSMakePayments
             this.lnklblClear.AutoSize = true;
             this.lnklblClear.Location = new System.Drawing.Point(104, 141);
             this.lnklblClear.Name = "lnklblClear";
-            this.lnklblClear.Size = new System.Drawing.Size(93, 23);
+            this.lnklblClear.Size = new System.Drawing.Size(57, 13);
             this.lnklblClear.TabIndex = 2008;
             this.lnklblClear.TabStop = true;
             this.lnklblClear.Text = "Clear Form";
@@ -869,7 +870,6 @@ namespace RDDSMakePayments
             this.rpvCCDebit.Controls.Add(this.rddlYear);
             this.rpvCCDebit.Controls.Add(this.rtxtCCNumber);
             this.rpvCCDebit.Controls.Add(this.rlblCCNumber);
-            this.rpvCCDebit.ItemSize = new System.Drawing.SizeF(687F, 40F);
             this.rpvCCDebit.Location = new System.Drawing.Point(5, 40);
             this.rpvCCDebit.Margin = new System.Windows.Forms.Padding(2);
             this.rpvCCDebit.Name = "rpvCCDebit";
@@ -1029,7 +1029,6 @@ namespace RDDSMakePayments
             this.rpvCheck.Controls.Add(this.rtxtBankAccount);
             this.rpvCheck.Controls.Add(this.rlblBankAccount);
             this.rpvCheck.Controls.Add(this.rlblABANumber);
-            this.rpvCheck.ItemSize = new System.Drawing.SizeF(687F, 40F);
             this.rpvCheck.Location = new System.Drawing.Point(5, 29);
             this.rpvCheck.Margin = new System.Windows.Forms.Padding(2);
             this.rpvCheck.Name = "rpvCheck";
